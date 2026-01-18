@@ -2,6 +2,7 @@
   "arrowParens": "avoid",
   "braceSameLine": true,
   "bracketSpacing": true,
+  "endOfLine": "auto",
   "printWidth": 80,
   "semi": true,
   "singleQuote": true,
