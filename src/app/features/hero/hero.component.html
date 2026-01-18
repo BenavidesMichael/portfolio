@@ -1,0 +1,86 @@
+<section id="hero" class="hero min-h-[calc(100vh-4rem)] bg-linear-to-b from-gray-950 to-gray-900">
+  <div class="hero-content text-center">
+    <div class="max-w-5xl space-y-6">
+      <!-- Badge Statut -->
+      <div class="badge badge-primary badge-lg gap-2">
+        <span class="text-lg">{{ data.badge.icon }}</span>
+        {{ data.badge.text }}
+      </div>
+
+      <!-- Titre Principal -->
+      <h1
+        class="text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent"
+      >
+        {{ data.name }}
+      </h1>
+
+      <!-- Sous-titre -->
+      <p class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-300">
+        <span class="mr-2">{{ data.titleIcon }}</span
+        >{{ data.title }}
+      </p>
+
+      <!-- Stats Cards -->
+      <div class="stats stats-vertical md:stats-horizontal shadow-xl bg-gray-800">
+        @for (stat of data.stats; track stat.title) {
+          <div class="stat place-items-center">
+            <div class="stat-figure" [class]="stat.colorClass">
+              <span class="text-4xl">{{ stat.icon }}</span>
+            </div>
+            <div class="stat-title">{{ stat.title }}</div>
+            <div class="stat-value" [class]="stat.colorClass + ' ' + stat.valueClass">
+              {{ stat.value }}
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Technologies Badges -->
+      <div class="flex flex-wrap justify-center gap-2">
+        @for (tech of data.technologies; track tech) {
+          <div class="badge badge-outline badge-lg">{{ tech }}</div>
+        }
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center gap-3">
+        @for (link of data.socialLinks; track link.name) {
+          <div class="tooltip" [attr.data-tip]="link.name">
+            <a
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-circle btn-outline"
+              [class]="link.colorClass"
+              [attr.aria-label]="link.name"
+            >
+              @switch (link.iconType) {
+                @case ('github') {
+                  <svg iconGithub class="size-6"></svg>
+                }
+                @case ('linkedin') {
+                  <svg iconLinkedin class="size-6"></svg>
+                }
+                @case ('email') {
+                  <svg iconEmail class="size-6"></svg>
+                }
+              }
+            </a>
+          </div>
+        }
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+        <button (click)="downloadCV()" class="btn btn-primary btn-lg">
+          <svg iconDownload class="size-5"></svg>
+          {{ data.cta.download }}
+        </button>
+        <a href="#contact" class="btn btn-outline btn-lg">
+          <svg iconEmail class="size-5"></svg>
+          {{ data.cta.contact }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

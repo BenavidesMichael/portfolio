@@ -36,6 +36,12 @@ module.exports = defineConfig([
     },
   },
   {
+    files: ['**/shared/components/icons/*.ts'],
+    rules: {
+      '@angular-eslint/component-selector': 'off',
+    },
+  },
+  {
     files: ['**/*.html'],
     extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility, prettierRules],
     rules: {},

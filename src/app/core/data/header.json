@@ -1,0 +1,13 @@
+{
+  "logo": {
+    "text": "MB",
+    "subtext": "Portfolio"
+  },
+  "navLinks": [
+    { "href": "#hero", "label": "Accueil", "isPrimary": false },
+    { "href": "#about", "label": "À propos", "isPrimary": false },
+    { "href": "#experience", "label": "Expérience", "isPrimary": false },
+    { "href": "#skills", "label": "Compétences", "isPrimary": false },
+    { "href": "#contact", "label": "Contact", "isPrimary": true }
+  ]
+}

@@ -1,6 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui" {
   themes: light, dracula;
 }
 
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
+
+html {
+  scroll-behavior: smooth;
+}
