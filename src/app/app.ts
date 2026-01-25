@@ -7,6 +7,6 @@ import { HeroComponent } from './features/hero/hero.component';
   standalone: true,
   imports: [HeaderComponent, HeroComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css',
 })
+export class App {}
 export class App {}
