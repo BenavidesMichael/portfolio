@@ -1,0 +1,15 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+@Component({
+  selector: 'app-icon-mail',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'icon', 'aria-hidden': 'true' },
+  template: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+      <path d="M3 7l9 6l9 -6" />
+    </svg>
+  `,
+})
+export class MailIconComponent {}
