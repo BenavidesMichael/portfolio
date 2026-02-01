@@ -2,14 +2,15 @@ import { Component, inject, signal, PLATFORM_ID, DestroyRef } from '@angular/cor
 import { isPlatformBrowser } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent, throttleTime, map, startWith } from 'rxjs';
-import { ThemeToggleComponent } from '../../../../shared/components/theme-toggle';
-import { ThemeService } from '../../../../core/services';
+import { ThemeToggleComponent } from '@shared/components/theme-toggle';
+import { ThemeService } from '@core/services';
+import { SCROLL_THRESHOLD, SCROLL_THROTTLE_MS } from '@core/config';
+import { NAV_LINKS } from '@data';
 import {
   GithubIconComponent,
   MailIconComponent,
   TerminalIconComponent,
-} from 'src/app/shared/components/icons';
-import { NAV_LINKS, SCROLL_THRESHOLD } from 'src/app/data';
+} from '@shared/components/icons';
 
 @Component({
   selector: 'app-navbar',
@@ -30,7 +31,7 @@ export class NavbarComponent {
     if (isPlatformBrowser(this.platformId)) {
       fromEvent(window, 'scroll', { passive: true })
         .pipe(
-          throttleTime(16, undefined, { leading: true, trailing: true }),
+          throttleTime(SCROLL_THROTTLE_MS, undefined, { leading: true, trailing: true }),
           map(() => window.scrollY > SCROLL_THRESHOLD),
           startWith(window.scrollY > SCROLL_THRESHOLD),
           takeUntilDestroyed(this.destroyRef),

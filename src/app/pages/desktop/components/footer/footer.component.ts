@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GithubIconComponent, MailIconComponent } from '@shared/components/icons';
+import { CURRENT_YEAR } from '@core/config';
 
 /**
  * Desktop footer component
@@ -7,9 +9,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-desktop-footer',
   standalone: true,
-  imports: [],
+  imports: [GithubIconComponent, MailIconComponent],
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {
-  currentYear = new Date().getFullYear();
+  protected readonly currentYear = CURRENT_YEAR;
 }

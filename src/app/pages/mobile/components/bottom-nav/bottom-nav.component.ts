@@ -1,24 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
-import { ThemeService } from '../../../../core/services';
+import { ThemeService } from '@core/services';
+import { NAV_LINKS_WITH_ICONS } from '@data';
+import type { NavLink } from '@models';
 import {
   CodeIconComponent,
   HomeIconComponent,
   MailIconComponent,
   UserIconComponent,
-} from 'src/app/shared/components/icons';
-
-interface NavItem {
-  readonly label: string;
-  readonly href: string;
-  readonly icon: string;
-}
-
-const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Home', href: '#home', icon: 'home' },
-  { label: 'About', href: '#about', icon: 'user' },
-  { label: 'Stack', href: '#stack', icon: 'code' },
-  { label: 'Contact', href: '#contact', icon: 'mail' },
-] as const;
+} from '@shared/components/icons';
 
 @Component({
   selector: 'app-bottom-nav',
@@ -29,7 +18,7 @@ const NAV_ITEMS: readonly NavItem[] = [
 export class BottomNavComponent {
   protected readonly themeService = inject(ThemeService);
   protected readonly activeLink = signal('home');
-  protected readonly navItems = NAV_ITEMS;
+  protected readonly navItems: readonly NavLink[] = NAV_LINKS_WITH_ICONS;
 
   protected setActiveLink(link: string): void {
     this.activeLink.set(link);

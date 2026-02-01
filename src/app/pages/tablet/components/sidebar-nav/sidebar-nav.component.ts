@@ -1,33 +1,20 @@
 import { Component, inject, signal } from '@angular/core';
-import { ThemeToggleComponent } from '../../../../shared/components/theme-toggle';
-import { ThemeService } from '../../../../core/services';
+import { ThemeToggleComponent } from '@shared/components/theme-toggle';
+import { ThemeService } from '@core/services';
+import { NAV_LINKS_WITH_ICONS } from '@data';
+import type { NavLink } from '@models';
 import {
   CodeIconComponent,
   HomeIconComponent,
   MailIconComponent,
   GithubIconComponent,
-} from 'src/app/shared/components/icons';
-
-interface NavItem {
-  readonly label: string;
-  readonly href: string;
-  readonly icon: string;
-}
-
-const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Overview', href: '#home', icon: 'home' },
-  { label: 'Evolution', href: '#about', icon: 'evolution' },
-  { label: 'Tech Stack', href: '#stack', icon: 'code' },
-  { label: 'Projects', href: '#projects', icon: 'folder' },
-  { label: 'Contact', href: '#contact', icon: 'mail' },
-] as const;
+} from '@shared/components/icons';
 
 @Component({
   selector: 'app-sidebar-nav',
   standalone: true,
   imports: [
     ThemeToggleComponent,
-    HomeIconComponent,
     HomeIconComponent,
     CodeIconComponent,
     MailIconComponent,
@@ -38,7 +25,7 @@ const NAV_ITEMS: readonly NavItem[] = [
 export class SidebarNavComponent {
   protected readonly themeService = inject(ThemeService);
   protected readonly activeLink = signal('home');
-  protected readonly navItems = NAV_ITEMS;
+  protected readonly navItems: readonly NavLink[] = NAV_LINKS_WITH_ICONS;
 
   protected setActiveLink(link: string): void {
     this.activeLink.set(link);

@@ -2,8 +2,7 @@ import { Injectable, inject, computed } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import { Device, DeviceType } from 'src/app/device-types';
-import { Breakpoint } from '../config';
+import { Device, type DeviceType, Breakpoint } from '../config';
 
 @Injectable({ providedIn: 'root' })
 export class DeviceService {
