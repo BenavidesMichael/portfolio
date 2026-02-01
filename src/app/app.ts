@@ -9,4 +9,3 @@ import { HeroComponent } from './features/hero/hero.component';
   templateUrl: './app.html',
 })
 export class App {}
-export class App {}
