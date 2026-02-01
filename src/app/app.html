@@ -30,8 +30,8 @@
       <app-mobile-layout>
         <div class="relative z-10 px-4">
           <div class="max-w-4xl mx-auto">
-            <!-- Hero Section Demo -->
-            <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+            <!-- Hero Section - Fullscreen -->
+            <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
               <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
               <p
                 class="text-lg md:text-xl max-w-2xl mb-8"
@@ -59,9 +59,9 @@
               </div>
             </section>
 
-            <!-- Scroll Demo Content -->
-            <section id="about" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">About</h2>
+            <!-- About Section - Fullscreen -->
+            <section id="about" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">About</h2>
               <div
                 class="rounded-2xl p-8 transition-colors"
                 [class.bg-surface-dark]="themeService.isDark()"
@@ -69,7 +69,7 @@
                 [class.shadow-xl]="!themeService.isDark()"
               >
                 <p
-                  class="text-lg leading-relaxed"
+                  class="text-lg md:text-xl leading-relaxed"
                   [class.text-slate-300]="themeService.isDark()"
                   [class.text-slate-600]="!themeService.isDark()"
                 >
@@ -79,8 +79,9 @@
               </div>
             </section>
 
-            <section id="stack" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+            <!-- Stack Section - Fullscreen -->
+            <section id="stack" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">Tech Stack</h2>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 @for (
                   tech of [
@@ -109,8 +110,9 @@
               </div>
             </section>
 
-            <section id="contact" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">Contact</h2>
+            <!-- Contact Section - Fullscreen -->
+            <section id="contact" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">Contact</h2>
               <div
                 class="rounded-2xl p-8"
                 [class.bg-surface-dark]="themeService.isDark()"
@@ -118,7 +120,7 @@
                 [class.shadow-xl]="!themeService.isDark()"
               >
                 <p
-                  class="text-lg"
+                  class="text-lg md:text-xl"
                   [class.text-slate-300]="themeService.isDark()"
                   [class.text-slate-600]="!themeService.isDark()"
                 >
@@ -134,8 +136,8 @@
       <app-tablet-layout>
         <div class="relative z-10 px-4">
           <div class="max-w-4xl mx-auto">
-            <!-- Same content as mobile -->
-            <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+            <!-- Hero Section - Fullscreen -->
+            <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
               <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
               <p
                 class="text-lg md:text-xl max-w-2xl mb-8"
@@ -163,8 +165,9 @@
               </div>
             </section>
 
-            <section id="about" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">About</h2>
+            <!-- About Section - Fullscreen -->
+            <section id="about" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">About</h2>
               <div
                 class="rounded-2xl p-8 transition-colors"
                 [class.bg-surface-dark]="themeService.isDark()"
@@ -172,7 +175,7 @@
                 [class.shadow-xl]="!themeService.isDark()"
               >
                 <p
-                  class="text-lg leading-relaxed"
+                  class="text-lg md:text-xl leading-relaxed"
                   [class.text-slate-300]="themeService.isDark()"
                   [class.text-slate-600]="!themeService.isDark()"
                 >
@@ -182,8 +185,9 @@
               </div>
             </section>
 
-            <section id="stack" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+            <!-- Stack Section - Fullscreen -->
+            <section id="stack" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">Tech Stack</h2>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 @for (
                   tech of [
@@ -212,8 +216,9 @@
               </div>
             </section>
 
-            <section id="contact" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">Contact</h2>
+            <!-- Contact Section - Fullscreen -->
+            <section id="contact" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">Contact</h2>
               <div
                 class="rounded-2xl p-8"
                 [class.bg-surface-dark]="themeService.isDark()"
@@ -221,7 +226,7 @@
                 [class.shadow-xl]="!themeService.isDark()"
               >
                 <p
-                  class="text-lg"
+                  class="text-lg md:text-xl"
                   [class.text-slate-300]="themeService.isDark()"
                   [class.text-slate-600]="!themeService.isDark()"
                 >
@@ -237,8 +242,8 @@
       <app-desktop-layout>
         <div class="relative z-10 px-4">
           <div class="max-w-4xl mx-auto">
-            <!-- Same content as mobile/tablet -->
-            <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+            <!-- Hero Section - Fullscreen -->
+            <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
               <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
               <p
                 class="text-lg md:text-xl max-w-2xl mb-8"
@@ -266,8 +271,9 @@
               </div>
             </section>
 
-            <section id="about" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">About</h2>
+            <!-- About Section - Fullscreen -->
+            <section id="about" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">About</h2>
               <div
                 class="rounded-2xl p-8 transition-colors"
                 [class.bg-surface-dark]="themeService.isDark()"
@@ -275,7 +281,7 @@
                 [class.shadow-xl]="!themeService.isDark()"
               >
                 <p
-                  class="text-lg leading-relaxed"
+                  class="text-lg md:text-xl leading-relaxed"
                   [class.text-slate-300]="themeService.isDark()"
                   [class.text-slate-600]="!themeService.isDark()"
                 >
@@ -285,8 +291,9 @@
               </div>
             </section>
 
-            <section id="stack" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+            <!-- Stack Section - Fullscreen -->
+            <section id="stack" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">Tech Stack</h2>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 @for (
                   tech of [
@@ -315,8 +322,9 @@
               </div>
             </section>
 
-            <section id="contact" class="py-24">
-              <h2 class="text-3xl font-bold mb-8">Contact</h2>
+            <!-- Contact Section - Fullscreen -->
+            <section id="contact" class="min-h-screen flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-bold mb-8">Contact</h2>
               <div
                 class="rounded-2xl p-8"
                 [class.bg-surface-dark]="themeService.isDark()"
@@ -324,7 +332,7 @@
                 [class.shadow-xl]="!themeService.isDark()"
               >
                 <p
-                  class="text-lg"
+                  class="text-lg md:text-xl"
                   [class.text-slate-300]="themeService.isDark()"
                   [class.text-slate-600]="!themeService.isDark()"
                 >
