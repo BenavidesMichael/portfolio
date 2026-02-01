@@ -1,16 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { DesktopNavComponent, TabletNavComponent, MobileNavComponent } from './features';
-import { ThemeService, LayoutService } from './core/services';
-import { Device } from './config';
+import { MobileLayoutComponent, TabletLayoutComponent, DesktopLayoutComponent } from './layouts';
+import { ThemeService, DeviceService } from './core/services';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DesktopNavComponent, TabletNavComponent, MobileNavComponent],
+  imports: [MobileLayoutComponent, TabletLayoutComponent, DesktopLayoutComponent],
   templateUrl: './app.html',
 })
 export class App {
   protected readonly themeService = inject(ThemeService);
-  protected readonly layout = inject(LayoutService);
-  device = Device;
+  protected readonly deviceService = inject(DeviceService);
 }

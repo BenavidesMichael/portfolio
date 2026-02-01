@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-import { ThemeToggleComponent } from '../../../shared/components/theme-toggle';
-import { ThemeService } from '../../../core/services';
+import { ThemeToggleComponent } from '../../../../shared/components/theme-toggle';
+import { ThemeService } from '../../../../core/services';
 
 interface NavItem {
   readonly label: string;
@@ -17,12 +17,12 @@ const NAV_ITEMS: readonly NavItem[] = [
 ] as const;
 
 @Component({
-  selector: 'app-tablet-nav',
+  selector: 'app-sidebar-nav',
   standalone: true,
   imports: [ThemeToggleComponent],
-  templateUrl: './tablet-nav.component.html',
+  templateUrl: './sidebar-nav.component.html',
 })
-export class TabletNavComponent {
+export class SidebarNavComponent {
   protected readonly themeService = inject(ThemeService);
   protected readonly activeLink = signal('home');
   protected readonly navItems = NAV_ITEMS;

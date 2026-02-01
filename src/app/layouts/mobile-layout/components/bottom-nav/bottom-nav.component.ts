@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { ThemeService } from 'src/app/core/services';
+import { ThemeService } from '../../../../core/services';
 
 interface NavItem {
   readonly label: string;
@@ -15,11 +15,11 @@ const NAV_ITEMS: readonly NavItem[] = [
 ] as const;
 
 @Component({
-  selector: 'app-mobile-nav',
+  selector: 'app-bottom-nav',
   standalone: true,
-  templateUrl: './mobile-nav.component.html',
+  templateUrl: './bottom-nav.component.html',
 })
-export class MobileNavComponent {
+export class BottomNavComponent {
   protected readonly themeService = inject(ThemeService);
   protected readonly activeLink = signal('home');
   protected readonly navItems = NAV_ITEMS;

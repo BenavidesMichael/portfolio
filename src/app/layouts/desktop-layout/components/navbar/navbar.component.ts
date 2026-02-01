@@ -2,8 +2,8 @@ import { Component, inject, signal, PLATFORM_ID, DestroyRef } from '@angular/cor
 import { isPlatformBrowser } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent, throttleTime, map, startWith } from 'rxjs';
-import { ThemeToggleComponent } from '../../../shared/components/theme-toggle';
-import { ThemeService } from '../../../core/services';
+import { ThemeToggleComponent } from '../../../../shared/components/theme-toggle';
+import { ThemeService } from '../../../../core/services';
 
 interface NavLink {
   readonly label: string;
@@ -20,12 +20,12 @@ const NAV_LINKS: readonly NavLink[] = [
 const SCROLL_THRESHOLD = 50;
 
 @Component({
-  selector: 'app-desktop-nav',
+  selector: 'app-navbar',
   standalone: true,
   imports: [ThemeToggleComponent],
-  templateUrl: './desktop-nav.component.html',
+  templateUrl: './navbar.component.html',
 })
-export class DesktopNavComponent {
+export class NavbarComponent {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly destroyRef = inject(DestroyRef);
 

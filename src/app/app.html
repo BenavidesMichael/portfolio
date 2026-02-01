@@ -24,125 +24,317 @@
     }
   </div>
 
-  <!-- Component Switching: Mobile / Tablet / Desktop Navigation -->
-  @switch (layout.deviceType()) {
-    @case (device.Mobile) {
-      <app-mobile-nav />
+  <!-- Layout Switcher: Mobile / Tablet / Desktop -->
+  @switch (deviceService.device()) {
+    @case ('mobile') {
+      <app-mobile-layout>
+        <div class="relative z-10 px-4">
+          <div class="max-w-4xl mx-auto">
+            <!-- Hero Section Demo -->
+            <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
+              <p
+                class="text-lg md:text-xl max-w-2xl mb-8"
+                [class.text-slate-400]="themeService.isDark()"
+                [class.text-slate-600]="!themeService.isDark()"
+              >
+                Building modern web applications with Angular, NestJS, and .NET. 7+ years of experience
+                crafting scalable solutions.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="btn rounded-full px-8 transition-all bg-primary-brand hover:bg-primary-brand-dark text-white border-primary-brand"
+                >
+                  View Projects
+                </button>
+                <button
+                  class="btn btn-outline rounded-full px-8"
+                  [class.border-white/20]="themeService.isDark()"
+                  [class.hover:bg-white/10]="themeService.isDark()"
+                  [class.border-slate-300]="!themeService.isDark()"
+                  [class.hover:bg-slate-100]="!themeService.isDark()"
+                >
+                  Contact Me
+                </button>
+              </div>
+            </section>
+
+            <!-- Scroll Demo Content -->
+            <section id="about" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">About</h2>
+              <div
+                class="rounded-2xl p-8 transition-colors"
+                [class.bg-surface-dark]="themeService.isDark()"
+                [class.bg-white]="!themeService.isDark()"
+                [class.shadow-xl]="!themeService.isDark()"
+              >
+                <p
+                  class="text-lg leading-relaxed"
+                  [class.text-slate-300]="themeService.isDark()"
+                  [class.text-slate-600]="!themeService.isDark()"
+                >
+                  Scroll down to see the navbar animation. When you scroll past the hero section, the
+                  navbar becomes more compact with a subtle scale and shadow effect.
+                </p>
+              </div>
+            </section>
+
+            <section id="stack" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                @for (
+                  tech of [
+                    'Angular',
+                    'NestJS',
+                    '.NET',
+                    'TypeScript',
+                    'PostgreSQL',
+                    'Docker',
+                    'Azure',
+                    'Git',
+                  ];
+                  track tech
+                ) {
+                  <div
+                    class="rounded-xl p-4 text-center transition-all hover:scale-105"
+                    [class.bg-surface-lighter]="themeService.isDark()"
+                    [class.hover:bg-surface-dark]="themeService.isDark()"
+                    [class.bg-white]="!themeService.isDark()"
+                    [class.shadow-md]="!themeService.isDark()"
+                    [class.hover:shadow-lg]="!themeService.isDark()"
+                  >
+                    {{ tech }}
+                  </div>
+                }
+              </div>
+            </section>
+
+            <section id="contact" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">Contact</h2>
+              <div
+                class="rounded-2xl p-8"
+                [class.bg-surface-dark]="themeService.isDark()"
+                [class.bg-white]="!themeService.isDark()"
+                [class.shadow-xl]="!themeService.isDark()"
+              >
+                <p
+                  class="text-lg"
+                  [class.text-slate-300]="themeService.isDark()"
+                  [class.text-slate-600]="!themeService.isDark()"
+                >
+                  Ready to collaborate? Send me a message!
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </app-mobile-layout>
     }
-    @case (device.Tablet) {
-      <app-tablet-nav />
+    @case ('tablet') {
+      <app-tablet-layout>
+        <div class="relative z-10 px-4">
+          <div class="max-w-4xl mx-auto">
+            <!-- Same content as mobile -->
+            <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
+              <p
+                class="text-lg md:text-xl max-w-2xl mb-8"
+                [class.text-slate-400]="themeService.isDark()"
+                [class.text-slate-600]="!themeService.isDark()"
+              >
+                Building modern web applications with Angular, NestJS, and .NET. 7+ years of experience
+                crafting scalable solutions.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="btn rounded-full px-8 transition-all bg-primary-brand hover:bg-primary-brand-dark text-white border-primary-brand"
+                >
+                  View Projects
+                </button>
+                <button
+                  class="btn btn-outline rounded-full px-8"
+                  [class.border-white/20]="themeService.isDark()"
+                  [class.hover:bg-white/10]="themeService.isDark()"
+                  [class.border-slate-300]="!themeService.isDark()"
+                  [class.hover:bg-slate-100]="!themeService.isDark()"
+                >
+                  Contact Me
+                </button>
+              </div>
+            </section>
+
+            <section id="about" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">About</h2>
+              <div
+                class="rounded-2xl p-8 transition-colors"
+                [class.bg-surface-dark]="themeService.isDark()"
+                [class.bg-white]="!themeService.isDark()"
+                [class.shadow-xl]="!themeService.isDark()"
+              >
+                <p
+                  class="text-lg leading-relaxed"
+                  [class.text-slate-300]="themeService.isDark()"
+                  [class.text-slate-600]="!themeService.isDark()"
+                >
+                  Scroll down to see the navbar animation. When you scroll past the hero section, the
+                  navbar becomes more compact with a subtle scale and shadow effect.
+                </p>
+              </div>
+            </section>
+
+            <section id="stack" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                @for (
+                  tech of [
+                    'Angular',
+                    'NestJS',
+                    '.NET',
+                    'TypeScript',
+                    'PostgreSQL',
+                    'Docker',
+                    'Azure',
+                    'Git',
+                  ];
+                  track tech
+                ) {
+                  <div
+                    class="rounded-xl p-4 text-center transition-all hover:scale-105"
+                    [class.bg-surface-lighter]="themeService.isDark()"
+                    [class.hover:bg-surface-dark]="themeService.isDark()"
+                    [class.bg-white]="!themeService.isDark()"
+                    [class.shadow-md]="!themeService.isDark()"
+                    [class.hover:shadow-lg]="!themeService.isDark()"
+                  >
+                    {{ tech }}
+                  </div>
+                }
+              </div>
+            </section>
+
+            <section id="contact" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">Contact</h2>
+              <div
+                class="rounded-2xl p-8"
+                [class.bg-surface-dark]="themeService.isDark()"
+                [class.bg-white]="!themeService.isDark()"
+                [class.shadow-xl]="!themeService.isDark()"
+              >
+                <p
+                  class="text-lg"
+                  [class.text-slate-300]="themeService.isDark()"
+                  [class.text-slate-600]="!themeService.isDark()"
+                >
+                  Ready to collaborate? Send me a message!
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </app-tablet-layout>
     }
-    @case (device.Desktop) {
-      <app-desktop-nav />
+    @case ('desktop') {
+      <app-desktop-layout>
+        <div class="relative z-10 px-4">
+          <div class="max-w-4xl mx-auto">
+            <!-- Same content as mobile/tablet -->
+            <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
+              <p
+                class="text-lg md:text-xl max-w-2xl mb-8"
+                [class.text-slate-400]="themeService.isDark()"
+                [class.text-slate-600]="!themeService.isDark()"
+              >
+                Building modern web applications with Angular, NestJS, and .NET. 7+ years of experience
+                crafting scalable solutions.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="btn rounded-full px-8 transition-all bg-primary-brand hover:bg-primary-brand-dark text-white border-primary-brand"
+                >
+                  View Projects
+                </button>
+                <button
+                  class="btn btn-outline rounded-full px-8"
+                  [class.border-white/20]="themeService.isDark()"
+                  [class.hover:bg-white/10]="themeService.isDark()"
+                  [class.border-slate-300]="!themeService.isDark()"
+                  [class.hover:bg-slate-100]="!themeService.isDark()"
+                >
+                  Contact Me
+                </button>
+              </div>
+            </section>
+
+            <section id="about" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">About</h2>
+              <div
+                class="rounded-2xl p-8 transition-colors"
+                [class.bg-surface-dark]="themeService.isDark()"
+                [class.bg-white]="!themeService.isDark()"
+                [class.shadow-xl]="!themeService.isDark()"
+              >
+                <p
+                  class="text-lg leading-relaxed"
+                  [class.text-slate-300]="themeService.isDark()"
+                  [class.text-slate-600]="!themeService.isDark()"
+                >
+                  Scroll down to see the navbar animation. When you scroll past the hero section, the
+                  navbar becomes more compact with a subtle scale and shadow effect.
+                </p>
+              </div>
+            </section>
+
+            <section id="stack" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                @for (
+                  tech of [
+                    'Angular',
+                    'NestJS',
+                    '.NET',
+                    'TypeScript',
+                    'PostgreSQL',
+                    'Docker',
+                    'Azure',
+                    'Git',
+                  ];
+                  track tech
+                ) {
+                  <div
+                    class="rounded-xl p-4 text-center transition-all hover:scale-105"
+                    [class.bg-surface-lighter]="themeService.isDark()"
+                    [class.hover:bg-surface-dark]="themeService.isDark()"
+                    [class.bg-white]="!themeService.isDark()"
+                    [class.shadow-md]="!themeService.isDark()"
+                    [class.hover:shadow-lg]="!themeService.isDark()"
+                  >
+                    {{ tech }}
+                  </div>
+                }
+              </div>
+            </section>
+
+            <section id="contact" class="py-24">
+              <h2 class="text-3xl font-bold mb-8">Contact</h2>
+              <div
+                class="rounded-2xl p-8"
+                [class.bg-surface-dark]="themeService.isDark()"
+                [class.bg-white]="!themeService.isDark()"
+                [class.shadow-xl]="!themeService.isDark()"
+              >
+                <p
+                  class="text-lg"
+                  [class.text-slate-300]="themeService.isDark()"
+                  [class.text-slate-600]="!themeService.isDark()"
+                >
+                  Ready to collaborate? Send me a message!
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </app-desktop-layout>
     }
   }
-
-  <main
-    id="home"
-    class="relative z-10 px-4"
-    [class.pt-28]="layout.isDesktop()"
-    [class.pt-6]="layout.isMobile()"
-    [class.pb-24]="layout.isMobile()"
-    [class.pl-60]="layout.isTablet()"
-    [class.pt-6]="layout.isTablet()"
-  >
-    <div class="max-w-4xl mx-auto">
-      <!-- Hero Section Demo -->
-      <section class="min-h-[70vh] flex flex-col justify-center items-center text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
-        <p
-          class="text-lg md:text-xl max-w-2xl mb-8"
-          [class.text-slate-400]="themeService.isDark()"
-          [class.text-slate-600]="!themeService.isDark()"
-        >
-          Building modern web applications with Angular, NestJS, and .NET. 7+ years of experience
-          crafting scalable solutions.
-        </p>
-        <div class="flex gap-4">
-          <button
-            class="btn rounded-full px-8 transition-all bg-primary-brand hover:bg-primary-brand-dark text-white border-primary-brand"
-          >
-            View Projects
-          </button>
-          <button
-            class="btn btn-outline rounded-full px-8"
-            [class.border-white/20]="themeService.isDark()"
-            [class.hover:bg-white/10]="themeService.isDark()"
-            [class.border-slate-300]="!themeService.isDark()"
-            [class.hover:bg-slate-100]="!themeService.isDark()"
-          >
-            Contact Me
-          </button>
-        </div>
-      </section>
-
-      <!-- Scroll Demo Content -->
-      <section id="about" class="py-24">
-        <h2 class="text-3xl font-bold mb-8">About</h2>
-        <div
-          class="rounded-2xl p-8 transition-colors"
-          [class.bg-surface-dark]="themeService.isDark()"
-          [class.bg-white]="!themeService.isDark()"
-          [class.shadow-xl]="!themeService.isDark()"
-        >
-          <p
-            class="text-lg leading-relaxed"
-            [class.text-slate-300]="themeService.isDark()"
-            [class.text-slate-600]="!themeService.isDark()"
-          >
-            Scroll down to see the navbar animation. When you scroll past the hero section, the
-            navbar becomes more compact with a subtle scale and shadow effect.
-          </p>
-        </div>
-      </section>
-
-      <section id="stack" class="py-24">
-        <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          @for (
-            tech of [
-              'Angular',
-              'NestJS',
-              '.NET',
-              'TypeScript',
-              'PostgreSQL',
-              'Docker',
-              'Azure',
-              'Git',
-            ];
-            track tech
-          ) {
-            <div
-              class="rounded-xl p-4 text-center transition-all hover:scale-105"
-              [class.bg-surface-lighter]="themeService.isDark()"
-              [class.hover:bg-surface-dark]="themeService.isDark()"
-              [class.bg-white]="!themeService.isDark()"
-              [class.shadow-md]="!themeService.isDark()"
-              [class.hover:shadow-lg]="!themeService.isDark()"
-            >
-              {{ tech }}
-            </div>
-          }
-        </div>
-      </section>
-
-      <section id="contact" class="py-24">
-        <h2 class="text-3xl font-bold mb-8">Contact</h2>
-        <div
-          class="rounded-2xl p-8"
-          [class.bg-surface-dark]="themeService.isDark()"
-          [class.bg-white]="!themeService.isDark()"
-          [class.shadow-xl]="!themeService.isDark()"
-        >
-          <p
-            class="text-lg"
-            [class.text-slate-300]="themeService.isDark()"
-            [class.text-slate-600]="!themeService.isDark()"
-          >
-            Ready to collaborate? Send me a message!
-          </p>
-        </div>
-      </section>
-    </div>
-  </main>
 </div>
