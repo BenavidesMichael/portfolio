@@ -1,0 +1,202 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-out"
+  [class.px-4]="!isScrolled()"
+  [class.px-0]="isScrolled()"
+  [class.pt-6]="!isScrolled()"
+  [class.pt-0]="isScrolled()"
+>
+  <nav
+    class="w-full flex items-center justify-between transition-all duration-500 ease-out"
+    [class.max-w-[960px]]="!isScrolled()"
+    [class.max-w-full]="isScrolled()"
+    [class.rounded-full]="!isScrolled()"
+    [class.rounded-none]="isScrolled()"
+    [class.px-5]="!isScrolled()"
+    [class.px-8]="isScrolled()"
+    [class.md:px-16]="isScrolled()"
+    [class.py-3]="!isScrolled()"
+    [class.py-4]="isScrolled()"
+    [class.glass-panel]="themeService.isDark() && !isScrolled()"
+    [class.glass-panel-light]="!themeService.isDark() && !isScrolled()"
+    [class.bg-surface-dark]="themeService.isDark() && isScrolled()"
+    [class.bg-white]="!themeService.isDark() && isScrolled()"
+    [class.border-b]="isScrolled()"
+    [class.border-white/10]="isScrolled() && themeService.isDark()"
+    [class.border-slate-200]="isScrolled() && !themeService.isDark()"
+    [class.shadow-lg]="isScrolled()"
+    [class.shadow-black/20]="isScrolled() && themeService.isDark()"
+    [class.shadow-black/5]="isScrolled() && !themeService.isDark()"
+    role="navigation"
+    aria-label="Main navigation"
+  >
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <div
+        class="p-2 rounded-full border transition-colors"
+        [class.bg-primary-brand/10]="themeService.isDark()"
+        [class.text-primary-brand]="themeService.isDark()"
+        [class.border-primary-brand/20]="themeService.isDark()"
+        [class.bg-primary-brand/20]="!themeService.isDark()"
+        [class.text-primary-brand-dark]="!themeService.isDark()"
+        [class.border-primary-brand/30]="!themeService.isDark()"
+      >
+        <!-- Terminal icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 7l5 5l-5 5" />
+          <path d="M12 19l7 0" />
+        </svg>
+      </div>
+      <span
+        class="font-bold text-lg tracking-tight font-display"
+        [class.text-slate-100]="themeService.isDark()"
+        [class.text-slate-800]="!themeService.isDark()"
+      >
+        Benavides Michael
+      </span>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex items-center gap-8">
+      @for (link of navLinks; track link.href) {
+        <a
+          [href]="link.href"
+          class="text-sm font-medium transition-colors relative"
+          [class.text-white]="activeLink() === link.label.toLowerCase() && themeService.isDark()"
+          [class.text-slate-800]="
+            activeLink() === link.label.toLowerCase() && !themeService.isDark()
+          "
+          [class.text-slate-400]="
+            activeLink() !== link.label.toLowerCase() && themeService.isDark()
+          "
+          [class.text-slate-500]="
+            activeLink() !== link.label.toLowerCase() && !themeService.isDark()
+          "
+          [class.hover:text-white]="themeService.isDark()"
+          [class.hover:text-slate-900]="!themeService.isDark()"
+          [class.after:content-['']]="activeLink() === link.label.toLowerCase()"
+          [class.after:absolute]="activeLink() === link.label.toLowerCase()"
+          [class.after:-bottom-1]="activeLink() === link.label.toLowerCase()"
+          [class.after:left-0]="activeLink() === link.label.toLowerCase()"
+          [class.after:w-full]="activeLink() === link.label.toLowerCase()"
+          [class.after:h-0.5]="activeLink() === link.label.toLowerCase()"
+          [class.after:bg-primary-brand]="activeLink() === link.label.toLowerCase()"
+          [class.after:rounded-full]="activeLink() === link.label.toLowerCase()"
+          (click)="setActiveLink(link.label.toLowerCase())"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </div>
+
+    <!-- Right Section: Lang, Theme, Social -->
+    <div class="flex items-center gap-3">
+      <!-- Language Selector -->
+      <button
+        class="flex h-9 px-4 items-center justify-center rounded-full border transition-colors text-xs font-bold tracking-wide"
+        [class.bg-surface-lighter]="themeService.isDark()"
+        [class.border-white/5]="themeService.isDark()"
+        [class.hover:border-primary-brand/30]="themeService.isDark()"
+        [class.text-slate-300]="themeService.isDark()"
+        [class.hover:text-white]="themeService.isDark()"
+        [class.bg-white]="!themeService.isDark()"
+        [class.border-slate-200]="!themeService.isDark()"
+        [class.hover:border-primary-brand/50]="!themeService.isDark()"
+        [class.text-slate-600]="!themeService.isDark()"
+        [class.hover:text-slate-900]="!themeService.isDark()"
+        aria-label="Change language"
+      >
+        EN
+      </button>
+
+      <div
+        class="h-6 w-px mx-1"
+        [class.bg-white/10]="themeService.isDark()"
+        [class.bg-slate-200]="!themeService.isDark()"
+      ></div>
+
+      <!-- Theme Toggle -->
+      <app-theme-toggle />
+
+      <!-- GitHub Link -->
+      <a
+        href="https://github.com/BenavidesMichael/portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="size-9 flex items-center justify-center rounded-full border transition-all group"
+        [class.bg-surface-lighter]="themeService.isDark()"
+        [class.border-white/5]="themeService.isDark()"
+        [class.hover:bg-primary-brand]="themeService.isDark()"
+        [class.hover:border-primary-brand]="themeService.isDark()"
+        [class.text-slate-300]="themeService.isDark()"
+        [class.hover:text-white]="themeService.isDark()"
+        [class.bg-white]="!themeService.isDark()"
+        [class.border-slate-200]="!themeService.isDark()"
+        [class.hover:bg-primary-brand]="!themeService.isDark()"
+        [class.hover:border-primary-brand]="!themeService.isDark()"
+        [class.text-slate-500]="!themeService.isDark()"
+        aria-label="GitHub profile"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-5 group-hover:scale-110 transition-transform"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+          />
+        </svg>
+      </a>
+
+      <!-- Email Link -->
+      <a
+        href="mailto:contact@example.com"
+        class="size-9 flex items-center justify-center rounded-full border transition-all group"
+        [class.bg-surface-lighter]="themeService.isDark()"
+        [class.border-white/5]="themeService.isDark()"
+        [class.hover:bg-blue-600]="themeService.isDark()"
+        [class.hover:border-blue-500]="themeService.isDark()"
+        [class.text-slate-300]="themeService.isDark()"
+        [class.hover:text-white]="themeService.isDark()"
+        [class.bg-white]="!themeService.isDark()"
+        [class.border-slate-200]="!themeService.isDark()"
+        [class.hover:bg-blue-500]="!themeService.isDark()"
+        [class.hover:border-blue-500]="!themeService.isDark()"
+        [class.text-slate-500]="!themeService.isDark()"
+        aria-label="Send email"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-5 group-hover:scale-110 transition-transform"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+          />
+          <path d="M3 7l9 6l9 -6" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+</header>

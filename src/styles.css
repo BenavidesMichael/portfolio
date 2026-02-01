@@ -5,6 +5,41 @@
 
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
 
+@theme {
+  --color-background-dark: #0f171c;
+  --color-surface-dark: #162026;
+  --color-surface-lighter: #1e2930;
+  --color-primary-brand: #13a4ec;
+  --color-primary-brand-dark: #0b6aa3;
+
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Safe area support for mobile devices with notch */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.glass-panel {
+  background: rgba(22, 32, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
 /* Icons - inherit size and color from parent */
 .icon {
   display: inline-flex;

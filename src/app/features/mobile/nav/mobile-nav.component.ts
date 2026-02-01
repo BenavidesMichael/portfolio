@@ -1,0 +1,30 @@
+import { Component, inject, signal } from '@angular/core';
+import { ThemeService } from 'src/app/core/services';
+
+interface NavItem {
+  readonly label: string;
+  readonly href: string;
+  readonly icon: string;
+}
+
+const NAV_ITEMS: readonly NavItem[] = [
+  { label: 'Home', href: '#home', icon: 'home' },
+  { label: 'About', href: '#about', icon: 'user' },
+  { label: 'Stack', href: '#stack', icon: 'code' },
+  { label: 'Contact', href: '#contact', icon: 'mail' },
+] as const;
+
+@Component({
+  selector: 'app-mobile-nav',
+  standalone: true,
+  templateUrl: './mobile-nav.component.html',
+})
+export class MobileNavComponent {
+  protected readonly themeService = inject(ThemeService);
+  protected readonly activeLink = signal('home');
+  protected readonly navItems = NAV_ITEMS;
+
+  protected setActiveLink(link: string): void {
+    this.activeLink.set(link);
+  }
+}

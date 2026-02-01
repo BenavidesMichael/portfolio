@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
-import { HeaderComponent } from './features/header/header.component';
-import { HeroComponent } from './features/hero/hero.component';
+import { Component, inject } from '@angular/core';
+import { DesktopNavComponent, TabletNavComponent, MobileNavComponent } from './features';
+import { ThemeService, LayoutService } from './core/services';
+import { Device } from './config';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, HeroComponent],
+  imports: [DesktopNavComponent, TabletNavComponent, MobileNavComponent],
   templateUrl: './app.html',
 })
-export class App {}
+export class App {
+  protected readonly themeService = inject(ThemeService);
+  protected readonly layout = inject(LayoutService);
+  device = Device;
+}

@@ -1,0 +1,127 @@
+<!-- Bottom Tab Bar Navigation for Mobile -->
+<nav
+  class="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom"
+  [class.bg-surface-dark]="themeService.isDark()"
+  [class.border-t]="true"
+  [class.border-white/10]="themeService.isDark()"
+  [class.bg-white]="!themeService.isDark()"
+  [class.border-slate-200]="!themeService.isDark()"
+  [class.shadow-[0_-4px_20px_rgba(0,0,0,0.15)]]="themeService.isDark()"
+  [class.shadow-[0_-4px_20px_rgba(0,0,0,0.05)]]="!themeService.isDark()"
+  role="navigation"
+  aria-label="Mobile navigation"
+>
+  <div class="flex items-center justify-around px-2 py-2">
+    @for (item of navItems; track item.href) {
+      <a
+        [href]="item.href"
+        class="flex flex-col items-center justify-center min-w-[64px] py-2 px-3 rounded-xl transition-all duration-200"
+        [class.bg-primary-brand/10]="
+          activeLink() === item.label.toLowerCase() && themeService.isDark()
+        "
+        [class.bg-primary-brand/15]="
+          activeLink() === item.label.toLowerCase() && !themeService.isDark()
+        "
+        (click)="setActiveLink(item.label.toLowerCase())"
+        [attr.aria-current]="activeLink() === item.label.toLowerCase() ? 'page' : null"
+      >
+        <!-- Icon -->
+        <span
+          class="mb-1 transition-colors"
+          [class.text-primary-brand]="activeLink() === item.label.toLowerCase()"
+          [class.text-slate-400]="
+            activeLink() !== item.label.toLowerCase() && themeService.isDark()
+          "
+          [class.text-slate-500]="
+            activeLink() !== item.label.toLowerCase() && !themeService.isDark()
+          "
+        >
+          @switch (item.icon) {
+            @case ('home') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+              </svg>
+            }
+            @case ('user') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+            }
+            @case ('code') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 8l-4 4l4 4" />
+                <path d="M17 8l4 4l-4 4" />
+                <path d="M14 4l-4 16" />
+              </svg>
+            }
+            @case ('mail') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+                />
+                <path d="M3 7l9 6l9 -6" />
+              </svg>
+            }
+          }
+        </span>
+
+        <!-- Label -->
+        <span
+          class="text-xs font-medium transition-colors"
+          [class.text-primary-brand]="activeLink() === item.label.toLowerCase()"
+          [class.text-slate-400]="
+            activeLink() !== item.label.toLowerCase() && themeService.isDark()
+          "
+          [class.text-slate-500]="
+            activeLink() !== item.label.toLowerCase() && !themeService.isDark()
+          "
+        >
+          {{ item.label }}
+        </span>
+      </a>
+    }
+  </div>
+</nav>
