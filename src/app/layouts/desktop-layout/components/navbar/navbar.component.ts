@@ -4,6 +4,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent, throttleTime, map, startWith } from 'rxjs';
 import { ThemeToggleComponent } from '../../../../shared/components/theme-toggle';
 import { ThemeService } from '../../../../core/services';
+import {
+  GithubIconComponent,
+  MailIconComponent,
+  TerminalIconComponent,
+} from 'src/app/shared/components/icons';
 
 interface NavLink {
   readonly label: string;
@@ -22,7 +27,7 @@ const SCROLL_THRESHOLD = 50;
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [ThemeToggleComponent],
+  imports: [ThemeToggleComponent, GithubIconComponent, MailIconComponent, TerminalIconComponent],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {

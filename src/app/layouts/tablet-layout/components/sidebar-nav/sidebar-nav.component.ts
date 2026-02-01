@@ -1,6 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { ThemeToggleComponent } from '../../../../shared/components/theme-toggle';
 import { ThemeService } from '../../../../core/services';
+import {
+  CodeIconComponent,
+  HomeIconComponent,
+  MailIconComponent,
+  GithubIconComponent,
+} from 'src/app/shared/components/icons';
 
 interface NavItem {
   readonly label: string;
@@ -19,7 +25,14 @@ const NAV_ITEMS: readonly NavItem[] = [
 @Component({
   selector: 'app-sidebar-nav',
   standalone: true,
-  imports: [ThemeToggleComponent],
+  imports: [
+    ThemeToggleComponent,
+    HomeIconComponent,
+    HomeIconComponent,
+    CodeIconComponent,
+    MailIconComponent,
+    GithubIconComponent,
+  ],
   templateUrl: './sidebar-nav.component.html',
 })
 export class SidebarNavComponent {

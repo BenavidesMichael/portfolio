@@ -1,5 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { ThemeService } from '../../../../core/services';
+import {
+  CodeIconComponent,
+  HomeIconComponent,
+  MailIconComponent,
+  UserIconComponent,
+} from 'src/app/shared/components/icons';
 
 interface NavItem {
   readonly label: string;
@@ -17,6 +23,7 @@ const NAV_ITEMS: readonly NavItem[] = [
 @Component({
   selector: 'app-bottom-nav',
   standalone: true,
+  imports: [HomeIconComponent, MailIconComponent, UserIconComponent, CodeIconComponent],
   templateUrl: './bottom-nav.component.html',
 })
 export class BottomNavComponent {

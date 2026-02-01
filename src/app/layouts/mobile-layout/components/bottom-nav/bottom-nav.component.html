@@ -15,7 +15,7 @@
     @for (item of navItems; track item.href) {
       <a
         [href]="item.href"
-        class="flex flex-col items-center justify-center min-w-[64px] py-2 px-3 rounded-xl transition-all duration-200"
+        class="flex flex-col items-center justify-center min-w-16 py-2 px-3 rounded-xl transition-all duration-200"
         [class.bg-primary-brand/10]="
           activeLink() === item.label.toLowerCase() && themeService.isDark()
         "
@@ -38,72 +38,16 @@
         >
           @switch (item.icon) {
             @case ('home') {
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-              </svg>
+              <app-icon-home></app-icon-home>
             }
             @case ('user') {
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-              </svg>
+              <app-icon-user></app-icon-user>
             }
             @case ('code') {
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M7 8l-4 4l4 4" />
-                <path d="M17 8l4 4l-4 4" />
-                <path d="M14 4l-4 16" />
-              </svg>
+              <app-icon-code></app-icon-code>
             }
             @case ('mail') {
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
-                />
-                <path d="M3 7l9 6l9 -6" />
-              </svg>
+              <app-icon-mail></app-icon-mail>
             }
           }
         </span>
