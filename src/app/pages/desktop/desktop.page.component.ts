@@ -5,11 +5,6 @@ import { NavbarComponent } from './components/navbar';
   selector: 'app-desktop-page',
   standalone: true,
   imports: [NavbarComponent],
-  template: `
-    <app-navbar />
-    <main class="pt-28">
-      <ng-content />
-    </main>
-  `,
+  templateUrl: './desktop.page.component.html',
 })
 export class DesktopPageComponent {}

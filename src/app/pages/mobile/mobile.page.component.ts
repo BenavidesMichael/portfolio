@@ -5,11 +5,6 @@ import { BottomNavComponent } from './components/bottom-nav';
   selector: 'app-mobile-page',
   standalone: true,
   imports: [BottomNavComponent],
-  template: `
-    <app-bottom-nav />
-    <main class="pb-20">
-      <ng-content />
-    </main>
-  `,
+  templateUrl: './mobile.page.component.html',
 })
 export class MobilePageComponent {}
