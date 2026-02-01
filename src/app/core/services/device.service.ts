@@ -6,7 +6,7 @@ import { Device, DeviceType } from 'src/app/config';
 import { Breakpoint } from '../config';
 
 @Injectable({ providedIn: 'root' })
-export class LayoutService {
+export class DeviceService {
   private readonly breakpointObserver = inject(BreakpointObserver);
 
   private readonly currentBreakpoint = toSignal(
