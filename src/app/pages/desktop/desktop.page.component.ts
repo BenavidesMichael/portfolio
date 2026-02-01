@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from './components/navbar';
 
 @Component({
-  selector: 'app-desktop-layout',
+  selector: 'app-desktop-page',
   standalone: true,
   imports: [NavbarComponent],
   template: `
@@ -12,4 +12,4 @@ import { NavbarComponent } from './components/navbar';
     </main>
   `,
 })
-export class DesktopLayoutComponent {}
+export class DesktopPageComponent {}

@@ -27,7 +27,7 @@
   <!-- Layout Switcher: Mobile / Tablet / Desktop -->
   @switch (deviceService.device()) {
     @case ('mobile') {
-      <app-mobile-layout>
+      <app-mobile-page>
         <div class="relative z-10 px-4">
           <div class="max-w-4xl mx-auto">
             <!-- Hero Section - Fullscreen -->
@@ -133,10 +133,10 @@
             </section>
           </div>
         </div>
-      </app-mobile-layout>
+      </app-mobile-page>
     }
     @case ('tablet') {
-      <app-tablet-layout>
+      <app-tablet-page>
         <div class="relative z-10 px-4">
           <div class="max-w-4xl mx-auto">
             <!-- Hero Section - Fullscreen -->
@@ -242,10 +242,10 @@
             </section>
           </div>
         </div>
-      </app-tablet-layout>
+      </app-tablet-page>
     }
     @case ('desktop') {
-      <app-desktop-layout>
+      <app-desktop-page>
         <div class="relative z-10 px-4">
           <div class="max-w-4xl mx-auto">
             <!-- Hero Section - Fullscreen -->
@@ -351,7 +351,7 @@
             </section>
           </div>
         </div>
-      </app-desktop-layout>
+      </app-desktop-page>
     }
   }
 </div>

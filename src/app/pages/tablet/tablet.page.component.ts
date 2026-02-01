@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SidebarNavComponent } from './components/sidebar-nav';
 
 @Component({
-  selector: 'app-tablet-layout',
+  selector: 'app-tablet-page',
   standalone: true,
   imports: [SidebarNavComponent],
   template: `
@@ -12,4 +12,4 @@ import { SidebarNavComponent } from './components/sidebar-nav';
     </main>
   `,
 })
-export class TabletLayoutComponent {}
+export class TabletPageComponent {}

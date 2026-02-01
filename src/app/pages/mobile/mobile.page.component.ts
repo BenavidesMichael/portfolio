@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BottomNavComponent } from './components/bottom-nav';
 
 @Component({
-  selector: 'app-mobile-layout',
+  selector: 'app-mobile-page',
   standalone: true,
   imports: [BottomNavComponent],
   template: `
@@ -12,4 +12,4 @@ import { BottomNavComponent } from './components/bottom-nav';
     </main>
   `,
 })
-export class MobileLayoutComponent {}
+export class MobilePageComponent {}

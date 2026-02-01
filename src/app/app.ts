@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { MobileLayoutComponent, TabletLayoutComponent, DesktopLayoutComponent } from './layouts';
 import { ThemeService, DeviceService } from './core/services';
+import { DesktopPageComponent, MobilePageComponent, TabletPageComponent } from './pages';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MobileLayoutComponent, TabletLayoutComponent, DesktopLayoutComponent],
+  imports: [MobilePageComponent, TabletPageComponent, DesktopPageComponent],
   templateUrl: './app.html',
 })
 export class App {
