@@ -9,20 +9,7 @@ import {
   MailIconComponent,
   TerminalIconComponent,
 } from 'src/app/shared/components/icons';
-
-interface NavLink {
-  readonly label: string;
-  readonly href: string;
-}
-
-const NAV_LINKS: readonly NavLink[] = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Stack', href: '#stack' },
-  { label: 'Contact', href: '#contact' },
-] as const;
-
-const SCROLL_THRESHOLD = 50;
+import { NAV_LINKS, SCROLL_THRESHOLD } from 'src/app/data';
 
 @Component({
   selector: 'app-navbar',

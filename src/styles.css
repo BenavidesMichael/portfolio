@@ -4,6 +4,7 @@
 }
 
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
+@custom-variant scrolled (&[data-scrolled]);
 
 @theme {
   --color-background-dark: #0f171c;

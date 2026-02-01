@@ -32,21 +32,12 @@
     <!-- Logo -->
     <div class="flex items-center gap-3">
       <div
-        class="p-2 rounded-full border transition-colors"
-        [class.bg-primary-brand/10]="themeService.isDark()"
-        [class.text-primary-brand]="themeService.isDark()"
-        [class.border-primary-brand/20]="themeService.isDark()"
-        [class.bg-primary-brand/20]="!themeService.isDark()"
-        [class.text-primary-brand-dark]="!themeService.isDark()"
-        [class.border-primary-brand/30]="!themeService.isDark()"
+        class="p-2 rounded-full border transition-colors bg-primary-brand/20 dark:bg-primary-brand/10 text-primary-brand-dark dark:text-primary-brand border-primary-brand/30 dark:border-primary-brand/20"
       >
-        <!-- Terminal icon -->
         <app-icon-terminal></app-icon-terminal>
       </div>
       <span
-        class="font-bold text-lg tracking-tight font-display"
-        [class.text-slate-100]="themeService.isDark()"
-        [class.text-slate-800]="!themeService.isDark()"
+        class="font-bold text-lg tracking-tight font-display text-slate-800 dark:text-slate-100"
       >
         Benavides Michael
       </span>
@@ -57,27 +48,8 @@
       @for (link of navLinks; track link.href) {
         <a
           [href]="link.href"
-          class="text-sm font-medium transition-colors relative"
-          [class.text-white]="activeLink() === link.label.toLowerCase() && themeService.isDark()"
-          [class.text-slate-800]="
-            activeLink() === link.label.toLowerCase() && !themeService.isDark()
-          "
-          [class.text-slate-400]="
-            activeLink() !== link.label.toLowerCase() && themeService.isDark()
-          "
-          [class.text-slate-500]="
-            activeLink() !== link.label.toLowerCase() && !themeService.isDark()
-          "
-          [class.hover:text-white]="themeService.isDark()"
-          [class.hover:text-slate-900]="!themeService.isDark()"
-          [class.after:content-['']]="activeLink() === link.label.toLowerCase()"
-          [class.after:absolute]="activeLink() === link.label.toLowerCase()"
-          [class.after:-bottom-1]="activeLink() === link.label.toLowerCase()"
-          [class.after:left-0]="activeLink() === link.label.toLowerCase()"
-          [class.after:w-full]="activeLink() === link.label.toLowerCase()"
-          [class.after:h-0.5]="activeLink() === link.label.toLowerCase()"
-          [class.after:bg-primary-brand]="activeLink() === link.label.toLowerCase()"
-          [class.after:rounded-full]="activeLink() === link.label.toLowerCase()"
+          [attr.data-active]="activeLink() === link.label.toLowerCase() ? true : null"
+          class="text-sm font-medium transition-colors relative text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white data-[active]:text-slate-800 data-[active]:dark:text-white data-[active]:after:content-[''] data-[active]:after:absolute data-[active]:after:-bottom-1 data-[active]:after:left-0 data-[active]:after:w-full data-[active]:after:h-0.5 data-[active]:after:bg-primary-brand data-[active]:after:rounded-full"
           (click)="setActiveLink(link.label.toLowerCase())"
         >
           {{ link.label }}
@@ -89,27 +61,13 @@
     <div class="flex items-center gap-3">
       <!-- Language Selector -->
       <button
-        class="flex h-9 px-4 items-center justify-center rounded-full border transition-colors text-xs font-bold tracking-wide"
-        [class.bg-surface-lighter]="themeService.isDark()"
-        [class.border-white/5]="themeService.isDark()"
-        [class.hover:border-primary-brand/30]="themeService.isDark()"
-        [class.text-slate-300]="themeService.isDark()"
-        [class.hover:text-white]="themeService.isDark()"
-        [class.bg-white]="!themeService.isDark()"
-        [class.border-slate-200]="!themeService.isDark()"
-        [class.hover:border-primary-brand/50]="!themeService.isDark()"
-        [class.text-slate-600]="!themeService.isDark()"
-        [class.hover:text-slate-900]="!themeService.isDark()"
+        class="flex h-9 px-4 items-center justify-center rounded-full border transition-colors text-xs font-bold tracking-wide bg-white dark:bg-surface-lighter border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-primary-brand/50 dark:hover:border-primary-brand/30"
         aria-label="Change language"
       >
         EN
       </button>
 
-      <div
-        class="h-6 w-px mx-1"
-        [class.bg-white/10]="themeService.isDark()"
-        [class.bg-slate-200]="!themeService.isDark()"
-      ></div>
+      <div class="h-6 w-px mx-1 bg-slate-200 dark:bg-white/10"></div>
 
       <!-- Theme Toggle -->
       <app-theme-toggle />
@@ -119,18 +77,7 @@
         href="https://github.com/BenavidesMichael/portfolio"
         target="_blank"
         rel="noopener noreferrer"
-        class="size-9 flex items-center justify-center rounded-full border transition-all group"
-        [class.bg-surface-lighter]="themeService.isDark()"
-        [class.border-white/5]="themeService.isDark()"
-        [class.hover:bg-primary-brand]="themeService.isDark()"
-        [class.hover:border-primary-brand]="themeService.isDark()"
-        [class.text-slate-300]="themeService.isDark()"
-        [class.hover:text-white]="themeService.isDark()"
-        [class.bg-white]="!themeService.isDark()"
-        [class.border-slate-200]="!themeService.isDark()"
-        [class.hover:bg-primary-brand]="!themeService.isDark()"
-        [class.hover:border-primary-brand]="!themeService.isDark()"
-        [class.text-slate-500]="!themeService.isDark()"
+        class="size-9 flex items-center justify-center rounded-full border transition-all group bg-white dark:bg-surface-lighter border-slate-200 dark:border-white/5 text-slate-500 dark:text-slate-300 hover:bg-primary-brand hover:border-primary-brand hover:text-white"
         aria-label="GitHub profile"
       >
         <app-icon-github></app-icon-github>
@@ -139,18 +86,7 @@
       <!-- Email Link -->
       <a
         href="mailto:contact@example.com"
-        class="size-9 flex items-center justify-center rounded-full border transition-all group"
-        [class.bg-surface-lighter]="themeService.isDark()"
-        [class.border-white/5]="themeService.isDark()"
-        [class.hover:bg-blue-600]="themeService.isDark()"
-        [class.hover:border-blue-500]="themeService.isDark()"
-        [class.text-slate-300]="themeService.isDark()"
-        [class.hover:text-white]="themeService.isDark()"
-        [class.bg-white]="!themeService.isDark()"
-        [class.border-slate-200]="!themeService.isDark()"
-        [class.hover:bg-blue-500]="!themeService.isDark()"
-        [class.hover:border-blue-500]="!themeService.isDark()"
-        [class.text-slate-500]="!themeService.isDark()"
+        class="size-9 flex items-center justify-center rounded-full border transition-all group bg-white dark:bg-surface-lighter border-slate-200 dark:border-white/5 text-slate-500 dark:text-slate-300 hover:bg-blue-500 dark:hover:bg-blue-600 hover:border-blue-500 hover:text-white"
         aria-label="Send email"
       >
         <app-icon-mail></app-icon-mail>
