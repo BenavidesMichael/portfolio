@@ -4,7 +4,6 @@ import { DesktopPageComponent, MobilePageComponent, TabletPageComponent } from '
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [MobilePageComponent, TabletPageComponent, DesktopPageComponent],
   templateUrl: './app.html',
 })
