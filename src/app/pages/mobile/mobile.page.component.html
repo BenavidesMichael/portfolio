@@ -3,70 +3,35 @@
 <main class="relative z-10 pb-20">
   <div class="px-4">
     <div class="max-w-4xl mx-auto">
-      <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
-        <p class="text-lg md:text-xl max-w-2xl mb-8 text-slate-600 dark:text-slate-400">
-          Building modern web applications with Angular, NestJS, and .NET. 7+ years of experience
-          crafting scalable solutions.
-        </p>
-        <div class="flex gap-4">
-          <button
-            class="btn rounded-full px-8 transition-all bg-primary-brand hover:bg-primary-brand-dark text-white border-primary-brand"
-          >
-            View Projects
-          </button>
-          <button
-            class="btn btn-outline rounded-full px-8 border-slate-300 dark:border-white/20 hover:bg-slate-100 dark:hover:bg-white/10"
-          >
-            Contact Me
-          </button>
-        </div>
-      </section>
+      <!-- 🚀 Hero Section - Loaded immediately -->
+      <app-hero-section />
 
-      <section id="about" class="min-h-screen flex flex-col justify-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-8">About</h2>
-        <div
-          class="rounded-2xl p-8 transition-colors bg-white dark:bg-surface-dark shadow-xl dark:shadow-none"
-        >
-          <p class="text-lg md:text-xl leading-relaxed text-slate-600 dark:text-slate-300">
-            Passionate about creating seamless user experiences and scalable backend architectures.
-          </p>
+      <!-- 🚀 About Section - Deferred -->
+      @defer (on viewport; prefetch on idle) {
+        <app-about-section />
+      } @placeholder {
+        <div class="min-h-screen flex items-center justify-center">
+          <span class="loading loading-spinner loading-md text-primary-brand"></span>
         </div>
-      </section>
+      }
 
-      <section id="stack" class="min-h-screen flex flex-col justify-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-8">Tech Stack</h2>
-        <div class="grid grid-cols-2 gap-4">
-          @for (
-            tech of [
-              'Angular',
-              'NestJS',
-              '.NET',
-              'TypeScript',
-              'PostgreSQL',
-              'Docker',
-              'Azure',
-              'Git',
-            ];
-            track tech
-          ) {
-            <div
-              class="rounded-xl p-4 text-center transition-all hover:scale-105 bg-white dark:bg-surface-lighter shadow-md dark:shadow-none hover:shadow-lg dark:hover:bg-surface-dark"
-            >
-              {{ tech }}
-            </div>
-          }
+      <!-- 🚀 Stack Section - Deferred -->
+      @defer (on viewport; prefetch on idle) {
+        <app-stack-section />
+      } @placeholder {
+        <div class="min-h-screen flex items-center justify-center">
+          <span class="loading loading-spinner loading-md text-primary-brand"></span>
         </div>
-      </section>
+      }
 
-      <section id="contact" class="min-h-screen flex flex-col justify-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-8">Contact</h2>
-        <div class="rounded-2xl p-8 bg-white dark:bg-surface-dark shadow-xl dark:shadow-none">
-          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300">
-            Ready to collaborate? Send me a message!
-          </p>
+      <!-- 🚀 Contact Section - Deferred -->
+      @defer (on viewport; prefetch on idle) {
+        <app-contact-section />
+      } @placeholder {
+        <div class="min-h-screen flex items-center justify-center">
+          <span class="loading loading-spinner loading-md text-primary-brand"></span>
         </div>
-      </section>
+      }
     </div>
   </div>
 </main>
