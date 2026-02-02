@@ -10,27 +10,21 @@
       @defer (on viewport; prefetch on idle) {
         <app-about-section />
       } @placeholder {
-        <div class="min-h-screen flex items-center justify-center">
-          <span class="loading loading-spinner loading-md text-primary-brand"></span>
-        </div>
+        <app-loading-placeholder size="loading-md" />
       }
 
       <!-- 🚀 Stack Section - Deferred -->
       @defer (on viewport; prefetch on idle) {
         <app-stack-section />
       } @placeholder {
-        <div class="min-h-screen flex items-center justify-center">
-          <span class="loading loading-spinner loading-md text-primary-brand"></span>
-        </div>
+        <app-loading-placeholder size="loading-md" />
       }
 
       <!-- 🚀 Contact Section - Deferred -->
       @defer (on viewport; prefetch on idle) {
         <app-contact-section />
       } @placeholder {
-        <div class="min-h-screen flex items-center justify-center">
-          <span class="loading loading-spinner loading-md text-primary-brand"></span>
-        </div>
+        <app-loading-placeholder size="loading-md" />
       }
     </div>
   </div>

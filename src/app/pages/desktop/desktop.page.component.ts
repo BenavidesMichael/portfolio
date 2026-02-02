@@ -7,6 +7,7 @@ import {
   StackSectionComponent,
   ContactSectionComponent,
 } from '../../features';
+import { LoadingPlaceholderComponent } from '@shared/components';
 
 /**
  * Desktop page component
@@ -22,6 +23,7 @@ import {
     AboutSectionComponent,
     StackSectionComponent,
     ContactSectionComponent,
+    LoadingPlaceholderComponent,
   ],
   templateUrl: './desktop.page.component.html',
 })

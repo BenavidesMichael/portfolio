@@ -7,6 +7,7 @@ import {
   StackSectionComponent,
   ContactSectionComponent,
 } from '../../features';
+import { LoadingPlaceholderComponent } from '@shared/components';
 
 @Component({
   selector: 'app-tablet-page',
@@ -17,6 +18,7 @@ import {
     AboutSectionComponent,
     StackSectionComponent,
     ContactSectionComponent,
+    LoadingPlaceholderComponent,
   ],
   templateUrl: './tablet.page.component.html',
 })
