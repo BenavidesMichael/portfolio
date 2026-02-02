@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeToggleComponent } from '@shared/components';
 
 /**
  * Mobile header component
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-mobile-header',
-  imports: [],
+  imports: [ThemeToggleComponent],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
