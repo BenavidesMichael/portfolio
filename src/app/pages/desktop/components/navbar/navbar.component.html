@@ -1,34 +1,8 @@
 <header
   class="fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-out"
-  [class.px-4]="!isScrolled()"
-  [class.px-0]="isScrolled()"
-  [class.pt-6]="!isScrolled()"
-  [class.pt-0]="isScrolled()"
+  [ngClass]="headerClasses()"
 >
-  <nav
-    class="w-full flex items-center justify-between transition-all duration-500 ease-out"
-    [class.max-w-[960px]]="!isScrolled()"
-    [class.max-w-full]="isScrolled()"
-    [class.rounded-full]="!isScrolled()"
-    [class.rounded-none]="isScrolled()"
-    [class.px-5]="!isScrolled()"
-    [class.px-8]="isScrolled()"
-    [class.md:px-16]="isScrolled()"
-    [class.py-3]="!isScrolled()"
-    [class.py-4]="isScrolled()"
-    [class.glass-panel]="themeService.isDark() && !isScrolled()"
-    [class.glass-panel-light]="!themeService.isDark() && !isScrolled()"
-    [class.bg-surface-dark]="themeService.isDark() && isScrolled()"
-    [class.bg-white]="!themeService.isDark() && isScrolled()"
-    [class.border-b]="isScrolled()"
-    [class.border-white/10]="isScrolled() && themeService.isDark()"
-    [class.border-slate-200]="isScrolled() && !themeService.isDark()"
-    [class.shadow-lg]="isScrolled()"
-    [class.shadow-black/20]="isScrolled() && themeService.isDark()"
-    [class.shadow-black/5]="isScrolled() && !themeService.isDark()"
-    role="navigation"
-    aria-label="Main navigation"
-  >
+  <nav [ngClass]="navClasses()" role="navigation" aria-label="Main navigation">
     <!-- Logo -->
     <div class="flex items-center gap-3">
       <div
