@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-stack-section',
-  imports: [],
   template: `
     <section id="stack" class="min-h-screen flex flex-col justify-center">
       <h2 class="text-3xl md:text-5xl font-bold mb-8">Tech Stack</h2>

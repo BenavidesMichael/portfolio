@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-hero-section',
-  imports: [],
   template: `
     <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
       <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>

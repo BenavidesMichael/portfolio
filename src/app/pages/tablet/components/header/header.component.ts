@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-tablet-header',
-  imports: [],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {

@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-contact-section',
-  imports: [],
   template: `
     <section id="contact" class="min-h-screen flex flex-col justify-center">
       <h2 class="text-3xl md:text-5xl font-bold mb-8">Contact</h2>
