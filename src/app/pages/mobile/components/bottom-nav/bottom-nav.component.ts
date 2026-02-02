@@ -11,7 +11,6 @@ import {
 
 @Component({
   selector: 'app-bottom-nav',
-  standalone: true,
   imports: [HomeIconComponent, MailIconComponent, UserIconComponent, CodeIconComponent],
   templateUrl: './bottom-nav.component.html',
 })

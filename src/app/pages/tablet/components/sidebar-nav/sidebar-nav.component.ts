@@ -12,7 +12,6 @@ import {
 
 @Component({
   selector: 'app-sidebar-nav',
-  standalone: true,
   imports: [
     ThemeToggleComponent,
     HomeIconComponent,

@@ -3,7 +3,6 @@ import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-theme-toggle',
-  standalone: true,
   template: `
     <button
       type="button"

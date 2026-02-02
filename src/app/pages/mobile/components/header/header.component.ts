@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-mobile-header',
-  standalone: true,
   imports: [],
   templateUrl: './header.component.html',
 })

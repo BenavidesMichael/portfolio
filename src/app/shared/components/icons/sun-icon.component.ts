@@ -2,7 +2,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-icon-sun',
-  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'icon', 'aria-hidden': 'true' },
   template: `

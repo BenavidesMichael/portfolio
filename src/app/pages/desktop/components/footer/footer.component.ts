@@ -8,7 +8,6 @@ import { CURRENT_YEAR } from '@core/config';
  */
 @Component({
   selector: 'app-desktop-footer',
-  standalone: true,
   imports: [GithubIconComponent, MailIconComponent],
   templateUrl: './footer.component.html',
 })
