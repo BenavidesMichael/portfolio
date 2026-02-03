@@ -24,3 +24,10 @@ export const Breakpoint = {
 export const SCROLL_THRESHOLD = 50;
 export const SCROLL_THROTTLE_MS = 16; // 60 FPS (1000ms / 60 ≈ 16ms)
 export const CURRENT_YEAR = new Date().getFullYear();
+
+export const BrandColors = {
+  Primary: '#13a4ec',
+  PrimaryDark: '#0f83bd',
+} as const;
+
+export type BrandColor = (typeof BrandColors)[keyof typeof BrandColors];

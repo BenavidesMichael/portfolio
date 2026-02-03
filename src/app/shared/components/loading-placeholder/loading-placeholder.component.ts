@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, computed } from '@angular/core';
 
 /**
  * Reusable loading placeholder component for @defer blocks
@@ -15,11 +15,17 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 })
 export class LoadingPlaceholderComponent {
   /** Container height class (default: 'min-h-screen') */
-  height = input<string>('min-h-screen');
+  readonly height = input<string>('min-h-screen');
 
   /** Spinner size (default: 'loading-lg') */
-  size = input<'loading-xs' | 'loading-sm' | 'loading-md' | 'loading-lg'>('loading-lg');
+  readonly size = input<'loading-xs' | 'loading-sm' | 'loading-md' | 'loading-lg'>('loading-lg');
 
-  protected containerClass = () => `${this.height()} flex items-center justify-center`;
-  protected spinnerClass = () => `loading loading-spinner ${this.size()} text-primary-brand`;
+  // Computed signals for reactivity tracking
+  protected readonly containerClass = computed(
+    () => `${this.height()} flex items-center justify-center`,
+  );
+
+  protected readonly spinnerClass = computed(
+    () => `loading loading-spinner ${this.size()} text-primary`,
+  );
 }

@@ -14,11 +14,7 @@ import { Component } from '@angular/core';
         crafting scalable solutions.
       </p>
       <div class="flex gap-4">
-        <button
-          class="btn rounded-full px-8 transition-all bg-primary-brand hover:bg-primary-brand-dark text-white border-primary-brand"
-        >
-          View Projects
-        </button>
+        <button class="btn btn-primary rounded-full px-8 transition-all">View Projects</button>
         <button
           class="btn btn-outline rounded-full px-8 border-slate-300 dark:border-white/20 hover:bg-slate-100 dark:hover:bg-white/10"
         >
