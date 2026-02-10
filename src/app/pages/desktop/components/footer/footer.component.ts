@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { GithubIconComponent, MailIconComponent } from '@shared/components/icons';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {
+  GithubIconComponent,
+  LinkedinIconComponent,
+  MailIconComponent,
+} from '@shared/components/icons';
 import { CURRENT_YEAR } from '@core/config';
 
 /**
@@ -8,7 +12,8 @@ import { CURRENT_YEAR } from '@core/config';
  */
 @Component({
   selector: 'app-desktop-footer',
-  imports: [GithubIconComponent, MailIconComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [GithubIconComponent, LinkedinIconComponent, MailIconComponent],
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {
