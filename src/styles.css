@@ -14,6 +14,24 @@
   --color-primary-brand-dark: #0b6aa3;
 
   --font-display: "Space Grotesk", sans-serif;
+
+  /* =========================================
+     ICON DESIGN TOKENS
+     ========================================= */
+
+  /* Stroke Weights */
+  --icon-stroke-thin: 1;
+  --icon-stroke-regular: 1.5;
+  --icon-stroke-medium: 2;
+  --icon-stroke-bold: 2.5;
+  --icon-stroke-default: var(--icon-stroke-medium);
+
+  /* Icon Sizes (Semantic) */
+  --icon-size-xs: 1rem;      /* 16px - Small inline icons */
+  --icon-size-sm: 1.25rem;   /* 20px - Body content icons */
+  --icon-size-md: 1.5rem;    /* 24px - Default, navigation */
+  --icon-size-lg: 2rem;      /* 32px - Feature highlights */
+  --icon-size-xl: 2.5rem;    /* 40px - Hero sections */
 }
 
 html {
@@ -52,4 +70,47 @@ html {
 .icon svg {
   width: 100%;
   height: 100%;
+}
+
+/* Icon Size Variants */
+.icon[data-size="xs"] {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+}
+
+.icon[data-size="sm"] {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.icon[data-size="md"] {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+.icon[data-size="lg"] {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.icon[data-size="xl"] {
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+}
+
+/* Icon Stroke Weight Variants */
+.icon svg[data-weight="thin"] {
+  stroke-width: var(--icon-stroke-thin);
+}
+
+.icon svg[data-weight="regular"] {
+  stroke-width: var(--icon-stroke-regular);
+}
+
+.icon svg[data-weight="medium"] {
+  stroke-width: var(--icon-stroke-medium);
+}
+
+.icon svg[data-weight="bold"] {
+  stroke-width: var(--icon-stroke-bold);
 }

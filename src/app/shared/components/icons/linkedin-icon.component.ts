@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 import { IconSize, IconWeight } from './icon.types';
 
 @Component({
-  selector: 'app-icon-home',
+  selector: 'app-icon-linkedin',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'icon',
@@ -11,13 +11,15 @@ import { IconSize, IconWeight } from './icon.types';
   },
   template: `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" [attr.data-weight]="weight()">
-      <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-      <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-      <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+      <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+      <path d="M8 11l0 5" />
+      <path d="M8 8l0 .01" />
+      <path d="M12 16l0 -5" />
+      <path d="M16 16v-3a2 2 0 0 0 -4 0" />
     </svg>
   `,
 })
-export class HomeIconComponent {
+export class LinkedinIconComponent {
   readonly size = input<IconSize>('md');
   readonly weight = input<IconWeight>('medium');
 }
