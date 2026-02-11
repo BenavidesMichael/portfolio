@@ -1,13 +1,6 @@
 <!-- Bottom Tab Bar Navigation for Mobile -->
 <nav
-  class="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom"
-  [class.bg-surface-dark]="themeService.isDark()"
-  [class.border-t]="true"
-  [class.border-white/10]="themeService.isDark()"
-  [class.bg-white]="!themeService.isDark()"
-  [class.border-slate-200]="!themeService.isDark()"
-  [class.shadow-[0_-4px_20px_rgba(0,0,0,0.15)]]="themeService.isDark()"
-  [class.shadow-[0_-4px_20px_rgba(0,0,0,0.05)]]="!themeService.isDark()"
+  class="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom border-t bg-white dark:bg-surface-dark border-slate-200 dark:border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.15)]"
   role="navigation"
   aria-label="Mobile navigation"
 >
@@ -15,26 +8,15 @@
     @for (item of navItems; track item.href) {
       <a
         [href]="item.href"
-        class="flex flex-col items-center justify-center min-w-16 py-2 px-3 rounded-xl transition-all duration-200"
-        [class.bg-primary-brand/10]="
-          activeLink() === item.label.toLowerCase() && themeService.isDark()
-        "
-        [class.bg-primary-brand/15]="
-          activeLink() === item.label.toLowerCase() && !themeService.isDark()
-        "
+        [attr.data-active]="activeLink() === item.label.toLowerCase() ? true : null"
+        class="flex flex-col items-center justify-center min-w-16 py-2 px-3 rounded-xl transition-all duration-200 data-[active]:bg-primary-brand/15 dark:data-[active]:bg-primary-brand/10"
         (click)="setActiveLink(item.label.toLowerCase())"
         [attr.aria-current]="activeLink() === item.label.toLowerCase() ? 'page' : null"
       >
         <!-- Icon -->
         <span
-          class="mb-1 transition-colors"
-          [class.text-primary-brand]="activeLink() === item.label.toLowerCase()"
-          [class.text-slate-400]="
-            activeLink() !== item.label.toLowerCase() && themeService.isDark()
-          "
-          [class.text-slate-500]="
-            activeLink() !== item.label.toLowerCase() && !themeService.isDark()
-          "
+          class="mb-1 transition-colors text-slate-500 dark:text-slate-400 data-[active]:text-primary-brand"
+          [attr.data-active]="activeLink() === item.label.toLowerCase() ? true : null"
         >
           @switch (item.icon) {
             @case ('home') {
@@ -54,14 +36,8 @@
 
         <!-- Label -->
         <span
-          class="text-xs font-medium transition-colors"
-          [class.text-primary-brand]="activeLink() === item.label.toLowerCase()"
-          [class.text-slate-400]="
-            activeLink() !== item.label.toLowerCase() && themeService.isDark()
-          "
-          [class.text-slate-500]="
-            activeLink() !== item.label.toLowerCase() && !themeService.isDark()
-          "
+          class="text-xs font-medium transition-colors text-slate-500 dark:text-slate-400 data-[active]:text-primary-brand"
+          [attr.data-active]="activeLink() === item.label.toLowerCase() ? true : null"
         >
           {{ item.label }}
         </span>

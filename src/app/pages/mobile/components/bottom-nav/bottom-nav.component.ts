@@ -1,5 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
-import { ThemeService } from '@core/services';
+import { Component, signal } from '@angular/core';
 import { NAV_LINKS_WITH_ICONS } from '@data';
 import type { NavLink } from '@models';
 import {
@@ -15,7 +14,6 @@ import {
   templateUrl: './bottom-nav.component.html',
 })
 export class BottomNavComponent {
-  protected readonly themeService = inject(ThemeService);
   protected readonly activeLink = signal('home');
   protected readonly navItems: readonly NavLink[] = NAV_LINKS_WITH_ICONS;
 

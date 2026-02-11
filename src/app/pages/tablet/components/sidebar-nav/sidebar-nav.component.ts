@@ -1,6 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ThemeToggleComponent } from '@shared/components/theme-toggle';
-import { ThemeService } from '@core/services';
 import { NAV_LINKS_WITH_ICONS } from '@data';
 import type { NavLink } from '@models';
 import {
@@ -22,7 +21,6 @@ import {
   templateUrl: './sidebar-nav.component.html',
 })
 export class SidebarNavComponent {
-  protected readonly themeService = inject(ThemeService);
   protected readonly activeLink = signal('home');
   protected readonly navItems: readonly NavLink[] = NAV_LINKS_WITH_ICONS;
 
