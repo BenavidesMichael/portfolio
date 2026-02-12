@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SKILLS } from '@data';
 
 @Component({
   selector: 'app-stack-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section id="stack" class="min-h-screen flex flex-col justify-center">
       <h2 class="text-3xl md:text-5xl font-bold mb-8">Tech Stack</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         @for (skill of skills; track skill.name) {
           <div
-            class="rounded-xl p-4 text-center transition-all hover:scale-105 bg-white dark:bg-surface-lighter shadow-md dark:shadow-none hover:shadow-lg dark:hover:bg-surface-dark"
+            class="card card-compact bg-base-200 shadow-md hover:shadow-lg hover:scale-105 transition-all"
           >
-            {{ skill.name }}
+            <div class="card-body items-center">
+              <span class="font-medium">{{ skill.name }}</span>
+            </div>
           </div>
         }
       </div>
