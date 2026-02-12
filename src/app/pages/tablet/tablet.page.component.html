@@ -2,29 +2,27 @@
   <app-sidebar-nav />
 
   <div class="flex-1">
-    <app-tablet-header />
-
     <main class="relative z-10">
       <div class="px-4">
         <div class="max-w-4xl mx-auto">
-          <!-- 🚀 Hero Section - Loaded immediately -->
+          <!-- Hero Section - Loaded immediately -->
           <app-hero-section />
 
-          <!-- 🚀 About Section - Deferred -->
+          <!-- About Section - Deferred -->
           @defer (on viewport; prefetch on idle) {
             <app-about-section />
           } @placeholder {
             <app-loading-placeholder size="loading-md" />
           }
 
-          <!-- 🚀 Stack Section - Deferred -->
+          <!-- Stack Section - Deferred -->
           @defer (on viewport; prefetch on idle) {
             <app-stack-section />
           } @placeholder {
             <app-loading-placeholder size="loading-md" />
           }
 
-          <!-- 🚀 Contact Section - Deferred -->
+          <!-- Contact Section - Deferred -->
           @defer (on viewport; prefetch on idle) {
             <app-contact-section />
           } @placeholder {

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SidebarNavComponent } from './components/sidebar-nav';
-import { HeaderComponent } from './components/header';
 import {
   HeroSectionComponent,
   AboutSectionComponent,
@@ -13,13 +12,13 @@ import { LoadingPlaceholderComponent } from '@shared/components';
   selector: 'app-tablet-page',
   imports: [
     SidebarNavComponent,
-    HeaderComponent,
     HeroSectionComponent,
     AboutSectionComponent,
     StackSectionComponent,
     ContactSectionComponent,
     LoadingPlaceholderComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tablet.page.component.html',
 })
 export class TabletPageComponent {}
