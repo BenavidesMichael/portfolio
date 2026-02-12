@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeToggleComponent } from '@shared/components/theme-toggle';
 import { NAV_LINKS_WITH_ICONS } from '@data';
 import type { NavLink } from '@models';
@@ -7,6 +7,7 @@ import {
   HomeIconComponent,
   MailIconComponent,
   GithubIconComponent,
+  LinkedinIconComponent,
 } from '@shared/components/icons';
 
 @Component({
@@ -17,7 +18,9 @@ import {
     CodeIconComponent,
     MailIconComponent,
     GithubIconComponent,
+    LinkedinIconComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './sidebar-nav.component.html',
 })
 export class SidebarNavComponent {

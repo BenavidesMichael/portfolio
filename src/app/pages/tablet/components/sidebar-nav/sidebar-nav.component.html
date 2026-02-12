@@ -1,96 +1,86 @@
-<!-- Left Sidebar Navigation for Tablet -->
-<aside
-  class="fixed left-0 top-0 bottom-0 z-50 w-56 flex flex-col border-r bg-white dark:bg-surface-dark border-slate-200 dark:border-white/10"
-  role="navigation"
+<nav
+  class="fixed left-0 top-0 bottom-0 z-50 w-56 flex flex-col border-r bg-base-100 border-base-300"
   aria-label="Tablet navigation"
 >
   <!-- Logo Section -->
-  <div class="p-5 border-b border-slate-200 dark:border-white/10">
+  <div class="p-5 border-b border-base-300">
     <a href="#home" class="flex items-center gap-3" (click)="setActiveLink('home')">
-      <div
-        class="size-9 flex items-center justify-center rounded-lg bg-primary-brand/20 dark:bg-primary-brand/10"
-      >
-        <app-icon-home></app-icon-home>
+      <div class="size-9 flex items-center justify-center rounded-lg bg-primary/10">
+        <app-icon-home />
       </div>
       <div class="flex flex-col">
-        <span class="font-bold text-sm text-slate-800 dark:text-slate-100">DevPortfolio</span>
-        <span class="text-xs text-slate-400 dark:text-slate-500">v2.0</span>
+        <span class="font-bold text-sm">DevPortfolio</span>
+        <span class="text-xs text-base-content/50">v2.0</span>
       </div>
     </a>
   </div>
 
   <!-- Navigation Items -->
-  <nav class="flex-1 py-4 px-3 overflow-y-auto">
-    <ul class="space-y-1">
-      @for (item of navItems; track item.href) {
-        <li>
-          <a
-            [href]="item.href"
-            [attr.data-active]="isActive(item.href) ? true : null"
-            class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-slate-200 data-[active]:bg-primary-brand/15 dark:data-[active]:bg-primary-brand/10 data-[active]:text-primary-brand"
-            (click)="setActiveLink(item.href.replace('#', ''))"
-            [attr.aria-current]="isActive(item.href) ? 'page' : null"
-          >
-            <!-- Icon -->
-            @switch (item.icon) {
-              @case ('home') {
-                <app-icon-home></app-icon-home>
-              }
-              @case ('evolution') {
-                <app-icon-home></app-icon-home>
-              }
-              @case ('code') {
-                <app-icon-code></app-icon-code>
-              }
-              @case ('folder') {
-                <app-icon-code></app-icon-code>
-              }
-              @case ('mail') {
-                <app-icon-mail></app-icon-mail>
-              }
+  <ul class="menu menu-sm flex-1 py-4 px-2">
+    @for (item of navItems; track item.href) {
+      <li>
+        <a
+          [href]="item.href"
+          [class.active]="isActive(item.href)"
+          (click)="setActiveLink(item.href.replace('#', ''))"
+          [attr.aria-current]="isActive(item.href) ? 'page' : null"
+        >
+          @switch (item.icon) {
+            @case ('home') {
+              <app-icon-home />
             }
-            {{ item.label }}
-          </a>
-        </li>
-      }
-    </ul>
-  </nav>
+            @case ('evolution') {
+              <app-icon-home />
+            }
+            @case ('code') {
+              <app-icon-code />
+            }
+            @case ('folder') {
+              <app-icon-code />
+            }
+            @case ('mail') {
+              <app-icon-mail />
+            }
+          }
+          {{ item.label }}
+        </a>
+      </li>
+    }
+  </ul>
 
   <!-- Footer Section -->
-  <div class="p-4 border-t border-slate-200 dark:border-white/10">
+  <div class="p-4 border-t border-base-300">
     <!-- Status -->
     <div class="flex items-center justify-between mb-3">
-      <span class="text-xs font-medium text-slate-400 dark:text-slate-500">Open to work</span>
+      <span class="text-xs font-medium text-base-content/50">Open to work</span>
       <span class="flex items-center gap-1.5">
-        <span class="size-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span class="text-xs text-emerald-500 font-medium">Available</span>
+        <span class="badge badge-xs badge-success animate-pulse"></span>
+        <span class="text-xs text-success font-medium">Available</span>
       </span>
     </div>
 
     <div class="flex items-center gap-2">
       <app-theme-toggle />
 
-      <!-- GitHub -->
       <a
         href="https://github.com/BenavidesMichael"
         target="_blank"
         rel="noopener noreferrer"
-        class="size-9 flex items-center justify-center rounded-lg transition-colors bg-slate-100 dark:bg-surface-lighter hover:bg-slate-200 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        class="btn btn-ghost btn-square btn-sm"
         aria-label="GitHub"
       >
-        <app-icon-github></app-icon-github>
+        <app-icon-github />
       </a>
 
-      <!-- LinkedIn -->
       <a
         href="https://linkedin.com/in/michael-benavides"
         target="_blank"
         rel="noopener noreferrer"
-        class="size-9 flex items-center justify-center rounded-lg transition-colors bg-slate-100 dark:bg-surface-lighter hover:bg-slate-200 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        class="btn btn-ghost btn-square btn-sm"
         aria-label="LinkedIn"
       >
-        <app-icon-github></app-icon-github>
+        <app-icon-linkedin />
       </a>
     </div>
   </div>
-</aside>
+</nav>
