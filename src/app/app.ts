@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeService, DeviceService } from './core/services';
 import { DesktopPageComponent, MobilePageComponent, TabletPageComponent } from './pages';
 
 @Component({
   selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MobilePageComponent, TabletPageComponent, DesktopPageComponent],
   templateUrl: './app.html',
 })
