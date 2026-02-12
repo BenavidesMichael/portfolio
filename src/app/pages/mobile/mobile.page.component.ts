@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BottomNavComponent } from './components/bottom-nav';
 import { HeaderComponent } from './components/header';
 import {
@@ -20,6 +20,7 @@ import { LoadingPlaceholderComponent } from '@shared/components';
     ContactSectionComponent,
     LoadingPlaceholderComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './mobile.page.component.html',
 })
 export class MobilePageComponent {}

@@ -1,16 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeToggleComponent } from '@shared/components';
 
-/**
- * Mobile header component
- * Compact header for mobile devices with minimal branding
- * TODO: Add navigation state management when sections feature is implemented
- */
 @Component({
   selector: 'app-mobile-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ThemeToggleComponent],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent {
-  // Future: Add scroll state, active section tracking
-}
+export class HeaderComponent {}
