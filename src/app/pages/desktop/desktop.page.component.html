@@ -2,24 +2,24 @@
 
 <main class="relative z-10 pt-28">
   <div class="max-w-4xl mx-auto px-4">
-    <!-- 🚀 Hero Section - Loaded immediately (above the fold) -->
+    <!-- Hero Section - Loaded immediately (above the fold) -->
     <app-hero-section />
 
-    <!-- 🚀 About Section - Deferred until viewport (Angular 21 @defer) -->
+    <!-- About Section - Deferred until viewport (Angular 21 @defer) -->
     @defer (on viewport; prefetch on idle) {
       <app-about-section />
     } @placeholder {
       <app-loading-placeholder />
     }
 
-    <!-- 🚀 Stack Section - Deferred until viewport -->
+    <!-- Stack Section - Deferred until viewport -->
     @defer (on viewport; prefetch on idle) {
       <app-stack-section />
     } @placeholder {
       <app-loading-placeholder />
     }
 
-    <!-- 🚀 Contact Section - Deferred until viewport -->
+    <!-- Contact Section - Deferred until viewport -->
     @defer (on viewport; prefetch on idle) {
       <app-contact-section />
     } @placeholder {
@@ -28,7 +28,7 @@
   </div>
 </main>
 
-<!-- 🚀 Footer - Deferred until viewport with idle prefetch -->
+<!-- Footer - Deferred until viewport with idle prefetch -->
 @defer (on viewport; prefetch on idle) {
   <app-desktop-footer />
 } @placeholder {

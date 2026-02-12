@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavbarComponent } from './components/navbar';
 import { FooterComponent } from './components/footer';
 import {
@@ -9,11 +9,6 @@ import {
 } from '../../features';
 import { LoadingPlaceholderComponent } from '@shared/components';
 
-/**
- * Desktop page component
- * Uses @defer for lazy loading of below-the-fold sections
- * Even though imports are declared, @defer creates separate lazy chunks
- */
 @Component({
   selector: 'app-desktop-page',
   imports: [
@@ -25,6 +20,7 @@ import { LoadingPlaceholderComponent } from '@shared/components';
     ContactSectionComponent,
     LoadingPlaceholderComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './desktop.page.component.html',
 })
 export class DesktopPageComponent {}

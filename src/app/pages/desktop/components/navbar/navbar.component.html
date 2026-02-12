@@ -10,43 +10,39 @@
   >
     <!-- Logo -->
     <div class="flex items-center gap-3">
-      <div
-        class="p-2 rounded-full border transition-colors bg-primary/20 dark:bg-primary/10 text-primary border-primary/30 dark:border-primary/20"
-      >
-        <app-icon-terminal></app-icon-terminal>
+      <div class="p-2 rounded-full bg-primary/10 text-primary border border-primary/20">
+        <app-icon-terminal />
       </div>
-      <span
-        class="font-bold text-lg tracking-tight font-display text-slate-800 dark:text-slate-100"
-      >
-        Benavides Michael
-      </span>
+      <span class="font-bold text-lg tracking-tight font-display"> Benavides Michael </span>
     </div>
 
     <!-- Navigation Links -->
-    <div class="flex items-center gap-8">
+    <ul class="menu menu-horizontal gap-2 px-0">
       @for (link of navLinks; track link.href) {
-        <a
-          [href]="link.href"
-          [attr.data-active]="activeLink() === link.label.toLowerCase() ? true : null"
-          class="text-sm font-medium transition-colors relative text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white data-[active]:text-slate-800 data-[active]:dark:text-white data-[active]:after:content-[''] data-[active]:after:absolute data-[active]:after:-bottom-1 data-[active]:after:left-0 data-[active]:after:w-full data-[active]:after:h-0.5 data-[active]:after:bg-primary data-[active]:after:rounded-full"
-          (click)="setActiveLink(link.label.toLowerCase())"
-        >
-          {{ link.label }}
-        </a>
+        <li>
+          <a
+            [href]="link.href"
+            [class.active]="activeLink() === link.label.toLowerCase()"
+            class="text-sm font-medium"
+            (click)="setActiveLink(link.label.toLowerCase())"
+          >
+            {{ link.label }}
+          </a>
+        </li>
       }
-    </div>
+    </ul>
 
     <!-- Right Section: Lang, Theme, Social -->
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2">
       <!-- Language Selector -->
       <button
-        class="flex h-9 px-4 items-center justify-center rounded-full border transition-colors text-xs font-bold tracking-wide bg-white dark:bg-surface-lighter border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-primary/50 dark:hover:border-primary/30"
+        class="btn btn-ghost btn-sm rounded-full text-xs font-bold tracking-wide"
         aria-label="Change language"
       >
         EN
       </button>
 
-      <div class="h-6 w-px mx-1 bg-slate-200 dark:bg-white/10"></div>
+      <div class="divider divider-horizontal mx-0 w-0"></div>
 
       <!-- Theme Toggle -->
       <app-theme-toggle />
@@ -56,19 +52,19 @@
         href="https://github.com/BenavidesMichael/portfolio"
         target="_blank"
         rel="noopener noreferrer"
-        class="size-9 flex items-center justify-center rounded-full border transition-all group bg-white dark:bg-surface-lighter border-slate-200 dark:border-white/5 text-slate-500 dark:text-slate-300 hover:bg-primary hover:border-primary hover:text-white"
+        class="btn btn-ghost btn-circle btn-sm"
         aria-label="GitHub profile"
       >
-        <app-icon-github></app-icon-github>
+        <app-icon-github />
       </a>
 
       <!-- Email Link -->
       <a
         href="mailto:contact@example.com"
-        class="size-9 flex items-center justify-center rounded-full border transition-all group bg-white dark:bg-surface-lighter border-slate-200 dark:border-white/5 text-slate-500 dark:text-slate-300 hover:bg-blue-500 dark:hover:bg-blue-600 hover:border-blue-500 hover:text-white"
+        class="btn btn-ghost btn-circle btn-sm"
         aria-label="Send email"
       >
-        <app-icon-mail></app-icon-mail>
+        <app-icon-mail />
       </a>
     </div>
   </nav>

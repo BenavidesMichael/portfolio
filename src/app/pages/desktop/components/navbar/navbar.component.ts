@@ -1,4 +1,11 @@
-import { Component, inject, signal, PLATFORM_ID, DestroyRef } from '@angular/core';
+import {
+  Component,
+  inject,
+  signal,
+  PLATFORM_ID,
+  DestroyRef,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent, throttleTime, map, startWith } from 'rxjs';
@@ -13,6 +20,7 @@ import {
 
 @Component({
   selector: 'app-navbar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ThemeToggleComponent, GithubIconComponent, MailIconComponent, TerminalIconComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
