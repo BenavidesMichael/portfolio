@@ -13,11 +13,11 @@ import { SunIconComponent, MoonIconComponent } from '../icons';
       [attr.aria-label]="themeService.isDark() ? 'Activer le mode clair' : 'Activer le mode sombre'"
       aria-live="polite"
     >
-      <!-- Sun icon (visible in dark mode) -->
-      <app-icon-sun />
+      <!-- Sun icon (visible when dark mode is active → swap-on) -->
+      <app-icon-sun class="swap-on" />
 
-      <!-- Moon icon (visible in light mode) -->
-      <app-icon-moon />
+      <!-- Moon icon (visible when light mode is active → swap-off) -->
+      <app-icon-moon class="swap-off" />
     </button>
   `,
   imports: [SunIconComponent, MoonIconComponent],
