@@ -1,8 +1,8 @@
-/**
- * Navigation link model
- */
+/** Available icon identifiers for navigation components */
+export type NavIconName = 'home' | 'user' | 'code' | 'mail';
+
 export interface NavLink {
   readonly label: string;
   readonly href: string;
-  readonly icon?: string; // Optional icon name for mobile/tablet navigation
+  readonly icon?: NavIconName;
 }
