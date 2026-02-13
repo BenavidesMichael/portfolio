@@ -4,34 +4,22 @@
 }
 
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
-@custom-variant scrolled (&[data-scrolled]);
 
 @theme {
-  --color-background-dark: #0f171c;
-  --color-surface-dark: #162026;
-  --color-surface-lighter: #1e2930;
-  --color-primary-brand: #13a4ec;
-  --color-primary-brand-dark: #0b6aa3;
-
   --font-display: "Space Grotesk", sans-serif;
 
-  /* =========================================
-     ICON DESIGN TOKENS
-     ========================================= */
-
-  /* Stroke Weights */
+  /* Icon Design Tokens */
   --icon-stroke-thin: 1;
   --icon-stroke-regular: 1.5;
   --icon-stroke-medium: 2;
   --icon-stroke-bold: 2.5;
   --icon-stroke-default: var(--icon-stroke-medium);
 
-  /* Icon Sizes (Semantic) */
-  --icon-size-xs: 1rem;      /* 16px - Small inline icons */
-  --icon-size-sm: 1.25rem;   /* 20px - Body content icons */
-  --icon-size-md: 1.5rem;    /* 24px - Default, navigation */
-  --icon-size-lg: 2rem;      /* 32px - Feature highlights */
-  --icon-size-xl: 2.5rem;    /* 40px - Hero sections */
+  --icon-size-xs: 1rem;
+  --icon-size-sm: 1.25rem;
+  --icon-size-md: 1.5rem;
+  --icon-size-lg: 2rem;
+  --icon-size-xl: 2.5rem;
 }
 
 html {
@@ -43,23 +31,7 @@ html {
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
-.glass-panel {
-  background: rgba(22, 32, 38, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-}
-
-/* Icons - inherit size and color from parent */
+/* Icons — inherit size and color from parent */
 .icon {
   display: inline-flex;
   width: 1em;
