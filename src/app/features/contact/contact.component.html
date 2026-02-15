@@ -1,0 +1,120 @@
+<section class="py-16 flex flex-col items-center gap-6">
+  <!-- Section header -->
+  <div class="flex flex-col items-center gap-2">
+    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+      <app-icon-mail size="lg" />
+    </div>
+    <h2 class="text-3xl font-bold">Contact</h2>
+    <p class="text-base-content/60">Discutons de votre projet</p>
+  </div>
+
+  <!-- Form card -->
+  <div class="card bg-base-200/50 border border-base-300 w-full">
+    <form class="card-body gap-4" (submit)="handleSubmit($event)">
+      <!-- Name -->
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Nom complet</legend>
+        <input
+          type="text"
+          class="input validator w-full"
+          placeholder="Votre nom"
+          minlength="2"
+          maxlength="100"
+          [value]="name()"
+          (input)="name.set($any($event.target).value)"
+          required
+          aria-describedby="name-error"
+        />
+        <p id="name-error" class="validator-hint" role="alert">
+          Veuillez entrer un nom (minimum 2 caracteres)
+        </p>
+      </fieldset>
+
+      <!-- Email -->
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Email</legend>
+        <input
+          type="email"
+          class="input validator w-full"
+          placeholder="votre@email.com"
+          [value]="email()"
+          (input)="email.set($any($event.target).value)"
+          required
+          aria-describedby="email-error"
+        />
+        <p id="email-error" class="validator-hint" role="alert">
+          Veuillez entrer une adresse email valide
+        </p>
+      </fieldset>
+
+      <!-- Mission type -->
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Type de mission</legend>
+        <select
+          class="select validator w-full"
+          [value]="missionType()"
+          (change)="missionType.set($any($event.target).value)"
+          required
+          aria-describedby="mission-error"
+        >
+          <option value="" disabled>Selectionnez un type</option>
+          <option value="fullstack">Full Stack</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="consulting">Consulting</option>
+          <option value="other">Autre</option>
+        </select>
+        <p id="mission-error" class="validator-hint" role="alert">
+          Veuillez selectionner un type de mission
+        </p>
+      </fieldset>
+
+      <!-- Message -->
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Message</legend>
+        <textarea
+          class="textarea validator w-full h-32"
+          placeholder="Decrivez votre projet..."
+          minlength="10"
+          maxlength="500"
+          [value]="message()"
+          (input)="message.set($any($event.target).value)"
+          required
+          aria-describedby="message-error message-counter"
+        ></textarea>
+        <div class="flex justify-between">
+          <p id="message-error" class="validator-hint" role="alert">
+            Veuillez entrer un message (minimum 10 caracteres)
+          </p>
+          <span id="message-counter" class="fieldset-label">{{ messageLength() }}/500</span>
+        </div>
+      </fieldset>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary btn-block">
+        <app-icon-send size="sm" />
+        Envoyer
+      </button>
+    </form>
+  </div>
+
+  <!-- Contact links -->
+  <nav class="flex items-center gap-6 text-base-content/60" aria-label="Contact links">
+    <a
+      href="mailto:contact@example.com"
+      class="flex items-center gap-1.5 hover:text-primary transition-colors"
+    >
+      <app-icon-mail size="sm" />
+      <span>Email</span>
+    </a>
+    <a
+      href="https://linkedin.com/in/michael-benavides"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-1.5 hover:text-primary transition-colors"
+    >
+      <app-icon-linkedin size="sm" />
+      <span>LinkedIn</span>
+    </a>
+  </nav>
+</section>

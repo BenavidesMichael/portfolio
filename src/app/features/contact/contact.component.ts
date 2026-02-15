@@ -1,19 +1,32 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import {
+  MailIconComponent,
+  LinkedinIconComponent,
+  SendIconComponent,
+} from '@shared/components/icons';
 
 @Component({
   selector: 'app-contact-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <section class="min-h-screen flex flex-col justify-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-8">Contact</h2>
-      <div class="card bg-base-200 shadow-xl">
-        <div class="card-body">
-          <p class="text-lg md:text-xl text-base-content/70">
-            Ready to collaborate? Send me a message!
-          </p>
-        </div>
-      </div>
-    </section>
-  `,
+  imports: [MailIconComponent, LinkedinIconComponent, SendIconComponent],
+  templateUrl: './contact.component.html',
 })
-export class ContactSectionComponent {}
+export class ContactSectionComponent {
+  protected readonly name = signal('');
+  protected readonly email = signal('');
+  protected readonly missionType = signal('');
+  protected readonly message = signal('');
+
+  protected readonly messageLength = computed(() => this.message().length);
+
+  protected handleSubmit(event: Event): void {
+    event.preventDefault();
+    // Post-MVP: send to backend
+    console.log({
+      name: this.name(),
+      email: this.email(),
+      missionType: this.missionType(),
+      message: this.message(),
+    });
+  }
+}
