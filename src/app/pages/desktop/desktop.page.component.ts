@@ -1,25 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar';
 import { FooterComponent } from './components/footer';
-import {
-  HeroSectionComponent,
-  AboutSectionComponent,
-  SkillsSectionComponent,
-  ContactSectionComponent,
-} from '../../features';
-import { LoadingPlaceholderComponent } from '@shared/components';
 
 @Component({
   selector: 'app-desktop-page',
-  imports: [
-    NavbarComponent,
-    FooterComponent,
-    HeroSectionComponent,
-    AboutSectionComponent,
-    SkillsSectionComponent,
-    ContactSectionComponent,
-    LoadingPlaceholderComponent,
-  ],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './desktop.page.component.html',
 })

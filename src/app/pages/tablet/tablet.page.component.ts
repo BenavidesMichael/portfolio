@@ -1,23 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { SidebarNavComponent } from './components/sidebar-nav';
-import {
-  HeroSectionComponent,
-  AboutSectionComponent,
-  SkillsSectionComponent,
-  ContactSectionComponent,
-} from '../../features';
-import { LoadingPlaceholderComponent } from '@shared/components';
 
 @Component({
   selector: 'app-tablet-page',
-  imports: [
-    SidebarNavComponent,
-    HeroSectionComponent,
-    AboutSectionComponent,
-    SkillsSectionComponent,
-    ContactSectionComponent,
-    LoadingPlaceholderComponent,
-  ],
+  imports: [RouterOutlet, SidebarNavComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tablet.page.component.html',
 })

@@ -1,27 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { BottomNavComponent } from './components/bottom-nav';
 import { HeaderComponent } from './components/header';
-import {
-  HeroSectionComponent,
-  AboutSectionComponent,
-  ExperienceSectionComponent,
-  SkillsSectionComponent,
-  ContactSectionComponent,
-} from '../../features';
-import { LoadingPlaceholderComponent } from '@shared/components';
 
 @Component({
   selector: 'app-mobile-page',
-  imports: [
-    BottomNavComponent,
-    HeaderComponent,
-    HeroSectionComponent,
-    AboutSectionComponent,
-    ExperienceSectionComponent,
-    SkillsSectionComponent,
-    ContactSectionComponent,
-    LoadingPlaceholderComponent,
-  ],
+  imports: [RouterOutlet, BottomNavComponent, HeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './mobile.page.component.html',
 })
