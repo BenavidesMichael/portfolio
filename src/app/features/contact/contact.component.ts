@@ -8,11 +8,7 @@ import {
   minLength,
   maxLength,
 } from '@angular/forms/signals';
-import {
-  MailIconComponent,
-  LinkedinIconComponent,
-  SendIconComponent,
-} from '@shared/components/icons';
+import { MailIconComponent, SendIconComponent } from '@shared/components/icons';
 
 interface ContactFormData {
   name: string;
@@ -24,7 +20,7 @@ interface ContactFormData {
 @Component({
   selector: 'app-contact-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FormField, MailIconComponent, LinkedinIconComponent, SendIconComponent],
+  imports: [FormField, MailIconComponent, SendIconComponent],
   templateUrl: './contact.component.html',
 })
 export class ContactSectionComponent {
