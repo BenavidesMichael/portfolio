@@ -5,6 +5,7 @@ import {
   UserIconComponent,
   CodeIconComponent,
   MailIconComponent,
+  BriefcaseIconComponent,
 } from '../icons';
 
 /**
@@ -14,7 +15,13 @@ import {
 @Component({
   selector: 'app-nav-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [HomeIconComponent, UserIconComponent, CodeIconComponent, MailIconComponent],
+  imports: [
+    HomeIconComponent,
+    UserIconComponent,
+    CodeIconComponent,
+    MailIconComponent,
+    BriefcaseIconComponent,
+  ],
   template: `
     @switch (name()) {
       @case ('home') {
@@ -28,6 +35,9 @@ import {
       }
       @case ('mail') {
         <app-icon-mail />
+      }
+      @case ('briefcase') {
+        <app-icon-briefcase />
       }
     }
   `,
