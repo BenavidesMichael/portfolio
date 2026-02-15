@@ -1,18 +1,96 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {
+  GithubIconComponent,
+  LinkedinIconComponent,
+  MailIconComponent,
+  BriefcaseIconComponent,
+  MapPinIconComponent,
+  DownloadIconComponent,
+} from '@shared/components/icons';
 
 @Component({
   selector: 'app-hero-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    GithubIconComponent,
+    LinkedinIconComponent,
+    MailIconComponent,
+    BriefcaseIconComponent,
+    MapPinIconComponent,
+    DownloadIconComponent,
+  ],
   template: `
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 font-display">Full-Stack Developer</h1>
-      <p class="text-lg md:text-xl max-w-2xl mb-8 text-base-content/60">
-        Building modern web applications with Angular, NestJS, and .NET. 7+ years of experience
-        crafting scalable solutions.
+    <section
+      id="home"
+      class="min-h-screen flex flex-col items-center justify-center gap-6 py-12 text-center"
+    >
+      <!-- Profile photo with "Disponible" badge -->
+      <div class="relative">
+        <div
+          class="size-32 rounded-full ring-4 ring-primary/30 bg-gradient-to-br from-primary/20 to-base-300 flex items-center justify-center overflow-hidden"
+        >
+          <span class="text-5xl">👨‍💻</span>
+        </div>
+        <span class="badge badge-success badge-sm absolute -bottom-1 right-0 animate-pulse">
+          Disponible
+        </span>
+      </div>
+
+      <!-- Name & title -->
+      <div class="space-y-1">
+        <h1 class="text-4xl font-bold font-display text-primary">Michael Benavides</h1>
+        <p class="text-xl">Developpeur Full Stack Senior</p>
+      </div>
+
+      <!-- Info row -->
+      <p class="flex items-center gap-2 text-base-content/70 text-sm">
+        <app-icon-briefcase size="sm" />
+        <span>7 ans d'exp.</span>
+        <span aria-hidden="true">·</span>
+        <app-icon-map-pin size="sm" />
+        <span>Belgique</span>
       </p>
-      <div class="flex gap-4">
-        <button class="btn btn-primary rounded-full px-8">View Projects</button>
-        <button class="btn btn-outline rounded-full px-8">Contact Me</button>
+
+      <!-- Social icons -->
+      <nav class="flex gap-3" aria-label="Social links">
+        <a
+          href="https://github.com/BenavidesMichael"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-circle btn-outline btn-sm"
+          aria-label="GitHub"
+        >
+          <app-icon-github />
+        </a>
+        <a
+          href="https://linkedin.com/in/michael-benavides"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-circle btn-outline btn-sm"
+          aria-label="LinkedIn"
+        >
+          <app-icon-linkedin />
+        </a>
+        <a
+          href="mailto:contact@example.com"
+          class="btn btn-circle btn-outline btn-sm"
+          aria-label="Email"
+        >
+          <app-icon-mail />
+        </a>
+      </nav>
+
+      <!-- CV download -->
+      <a href="/assets/cv/cv-fr.pdf" download class="btn btn-primary btn-lg w-full max-w-xs">
+        <app-icon-download />
+        Telecharger CV
+      </a>
+
+      <!-- Language switcher -->
+      <div class="flex gap-2" role="group" aria-label="Language selection">
+        <button class="btn btn-sm btn-primary">FR</button>
+        <button class="btn btn-sm btn-outline">EN</button>
+        <button class="btn btn-sm btn-outline">ES</button>
       </div>
     </section>
   `,
