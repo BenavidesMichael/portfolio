@@ -4,7 +4,7 @@ import { FooterComponent } from './components/footer';
 import {
   HeroSectionComponent,
   AboutSectionComponent,
-  StackSectionComponent,
+  SkillsSectionComponent,
   ContactSectionComponent,
 } from '../../features';
 import { LoadingPlaceholderComponent } from '@shared/components';
@@ -16,7 +16,7 @@ import { LoadingPlaceholderComponent } from '@shared/components';
     FooterComponent,
     HeroSectionComponent,
     AboutSectionComponent,
-    StackSectionComponent,
+    SkillsSectionComponent,
     ContactSectionComponent,
     LoadingPlaceholderComponent,
   ],

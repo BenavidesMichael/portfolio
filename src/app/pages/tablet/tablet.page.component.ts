@@ -3,7 +3,7 @@ import { SidebarNavComponent } from './components/sidebar-nav';
 import {
   HeroSectionComponent,
   AboutSectionComponent,
-  StackSectionComponent,
+  SkillsSectionComponent,
   ContactSectionComponent,
 } from '../../features';
 import { LoadingPlaceholderComponent } from '@shared/components';
@@ -14,7 +14,7 @@ import { LoadingPlaceholderComponent } from '@shared/components';
     SidebarNavComponent,
     HeroSectionComponent,
     AboutSectionComponent,
-    StackSectionComponent,
+    SkillsSectionComponent,
     ContactSectionComponent,
     LoadingPlaceholderComponent,
   ],

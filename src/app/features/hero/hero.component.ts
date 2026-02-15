@@ -20,10 +20,7 @@ import {
     DownloadIconComponent,
   ],
   template: `
-    <section
-      id="home"
-      class="min-h-screen flex flex-col items-center justify-center gap-6 py-12 text-center"
-    >
+    <section class="min-h-screen flex flex-col items-center justify-center gap-6 py-12 text-center">
       <!-- Profile photo with "Disponible" badge -->
       <div class="relative">
         <div

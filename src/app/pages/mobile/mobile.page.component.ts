@@ -5,7 +5,7 @@ import {
   HeroSectionComponent,
   AboutSectionComponent,
   ExperienceSectionComponent,
-  StackSectionComponent,
+  SkillsSectionComponent,
   ContactSectionComponent,
 } from '../../features';
 import { LoadingPlaceholderComponent } from '@shared/components';
@@ -18,7 +18,7 @@ import { LoadingPlaceholderComponent } from '@shared/components';
     HeroSectionComponent,
     AboutSectionComponent,
     ExperienceSectionComponent,
-    StackSectionComponent,
+    SkillsSectionComponent,
     ContactSectionComponent,
     LoadingPlaceholderComponent,
   ],

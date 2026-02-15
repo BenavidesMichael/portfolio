@@ -1,0 +1,52 @@
+<section class="py-16 flex flex-col items-center gap-6">
+  <!-- Section header -->
+  <div class="flex flex-col items-center gap-2">
+    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+      <app-icon-code size="lg" />
+    </div>
+    <h2 class="text-3xl font-bold">Competences</h2>
+    <p class="text-base-content/60">Mon stack technique</p>
+  </div>
+
+  <!-- Filter tabs using DaisyUI join -->
+  <div class="join">
+    @for (filter of filters; track filter.value) {
+      <button
+        class="btn btn-sm join-item"
+        [class]="activeFilter() === filter.value ? 'btn-primary' : 'btn-outline'"
+        (click)="activeFilter.set(filter.value)"
+      >
+        {{ filter.label }}
+      </button>
+    }
+  </div>
+
+  <!-- Skills grid -->
+  <div class="grid grid-cols-2 gap-3 w-full">
+    @for (skill of filteredSkills(); track skill.name) {
+      <article class="card bg-base-200/50 border border-base-300">
+        <div class="card-body gap-2 p-4">
+          <!-- Skill icon placeholder + name -->
+          <div class="flex items-center gap-2">
+            <div
+              class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-xs font-bold text-primary"
+            >
+              {{ skill.name.slice(0, 2) }}
+            </div>
+            <span class="font-semibold text-sm">{{ skill.name }}</span>
+          </div>
+
+          <!-- Progress bar using DaisyUI progress -->
+          <progress
+            class="progress progress-primary w-full"
+            [value]="skill.progress"
+            max="100"
+          ></progress>
+
+          <!-- Level label -->
+          <span class="text-xs text-base-content/50 capitalize">{{ skill.level }}</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>

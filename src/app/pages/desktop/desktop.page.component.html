@@ -3,28 +3,36 @@
 <main class="relative z-10 pt-28">
   <div class="max-w-4xl mx-auto px-4">
     <!-- Hero Section - Loaded immediately (above the fold) -->
-    <app-hero-section />
+    <div id="home">
+      <app-hero-section />
+    </div>
 
     <!-- About Section - Deferred until viewport (Angular 21 @defer) -->
-    @defer (on viewport; prefetch on idle) {
-      <app-about-section />
-    } @placeholder {
-      <app-loading-placeholder />
-    }
+    <div id="about">
+      @defer (on viewport; prefetch on idle) {
+        <app-about-section />
+      } @placeholder {
+        <app-loading-placeholder />
+      }
+    </div>
 
-    <!-- Stack Section - Deferred until viewport -->
-    @defer (on viewport; prefetch on idle) {
-      <app-stack-section />
-    } @placeholder {
-      <app-loading-placeholder />
-    }
+    <!-- Skills Section - Deferred until viewport -->
+    <div id="skills">
+      @defer (on viewport; prefetch on idle) {
+        <app-skills-section />
+      } @placeholder {
+        <app-loading-placeholder />
+      }
+    </div>
 
     <!-- Contact Section - Deferred until viewport -->
-    @defer (on viewport; prefetch on idle) {
-      <app-contact-section />
-    } @placeholder {
-      <app-loading-placeholder />
-    }
+    <div id="contact">
+      @defer (on viewport; prefetch on idle) {
+        <app-contact-section />
+      } @placeholder {
+        <app-loading-placeholder />
+      }
+    </div>
   </div>
 </main>
 
