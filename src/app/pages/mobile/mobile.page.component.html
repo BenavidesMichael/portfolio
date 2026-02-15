@@ -13,6 +13,13 @@
         <app-loading-placeholder size="loading-md" />
       }
 
+      <!-- Experience Section - Deferred -->
+      @defer (on viewport; prefetch on idle) {
+        <app-experience-section />
+      } @placeholder {
+        <app-loading-placeholder size="loading-md" />
+      }
+
       <!-- Stack Section - Deferred -->
       @defer (on viewport; prefetch on idle) {
         <app-stack-section />

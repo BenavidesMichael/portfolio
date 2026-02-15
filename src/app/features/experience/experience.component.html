@@ -1,0 +1,76 @@
+<section id="experience" class="py-16 flex flex-col items-center gap-6">
+  <!-- Section header -->
+  <div class="flex flex-col items-center gap-2">
+    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+      <app-icon-clock size="lg" />
+    </div>
+    <h2 class="text-3xl font-bold">Mon Parcours</h2>
+    <p class="text-base-content/60">7 ans d'evolution professionnelle</p>
+  </div>
+
+  <!-- Timeline -->
+  <div class="relative w-full pl-12">
+    <!-- Vertical line -->
+    <div
+      class="absolute left-5 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary to-transparent"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Experience entries -->
+    @for (exp of experiences; track exp.id) {
+      <div class="relative mb-6 last:mb-0">
+        <!-- Timeline dot -->
+        <div
+          class="absolute -left-7 top-6 size-4 rounded-full border-2"
+          [class]="
+            exp.isCurrent
+              ? 'bg-primary border-primary shadow-[0_0_8px] shadow-primary/50'
+              : 'bg-base-300 border-base-300'
+          "
+          aria-hidden="true"
+        >
+          @if (exp.isCurrent) {
+            <div class="absolute inset-1 rounded-full bg-base-100"></div>
+          }
+        </div>
+
+        <!-- Card -->
+        <article
+          class="card bg-base-200/50 border border-base-300 w-full transition-colors hover:border-primary/30"
+        >
+          <div class="card-body gap-2 p-4">
+            <!-- Header row -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="badge badge-sm badge-outline">{{ exp.dateRange }}</span>
+                @if (exp.isCurrent) {
+                  <span class="badge badge-sm badge-success">✓ Actuel</span>
+                }
+              </div>
+              <app-icon-chevron-right class="text-base-content/30" size="sm" />
+            </div>
+
+            <!-- Job title -->
+            <h3 class="text-lg font-bold">{{ exp.title }}</h3>
+
+            <!-- Company -->
+            <p class="flex items-center gap-1.5 text-base-content/60 text-sm">
+              <app-icon-briefcase size="xs" />
+              {{ exp.company }}
+            </p>
+
+            <!-- Tech badges -->
+            <div class="flex flex-wrap gap-1.5 mt-1">
+              @for (tech of exp.technologies.slice(0, 3); track tech) {
+                <span class="badge badge-sm badge-primary badge-outline">{{ tech }}</span>
+              }
+              @if (exp.technologies.length > 3) {
+                <span class="badge badge-sm badge-outline">+{{ exp.technologies.length - 3 }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      </div>
+    }
+  </div>
+</section>

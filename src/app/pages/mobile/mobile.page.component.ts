@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header';
 import {
   HeroSectionComponent,
   AboutSectionComponent,
+  ExperienceSectionComponent,
   StackSectionComponent,
   ContactSectionComponent,
 } from '../../features';
@@ -16,6 +17,7 @@ import { LoadingPlaceholderComponent } from '@shared/components';
     HeaderComponent,
     HeroSectionComponent,
     AboutSectionComponent,
+    ExperienceSectionComponent,
     StackSectionComponent,
     ContactSectionComponent,
     LoadingPlaceholderComponent,
