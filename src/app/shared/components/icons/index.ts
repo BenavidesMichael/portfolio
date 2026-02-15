@@ -1,4 +1,5 @@
 export type { IconSize, IconWeight } from './icon.types';
+export { ArrowLeftIconComponent } from './arrow-left-icon.component';
 export { HomeIconComponent } from './home-icon.component';
 export { UserIconComponent } from './user-icon.component';
 export { CodeIconComponent } from './code-icon.component';

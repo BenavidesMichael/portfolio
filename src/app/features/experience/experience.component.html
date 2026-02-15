@@ -27,8 +27,9 @@
 
         <!-- Card -->
         <div class="timeline-end mb-6 w-full">
-          <article
-            class="card bg-base-200/50 border border-base-300 w-full transition-colors hover:border-primary/30"
+          <a
+            [routerLink]="['/experience', exp.id]"
+            class="card bg-base-200/50 border border-base-300 w-full transition-colors hover:border-primary/30 cursor-pointer block"
           >
             <div class="card-body gap-2 p-4">
               <!-- Header row -->
@@ -63,7 +64,7 @@
                 }
               </div>
             </div>
-          </article>
+          </a>
         </div>
 
         <!-- Line after dot -->
