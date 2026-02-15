@@ -1,0 +1,74 @@
+<section id="about" class="py-16 flex flex-col items-center gap-6">
+  <!-- Section header -->
+  <div class="flex flex-col items-center gap-2">
+    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+      <app-icon-user size="lg" />
+    </div>
+    <h2 class="text-3xl font-bold">A propos</h2>
+    <p class="text-base-content/60">Qui suis-je ?</p>
+  </div>
+
+  <!-- Bio card with expand/collapse -->
+  <div class="card bg-base-200/50 border border-base-300 w-full">
+    <div class="card-body">
+      <p class="text-base-content/80 leading-relaxed">
+        Developpeur Full Stack passionne avec 7 ans d'experience dans la creation d'applications web
+        modernes et performantes. Specialise dans l'ecosysteme TypeScript, je transforme<!---->
+        @if (!expanded()) {
+          <span>...</span>
+        }
+        @if (expanded()) {
+          <span
+            >les idees en solutions techniques robustes avec Angular et NestJS. Mon parcours unique
+            de .NET vers le Full TypeScript me donne une vision complete du developpement logiciel,
+            de l'architecture backend aux interfaces utilisateur soignees.</span
+          >
+        }
+      </p>
+      <button
+        class="text-primary text-sm font-medium self-start mt-1"
+        (click)="expanded.set(!expanded())"
+      >
+        {{ expanded() ? 'Lire moins ^' : 'Lire plus v' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Value badges -->
+  <div class="flex flex-wrap justify-center gap-2">
+    <span class="badge badge-lg bg-base-200 border-base-300">🔥 Passionne</span>
+    <span class="badge badge-lg bg-base-200 border-base-300">🏆 Adaptable</span>
+    <span class="badge badge-lg bg-base-200 border-base-300">💻 Apprenant continu</span>
+  </div>
+
+  <!-- Journey block -->
+  <div class="card bg-base-200/50 border border-base-300 w-full">
+    <div class="card-body gap-3">
+      <h3 class="font-bold text-primary">🎯 Mon parcours unique</h3>
+      <div class="flex items-center gap-3">
+        <span class="badge badge-outline">.NET</span>
+        <span class="text-base-content/50" aria-hidden="true">→</span>
+        <div>
+          <p class="text-primary font-semibold">Full TypeScript</p>
+          <p class="text-sm text-base-content/60">Angular + NestJS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats row -->
+  <div class="grid grid-cols-3 gap-4 w-full text-center">
+    <div>
+      <p class="text-3xl font-bold text-primary">7+</p>
+      <p class="text-sm text-base-content/60">Annees</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-secondary">50+</p>
+      <p class="text-sm text-base-content/60">Projets</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-accent">15+</p>
+      <p class="text-sm text-base-content/60">Clients</p>
+    </div>
+  </div>
+</section>
