@@ -15,5 +15,5 @@ export interface Skill {
   readonly name: string;
   readonly category: SkillCategory;
   readonly level: SkillLevel;
-  readonly icon?: string; // Optional icon name
+  readonly icon?: string;
 }

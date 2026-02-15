@@ -26,6 +26,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide scrollbar on mobile/tablet for native app feel */
+@media (max-width: 1023px) {
+  html {
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Safe area support for mobile devices with notch */
 .safe-area-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0);
