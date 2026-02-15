@@ -1,0 +1,98 @@
+@if (experience(); as exp) {
+  <!-- Back link -->
+  <a
+    routerLink="/experience"
+    class="btn btn-ghost btn-sm gap-1.5 mb-4"
+    aria-label="Retour au parcours"
+  >
+    <app-icon-arrow-left size="sm" />
+    <span>Retour</span>
+  </a>
+
+  <!-- Header -->
+  <header class="flex flex-col gap-3 mb-6">
+    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+      <app-icon-clock size="lg" />
+    </div>
+
+    <h1 class="text-3xl font-bold">{{ exp.title }}</h1>
+    <p class="flex items-center gap-1.5 text-base-content/70 text-lg">
+      <app-icon-briefcase size="sm" />
+      {{ exp.company }}
+    </p>
+
+    <!-- Meta badges -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="badge badge-outline">{{ exp.dateRange }}</span>
+      @if (exp.isCurrent) {
+        <span class="badge badge-success">✓ Actuel</span>
+      }
+      @if (exp.location) {
+        <span class="flex items-center gap-1 text-base-content/60 text-sm">
+          <app-icon-map-pin size="xs" />
+          {{ exp.location }}
+        </span>
+      }
+    </div>
+  </header>
+
+  <!-- Description card -->
+  <section class="card bg-base-200/50 border border-base-300 mb-4">
+    <div class="card-body gap-3">
+      <h2 class="card-title text-primary text-lg">📝 Description</h2>
+      <p class="text-base-content/80 leading-relaxed">{{ exp.description }}</p>
+    </div>
+  </section>
+
+  <!-- Responsibilities card -->
+  @if (exp.responsibilities.length > 0) {
+    <section class="card bg-base-200/50 border border-base-300 mb-4">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-primary text-lg">📋 Responsabilites</h2>
+        <ul class="flex flex-col gap-2">
+          @for (item of exp.responsibilities; track item) {
+            <li class="flex items-start gap-2 text-base-content/80">
+              <span class="text-primary mt-1 shrink-0">▸</span>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
+
+  <!-- Achievements card -->
+  @if (exp.achievements.length > 0) {
+    <section class="card bg-base-200/50 border border-base-300 mb-4">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-primary text-lg">🏆 Realisations</h2>
+        <ul class="flex flex-col gap-2">
+          @for (item of exp.achievements; track item) {
+            <li class="flex items-start gap-2 text-base-content/80">
+              <span class="text-success mt-1 shrink-0">✓</span>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
+
+  <!-- Technologies card -->
+  <section class="card bg-base-200/50 border border-base-300">
+    <div class="card-body gap-3">
+      <h2 class="card-title text-primary text-lg">💻 Technologies</h2>
+      <div class="flex flex-wrap gap-2">
+        @for (tech of exp.technologies; track tech) {
+          <span class="badge badge-primary badge-outline">{{ tech }}</span>
+        }
+      </div>
+    </div>
+  </section>
+} @else {
+  <!-- Not found state -->
+  <div class="flex flex-col items-center justify-center gap-4 py-16">
+    <p class="text-2xl font-bold">Experience introuvable</p>
+    <a routerLink="/" class="btn btn-primary">Retour a l'accueil</a>
+  </div>
+}
