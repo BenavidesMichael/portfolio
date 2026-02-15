@@ -27,7 +27,7 @@ import {
       <!-- Profile photo with "Disponible" badge -->
       <div class="relative">
         <div
-          class="size-32 rounded-full ring-4 ring-primary/30 bg-gradient-to-br from-primary/20 to-base-300 flex items-center justify-center overflow-hidden"
+          class="size-32 rounded-full ring-4 ring-primary/30 bg-linear-to-br from-primary/20 to-base-300 flex items-center justify-center overflow-hidden"
         >
           <span class="text-5xl">👨‍💻</span>
         </div>
