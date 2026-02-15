@@ -10,88 +10,90 @@
 
   <!-- Form card -->
   <div class="card bg-base-200/50 border border-base-300 w-full">
-    <form class="card-body gap-4" (submit)="handleSubmit($event)">
+    <form class="card-body gap-4" novalidate (submit)="handleSubmit($event)">
       <!-- Name -->
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Nom complet</legend>
+        <label class="fieldset-legend" for="contact-name">Nom complet</label>
         <input
+          id="contact-name"
           type="text"
-          class="input validator w-full"
+          class="input w-full"
           placeholder="Votre nom"
-          minlength="2"
-          maxlength="100"
-          [value]="name()"
-          (input)="name.set($any($event.target).value)"
-          required
+          [formField]="contactForm.name"
           aria-describedby="name-error"
         />
-        <p id="name-error" class="validator-hint" role="alert">
-          Veuillez entrer un nom (minimum 2 caracteres)
-        </p>
+        @if (contactForm.name().touched() && contactForm.name().invalid()) {
+          <p id="name-error" class="text-error text-sm mt-1" role="alert">
+            {{ contactForm.name().errors()[0].message }}
+          </p>
+        }
       </fieldset>
 
       <!-- Email -->
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Email</legend>
+        <label class="fieldset-legend" for="contact-email">Email</label>
         <input
+          id="contact-email"
           type="email"
-          class="input validator w-full"
+          class="input w-full"
           placeholder="votre@email.com"
-          [value]="email()"
-          (input)="email.set($any($event.target).value)"
-          required
+          [formField]="contactForm.email"
           aria-describedby="email-error"
         />
-        <p id="email-error" class="validator-hint" role="alert">
-          Veuillez entrer une adresse email valide
-        </p>
+        @if (contactForm.email().touched() && contactForm.email().invalid()) {
+          <p id="email-error" class="text-error text-sm mt-1" role="alert">
+            {{ contactForm.email().errors()[0].message }}
+          </p>
+        }
       </fieldset>
 
       <!-- Mission type -->
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Type de mission</legend>
+        <label class="fieldset-legend" for="contact-mission">Type de mission</label>
         <select
-          class="select validator w-full"
-          [value]="missionType()"
-          (change)="missionType.set($any($event.target).value)"
-          required
+          id="contact-mission"
+          class="select w-full"
+          [formField]="contactForm.missionType"
           aria-describedby="mission-error"
         >
-          <option value="" disabled>Selectionnez un type</option>
+          <option value="">Sélectionnez un type</option>
           <option value="fullstack">Full Stack</option>
           <option value="frontend">Frontend</option>
           <option value="backend">Backend</option>
           <option value="consulting">Consulting</option>
           <option value="other">Autre</option>
         </select>
-        <p id="mission-error" class="validator-hint" role="alert">
-          Veuillez selectionner un type de mission
-        </p>
+        @if (contactForm.missionType().touched() && contactForm.missionType().invalid()) {
+          <p id="mission-error" class="text-error text-sm mt-1" role="alert">
+            {{ contactForm.missionType().errors()[0].message }}
+          </p>
+        }
       </fieldset>
 
       <!-- Message -->
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Message</legend>
+        <label class="fieldset-legend" for="contact-message">Message</label>
         <textarea
-          class="textarea validator w-full h-32"
-          placeholder="Decrivez votre projet..."
-          minlength="10"
-          maxlength="500"
-          [value]="message()"
-          (input)="message.set($any($event.target).value)"
-          required
+          id="contact-message"
+          class="textarea w-full h-32"
+          placeholder="Décrivez votre projet..."
+          [formField]="contactForm.message"
           aria-describedby="message-error message-counter"
         ></textarea>
         <div class="flex justify-between">
-          <p id="message-error" class="validator-hint" role="alert">
-            Veuillez entrer un message (minimum 10 caracteres)
-          </p>
-          <span id="message-counter" class="fieldset-label">{{ messageLength() }}/500</span>
+          @if (contactForm.message().touched() && contactForm.message().invalid()) {
+            <p id="message-error" class="text-error text-sm mt-1" role="alert">
+              {{ contactForm.message().errors()[0].message }}
+            </p>
+          }
+          <span id="message-counter" class="fieldset-label ml-auto">
+            {{ contactForm.message().value().length }}/500
+          </span>
         </div>
       </fieldset>
 
       <!-- Submit -->
-      <button type="submit" class="btn btn-primary btn-block">
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="contactForm().invalid()">
         <app-icon-send size="sm" />
         Envoyer
       </button>
