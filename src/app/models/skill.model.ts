@@ -1,7 +1,13 @@
 /**
  * Skill category types
  */
-export type SkillCategory = 'frontend' | 'backend' | 'database' | 'tools' | 'soft-skills';
+export type SkillCategory =
+  | 'frontend'
+  | 'backend'
+  | 'database'
+  | 'cloud-devops'
+  | 'ai-llm'
+  | 'tools';
 
 /**
  * Skill proficiency level
@@ -16,5 +22,5 @@ export interface Skill {
   readonly category: SkillCategory;
   readonly level: SkillLevel;
   readonly progress: number;
-  readonly icon?: string;
+  readonly yearsOfExperience?: number;
 }
