@@ -24,64 +24,81 @@
     <!-- Meta badges -->
     <div class="flex flex-wrap items-center gap-2">
       <span class="badge badge-outline">{{ exp.dateRange }}</span>
+      <span class="badge badge-outline">{{ exp.contractType }}</span>
       @if (exp.isCurrent) {
         <span class="badge badge-success">✓ Actuel</span>
       }
-      @if (exp.location) {
-        <span class="flex items-center gap-1 text-base-content/60 text-sm">
-          <app-icon-map-pin size="xs" />
-          {{ exp.location }}
-        </span>
-      }
+      <span class="flex items-center gap-1 text-base-content/60 text-sm">
+        <app-icon-map-pin size="xs" />
+        {{ exp.location }}
+      </span>
     </div>
   </header>
+
+  <!-- Company description -->
+  @if (exp.companyDescription) {
+    <section class="card bg-base-200/50 border border-base-300 mb-4">
+      <div class="card-body gap-3">
+        <p class="text-base-content/70 text-sm italic">{{ exp.companyDescription }}</p>
+      </div>
+    </section>
+  }
 
   <!-- Description card -->
   <section class="card bg-base-200/50 border border-base-300 mb-4">
     <div class="card-body gap-3">
-      <h2 class="card-title text-primary text-lg">📝 Description</h2>
+      <h2 class="card-title text-primary text-lg">Description</h2>
       <p class="text-base-content/80 leading-relaxed">{{ exp.description }}</p>
     </div>
   </section>
 
-  <!-- Responsibilities card -->
-  @if (exp.responsibilities.length > 0) {
+  <!-- Missions / Projects -->
+  @for (mission of exp.missions; track mission.title) {
     <section class="card bg-base-200/50 border border-base-300 mb-4">
       <div class="card-body gap-3">
-        <h2 class="card-title text-primary text-lg">📋 Responsabilites</h2>
-        <ul class="flex flex-col gap-2">
-          @for (item of exp.responsibilities; track item) {
-            <li class="flex items-start gap-2 text-base-content/80">
-              <span class="text-primary mt-1 shrink-0">▸</span>
-              <span>{{ item }}</span>
-            </li>
-          }
-        </ul>
+        <h2 class="card-title text-primary text-lg">{{ mission.title }}</h2>
+
+        @if (mission.client) {
+          <p class="text-base-content/60 text-sm">
+            Client : <span class="font-medium text-base-content/80">{{ mission.client }}</span>
+            @if (mission.sector) {
+              <span class="text-base-content/40"> · {{ mission.sector }}</span>
+            }
+          </p>
+        }
+
+        @if (mission.description) {
+          <p class="text-base-content/70 text-sm italic">{{ mission.description }}</p>
+        }
+
+        <!-- Achievements -->
+        @if (mission.achievements.length > 0) {
+          <ul class="flex flex-col gap-2 mt-1">
+            @for (item of mission.achievements; track item) {
+              <li class="flex items-start gap-2 text-base-content/80">
+                <span class="text-success mt-1 shrink-0">✓</span>
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
+        }
+
+        <!-- Mission technologies -->
+        @if (mission.technologies.length > 0) {
+          <div class="flex flex-wrap gap-1.5 mt-2">
+            @for (tech of mission.technologies; track tech) {
+              <span class="badge badge-sm badge-primary badge-outline">{{ tech }}</span>
+            }
+          </div>
+        }
       </div>
     </section>
   }
 
-  <!-- Achievements card -->
-  @if (exp.achievements.length > 0) {
-    <section class="card bg-base-200/50 border border-base-300 mb-4">
-      <div class="card-body gap-3">
-        <h2 class="card-title text-primary text-lg">🏆 Realisations</h2>
-        <ul class="flex flex-col gap-2">
-          @for (item of exp.achievements; track item) {
-            <li class="flex items-start gap-2 text-base-content/80">
-              <span class="text-success mt-1 shrink-0">✓</span>
-              <span>{{ item }}</span>
-            </li>
-          }
-        </ul>
-      </div>
-    </section>
-  }
-
-  <!-- Technologies card -->
+  <!-- All technologies summary -->
   <section class="card bg-base-200/50 border border-base-300">
     <div class="card-body gap-3">
-      <h2 class="card-title text-primary text-lg">💻 Technologies</h2>
+      <h2 class="card-title text-primary text-lg">Stack technique</h2>
       <div class="flex flex-wrap gap-2">
         @for (tech of exp.technologies; track tech) {
           <span class="badge badge-primary badge-outline">{{ tech }}</span>

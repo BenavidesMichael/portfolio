@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import {
   GithubIconComponent,
   LinkedinIconComponent,
@@ -7,6 +7,7 @@ import {
   MapPinIconComponent,
   DownloadIconComponent,
 } from '@shared/components/icons';
+import { CvPdfService } from '@core/services';
 
 @Component({
   selector: 'app-hero-section',
@@ -21,4 +22,11 @@ import {
   ],
   templateUrl: './hero.component.html',
 })
-export class HeroSectionComponent {}
+export class HeroSectionComponent {
+  private readonly cvPdfService = inject(CvPdfService);
+  protected readonly isGenerating = this.cvPdfService.isGenerating;
+
+  protected downloadCv(): void {
+    this.cvPdfService.generateCv();
+  }
+}
