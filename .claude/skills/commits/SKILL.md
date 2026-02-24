@@ -66,10 +66,11 @@ build: Add production budget limits
 
 ## Workflow
 
-1. **Always run lint fix first:** `ng lint --fix`
-2. Stage changes: `git add .`
-3. Commit with a valid message: `git commit -m "type(scope): Subject"`
-4. Hooks run automatically:
+1. **Ensure Node.js >= v20.19 is active** — `ng lint` requires it. Switch with `nvm use 22` if needed.
+2. **Always run lint fix first:** `ng lint --fix`
+3. Stage changes: `git add <files>`
+4. Commit with a valid message: `git commit -m "type(scope): Subject"`
+5. Hooks run automatically:
    - `pre-commit` → lint check
    - `commit-msg` → message format validation
-5. If either fails, fix the issue and retry
+6. If either fails, fix the issue and retry — **never use `--no-verify`**
