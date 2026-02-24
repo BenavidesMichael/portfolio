@@ -8,11 +8,11 @@
     <p class="text-base-content/60">Mon stack technique</p>
   </div>
 
-  <!-- Filter tabs using DaisyUI join -->
-  <div class="join">
+  <!-- Filter tabs -->
+  <div class="flex flex-wrap justify-center gap-1.5 w-full">
     @for (filter of filters; track filter.value) {
       <button
-        class="btn btn-sm join-item"
+        class="btn btn-xs"
         [class]="activeFilter() === filter.value ? 'btn-primary' : 'btn-outline'"
         [attr.aria-pressed]="activeFilter() === filter.value"
         (click)="activeFilter.set(filter.value)"
