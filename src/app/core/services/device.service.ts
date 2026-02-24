@@ -22,7 +22,6 @@ export class DeviceService {
   );
 
   readonly device = this.currentBreakpoint;
-  readonly deviceType = this.currentBreakpoint;
   readonly isMobile = computed(() => this.currentBreakpoint() === Device.Mobile);
   readonly isTablet = computed(() => this.currentBreakpoint() === Device.Tablet);
   readonly isDesktop = computed(() => this.currentBreakpoint() === Device.Desktop);

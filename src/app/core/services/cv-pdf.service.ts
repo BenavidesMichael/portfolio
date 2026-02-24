@@ -1,4 +1,5 @@
 import { inject, Injectable, NgZone, signal } from '@angular/core';
+import type { SkillCategory } from '@models';
 import {
   PERSONAL_INFO,
   PROFILE_TEXT,
@@ -45,7 +46,7 @@ const EXPERIENCE_CONTENT_GAP = 10;
 
 const YIELD_EVERY_ITEMS = 16;
 
-const CATEGORY_LABELS: Record<string, string> = {
+const CATEGORY_LABELS: Record<SkillCategory, string> = {
   frontend: 'Frontend',
   backend: 'Backend',
   database: 'Bases de donnees',
@@ -571,9 +572,10 @@ export class CvPdfService {
   private groupSkillsByCategory() {
     const grouped = new Map<string, (typeof SKILLS)[number][]>();
     for (const skill of SKILLS) {
-      const label = CATEGORY_LABELS[skill.category] ?? skill.category;
-      if (!grouped.has(label)) grouped.set(label, []);
-      grouped.get(label)!.push(skill);
+      const label = CATEGORY_LABELS[skill.category];
+      const entry = grouped.get(label) ?? [];
+      grouped.set(label, entry);
+      entry.push(skill);
     }
     return grouped;
   }

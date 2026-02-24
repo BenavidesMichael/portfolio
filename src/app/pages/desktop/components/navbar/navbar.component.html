@@ -24,7 +24,7 @@
             [href]="link.href"
             [class.active]="activeLink() === link.label.toLowerCase()"
             class="text-sm font-medium"
-            (click)="setActiveLink(link.label.toLowerCase())"
+            (click)="activeLink.set(link.label.toLowerCase())"
           >
             {{ link.label }}
           </a>
