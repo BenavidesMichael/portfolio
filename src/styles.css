@@ -8,12 +8,15 @@
 @theme {
   --font-display: "Space Grotesk", sans-serif;
 
+  /* Layout Design Tokens */
+  --height-navbar: 5rem;
+  --width-nav-pill: 60rem;
+
   /* Icon Design Tokens */
   --icon-stroke-thin: 1;
   --icon-stroke-regular: 1.5;
   --icon-stroke-medium: 2;
   --icon-stroke-bold: 2.5;
-  --icon-stroke-default: var(--icon-stroke-medium);
 
   --icon-size-xs: 1rem;
   --icon-size-sm: 1.25rem;
@@ -46,6 +49,31 @@ html {
   /* Circular icon badge used in each section header */
   .section-icon {
     @apply size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary;
+  }
+
+  /* Decorative background glow blobs — pseudo-elements avoid arbitrary values in templates */
+  .bg-decorative::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 20%;
+    width: 50%;
+    height: 50%;
+    border-radius: 9999px;
+    background: color-mix(in oklch, var(--color-primary) 10%, transparent);
+    filter: blur(130px);
+  }
+
+  .bg-decorative::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    border-radius: 9999px;
+    background: color-mix(in oklch, var(--color-info) 5%, transparent);
+    filter: blur(120px);
   }
 
   /* Icons — inherit size and color from parent */
