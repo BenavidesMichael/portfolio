@@ -38,7 +38,9 @@
       "WebFetch(domain:docs.anthropic.com)",
       "Skill(code-review)",
       "WebFetch(domain:libpdf.documenso.com)",
-      "Bash(python -m json.tool:*)"
+      "Bash(python -m json.tool:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(nvm use:*)"
     ]
   }
 }
