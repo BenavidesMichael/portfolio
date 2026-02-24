@@ -19,6 +19,7 @@
           type="text"
           class="input w-full"
           placeholder="Votre nom"
+          autocomplete="name"
           [formField]="contactForm.name"
           aria-describedby="name-error"
         />
@@ -37,6 +38,8 @@
           type="email"
           class="input w-full"
           placeholder="votre@email.com"
+          autocomplete="email"
+          spellcheck="false"
           [formField]="contactForm.email"
           aria-describedby="email-error"
         />
@@ -76,7 +79,7 @@
         <textarea
           id="contact-message"
           class="textarea w-full h-32"
-          placeholder="Décrivez votre projet..."
+          placeholder="Décrivez votre projet…"
           [formField]="contactForm.message"
           aria-describedby="message-error message-counter"
         ></textarea>
@@ -86,14 +89,14 @@
               {{ contactForm.message().errors()[0].message }}
             </p>
           }
-          <span id="message-counter" class="fieldset-label ml-auto">
+          <span id="message-counter" class="fieldset-label ml-auto tabular-nums">
             {{ contactForm.message().value().length }}/500
           </span>
         </div>
       </fieldset>
 
       <!-- Submit -->
-      <button type="submit" class="btn btn-primary btn-block" [disabled]="contactForm().invalid()">
+      <button type="submit" class="btn btn-primary btn-block">
         <app-icon-send size="sm" />
         Envoyer
       </button>

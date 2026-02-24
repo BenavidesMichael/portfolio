@@ -11,7 +11,6 @@ import { SunIconComponent, MoonIconComponent } from '../icons';
       [class.swap-active]="themeService.isDark()"
       (click)="themeService.toggle()"
       [attr.aria-label]="themeService.isDark() ? 'Activer le mode clair' : 'Activer le mode sombre'"
-      aria-live="polite"
     >
       <!-- Sun icon (visible when dark mode is active → swap-on) -->
       <app-icon-sun class="swap-on" />

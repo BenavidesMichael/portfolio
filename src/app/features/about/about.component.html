@@ -28,19 +28,31 @@
         }
       </p>
       <button
-        class="text-primary text-sm font-medium self-start mt-1"
+        class="text-primary text-sm font-medium self-start mt-1 flex items-center gap-1"
+        [attr.aria-expanded]="expanded()"
         (click)="expanded.set(!expanded())"
       >
-        {{ expanded() ? 'Lire moins ^' : 'Lire plus v' }}
+        {{ expanded() ? 'Lire moins' : 'Lire plus' }}
+        <app-icon-chevron-right
+          size="sm"
+          class="transition-transform duration-200"
+          [ngClass]="expanded() ? '-rotate-90' : 'rotate-90'"
+        />
       </button>
     </div>
   </div>
 
   <!-- Value badges -->
   <div class="flex flex-wrap justify-center gap-2">
-    <span class="badge badge-lg bg-base-200 border-base-300">🔥 Passionne</span>
-    <span class="badge badge-lg bg-base-200 border-base-300">🏆 Adaptable</span>
-    <span class="badge badge-lg bg-base-200 border-base-300">💻 Apprenant continu</span>
+    <span class="badge badge-lg bg-base-200 border-base-300"
+      ><span aria-hidden="true">🔥</span> Passionné</span
+    >
+    <span class="badge badge-lg bg-base-200 border-base-300"
+      ><span aria-hidden="true">🏆</span> Adaptable</span
+    >
+    <span class="badge badge-lg bg-base-200 border-base-300"
+      ><span aria-hidden="true">💻</span> Apprenant continu</span
+    >
   </div>
 
   <!-- Journey block -->

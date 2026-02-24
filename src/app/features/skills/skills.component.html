@@ -14,6 +14,7 @@
       <button
         class="btn btn-sm join-item"
         [class]="activeFilter() === filter.value ? 'btn-primary' : 'btn-outline'"
+        [attr.aria-pressed]="activeFilter() === filter.value"
         (click)="activeFilter.set(filter.value)"
       >
         {{ filter.label }}

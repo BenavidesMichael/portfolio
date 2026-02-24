@@ -13,7 +13,7 @@
     @for (exp of experiences; track exp.id; let last = $last) {
       <li>
         <!-- Line before dot -->
-        <hr [class]="exp.isCurrent ? 'bg-primary' : 'bg-base-300'" />
+        <hr [class]="exp.isCurrent ? 'bg-primary' : 'bg-base-300'" aria-hidden="true" />
 
         <!-- Centered dot -->
         <div class="timeline-middle">

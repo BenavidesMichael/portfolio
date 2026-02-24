@@ -6,9 +6,11 @@
     <div
       class="size-32 rounded-full ring-4 ring-primary/30 bg-linear-to-br from-primary/20 to-base-300 flex items-center justify-center overflow-hidden"
     >
-      <span class="text-5xl">👨‍💻</span>
+      <span class="text-5xl" aria-hidden="true">👨‍💻</span>
     </div>
-    <span class="badge badge-success badge-sm absolute -bottom-1 right-0 animate-pulse">
+    <span
+      class="badge badge-success badge-sm absolute -bottom-1 right-0 animate-pulse motion-reduce:animate-none"
+    >
       Disponible
     </span>
   </div>
@@ -65,7 +67,7 @@
   >
     @if (isGenerating()) {
       <span class="loading loading-spinner loading-sm"></span>
-      Generation...
+      Génération…
     } @else {
       <app-icon-download />
       Telecharger CV
@@ -74,8 +76,8 @@
 
   <!-- Language switcher -->
   <div class="flex gap-2" role="group" aria-label="Language selection">
-    <button class="btn btn-sm btn-primary">FR</button>
-    <button class="btn btn-sm btn-outline">EN</button>
-    <button class="btn btn-sm btn-outline">ES</button>
+    <button class="btn btn-sm btn-primary" aria-pressed="true">FR</button>
+    <button class="btn btn-sm btn-outline" aria-pressed="false">EN</button>
+    <button class="btn btn-sm btn-outline" aria-pressed="false">ES</button>
   </div>
 </section>
