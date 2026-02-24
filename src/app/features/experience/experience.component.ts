@@ -12,6 +12,7 @@ import { EXPERIENCES } from '@data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, ClockIconComponent, BriefcaseIconComponent, ChevronRightIconComponent],
   templateUrl: './experience.component.html',
+  styleUrl: './experience.component.css',
 })
 export class ExperienceSectionComponent {
   protected readonly experiences = EXPERIENCES;

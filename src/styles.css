@@ -37,63 +37,77 @@ html {
   }
 }
 
-/* Safe area support for mobile devices with notch */
-.safe-area-bottom {
-  padding-bottom: env(safe-area-inset-bottom, 0);
+@layer components {
+  /* Card used across all feature sections */
+  .card-section {
+    @apply card bg-base-200/50 border border-base-300;
+  }
+
+  /* Circular icon badge used in each section header */
+  .section-icon {
+    @apply size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary;
+  }
+
+  /* Icons — inherit size and color from parent */
+  .icon {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+  }
+
+  .icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Icon Size Variants */
+  .icon[data-size='xs'] {
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+  }
+
+  .icon[data-size='sm'] {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+  }
+
+  .icon[data-size='md'] {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+  }
+
+  .icon[data-size='lg'] {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
+
+  .icon[data-size='xl'] {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
+  }
+
+  /* Icon Stroke Weight Variants */
+  .icon svg[data-weight='thin'] {
+    stroke-width: var(--icon-stroke-thin);
+  }
+
+  .icon svg[data-weight='regular'] {
+    stroke-width: var(--icon-stroke-regular);
+  }
+
+  .icon svg[data-weight='medium'] {
+    stroke-width: var(--icon-stroke-medium);
+  }
+
+  .icon svg[data-weight='bold'] {
+    stroke-width: var(--icon-stroke-bold);
+  }
 }
 
-/* Icons — inherit size and color from parent */
-.icon {
-  display: inline-flex;
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-}
-
-.icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Icon Size Variants */
-.icon[data-size="xs"] {
-  width: var(--icon-size-xs);
-  height: var(--icon-size-xs);
-}
-
-.icon[data-size="sm"] {
-  width: var(--icon-size-sm);
-  height: var(--icon-size-sm);
-}
-
-.icon[data-size="md"] {
-  width: var(--icon-size-md);
-  height: var(--icon-size-md);
-}
-
-.icon[data-size="lg"] {
-  width: var(--icon-size-lg);
-  height: var(--icon-size-lg);
-}
-
-.icon[data-size="xl"] {
-  width: var(--icon-size-xl);
-  height: var(--icon-size-xl);
-}
-
-/* Icon Stroke Weight Variants */
-.icon svg[data-weight="thin"] {
-  stroke-width: var(--icon-stroke-thin);
-}
-
-.icon svg[data-weight="regular"] {
-  stroke-width: var(--icon-stroke-regular);
-}
-
-.icon svg[data-weight="medium"] {
-  stroke-width: var(--icon-stroke-medium);
-}
-
-.icon svg[data-weight="bold"] {
-  stroke-width: var(--icon-stroke-bold);
+@layer utilities {
+  /* Safe area support for mobile devices with notch */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
 }

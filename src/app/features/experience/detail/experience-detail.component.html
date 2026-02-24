@@ -11,7 +11,7 @@
 
   <!-- Header -->
   <header class="flex flex-col gap-3 mb-6">
-    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+    <div class="section-icon">
       <app-icon-clock size="lg" />
     </div>
 
@@ -37,7 +37,7 @@
 
   <!-- Company description -->
   @if (exp.companyDescription) {
-    <section class="card bg-base-200/50 border border-base-300 mb-4">
+    <section class="card-section mb-4">
       <div class="card-body gap-3">
         <p class="text-base-content/70 text-sm italic">{{ exp.companyDescription }}</p>
       </div>
@@ -45,7 +45,7 @@
   }
 
   <!-- Description card -->
-  <section class="card bg-base-200/50 border border-base-300 mb-4">
+  <section class="card-section mb-4">
     <div class="card-body gap-3">
       <h2 class="card-title text-primary text-lg">Description</h2>
       <p class="text-base-content/80 leading-relaxed">{{ exp.description }}</p>
@@ -54,7 +54,7 @@
 
   <!-- Missions / Projects -->
   @for (mission of exp.missions; track mission.title) {
-    <section class="card bg-base-200/50 border border-base-300 mb-4">
+    <section class="card-section mb-4">
       <div class="card-body gap-3">
         <h2 class="card-title text-primary text-lg">{{ mission.title }}</h2>
 
@@ -96,7 +96,7 @@
   }
 
   <!-- All technologies summary -->
-  <section class="card bg-base-200/50 border border-base-300">
+  <section class="card-section">
     <div class="card-body gap-3">
       <h2 class="card-title text-primary text-lg">Stack technique</h2>
       <div class="flex flex-wrap gap-2">

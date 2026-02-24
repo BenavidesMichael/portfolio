@@ -1,7 +1,7 @@
 <section class="py-5 flex flex-col items-center gap-6">
   <!-- Section header -->
   <div class="flex flex-col items-center gap-2">
-    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+    <div class="section-icon">
       <app-icon-mail size="lg" />
     </div>
     <h2 class="text-3xl font-bold">Contact</h2>
@@ -9,7 +9,7 @@
   </div>
 
   <!-- Form card -->
-  <div class="card bg-base-200/50 border border-base-300 w-full">
+  <div class="card-section w-full">
     <form class="card-body gap-4" novalidate (submit)="handleSubmit($event)">
       <!-- Name -->
       <fieldset class="fieldset">

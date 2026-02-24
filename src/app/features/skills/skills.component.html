@@ -1,7 +1,7 @@
 <section class="py-5 flex flex-col items-center gap-6">
   <!-- Section header -->
   <div class="flex flex-col items-center gap-2">
-    <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+    <div class="section-icon">
       <app-icon-code size="lg" />
     </div>
     <h2 class="text-3xl font-bold">Competences</h2>
@@ -25,7 +25,7 @@
   <!-- Skills grid -->
   <div class="grid grid-cols-2 gap-3 w-full">
     @for (skill of filteredSkills(); track skill.name) {
-      <article class="card bg-base-200/50 border border-base-300">
+      <article class="card-section">
         <div class="card-body gap-2 p-4">
           <!-- Skill icon placeholder + name -->
           <div class="flex items-center gap-2">
