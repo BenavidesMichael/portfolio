@@ -21,14 +21,14 @@
       <li>
         <a
           [href]="item.href"
-          [class.active]="isActive(item)"
+          [class.active]="activeHref() === item.href"
           (click)="navigate(item)"
-          [attr.aria-current]="isActive(item) ? 'page' : null"
+          [attr.aria-current]="activeHref() === item.href ? 'page' : null"
         >
           @if (item.icon) {
             <app-nav-icon [name]="item.icon" />
           }
-          {{ item.label }}
+          {{ item.label | transloco }}
         </a>
       </li>
     }
@@ -38,10 +38,12 @@
   <div class="p-4 border-t border-base-300">
     <!-- Status -->
     <div class="flex items-center justify-between mb-3">
-      <span class="text-xs font-medium text-base-content/50">Open to work</span>
+      <span class="text-xs font-medium text-base-content/50">{{
+        'nav.open-to-work' | transloco
+      }}</span>
       <span class="flex items-center gap-1.5">
         <span class="badge badge-xs badge-success animate-pulse motion-reduce:animate-none"></span>
-        <span class="text-xs text-success font-medium">Available</span>
+        <span class="text-xs text-success font-medium">{{ 'nav.available' | transloco }}</span>
       </span>
     </div>
 

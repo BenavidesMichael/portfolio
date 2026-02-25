@@ -22,11 +22,11 @@
         <li>
           <a
             [href]="link.href"
-            [class.active]="activeLink() === link.label.toLowerCase()"
+            [class.active]="activeLink() === link.href"
             class="text-sm font-medium"
-            (click)="activeLink.set(link.label.toLowerCase())"
+            (click)="activeLink.set(link.href)"
           >
-            {{ link.label }}
+            {{ link.label | transloco }}
           </a>
         </li>
       }
@@ -35,12 +35,7 @@
     <!-- Right Section: Lang, Theme, Social -->
     <div class="flex items-center gap-2">
       <!-- Language Selector -->
-      <button
-        class="btn btn-ghost btn-sm rounded-full text-xs font-bold tracking-wide"
-        aria-label="Change language"
-      >
-        EN
-      </button>
+      <app-language-switcher />
 
       <div class="divider divider-horizontal mx-0 w-0"></div>
 
