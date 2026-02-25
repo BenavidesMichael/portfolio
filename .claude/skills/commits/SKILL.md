@@ -4,9 +4,9 @@ This project uses **Husky** + **commitlint** (`@commitlint/config-conventional`)
 
 ## Hooks
 
-| Hook | Action |
-|------|--------|
-| `pre-commit` | Runs `npm run lint` (ESLint via `ng lint`) |
+| Hook         | Action                                           |
+| ------------ | ------------------------------------------------ |
+| `pre-commit` | Runs `npm run lint` (ESLint via `ng lint`)       |
 | `commit-msg` | Runs `commitlint` to validate the message format |
 
 Both hooks **must pass** before a commit is accepted.
@@ -19,28 +19,28 @@ type(scope): Subject in sentence case
 
 ### Rules
 
-| Rule | Constraint |
-|------|-----------|
-| `type` | Required — must be one of the allowed types below |
-| `scope` | Optional — feature area in parentheses (e.g., `mobile`, `hero`, `desktop`) |
-| `subject-case` | **sentence-case** — first letter uppercase, rest lowercase (e.g., `Add theme toggle`) |
-| `subject-max-length` | Maximum **100** characters |
+| Rule                 | Constraint                                                                            |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| `type`               | Required — must be one of the allowed types below                                     |
+| `scope`              | Optional — feature area in parentheses (e.g., `mobile`, `hero`, `desktop`)            |
+| `subject-case`       | **sentence-case** — first letter uppercase, rest lowercase (e.g., `Add theme toggle`) |
+| `subject-max-length` | Maximum **100** characters                                                            |
 
 ### Allowed Types
 
-| Type | Usage |
-|------|-------|
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `docs` | Documentation only |
-| `style` | Formatting, whitespace — no code logic change |
-| `refactor` | Code restructuring without behavior change |
-| `perf` | Performance improvement |
-| `test` | Adding or updating tests |
-| `build` | Build system or external dependency changes |
-| `ci` | CI/CD pipeline changes |
-| `chore` | Maintenance tasks, tooling |
-| `revert` | Reverting a previous commit |
+| Type       | Usage                                         |
+| ---------- | --------------------------------------------- |
+| `feat`     | New feature                                   |
+| `fix`      | Bug fix                                       |
+| `docs`     | Documentation only                            |
+| `style`    | Formatting, whitespace — no code logic change |
+| `refactor` | Code restructuring without behavior change    |
+| `perf`     | Performance improvement                       |
+| `test`     | Adding or updating tests                      |
+| `build`    | Build system or external dependency changes   |
+| `ci`       | CI/CD pipeline changes                        |
+| `chore`    | Maintenance tasks, tooling                    |
+| `revert`   | Reverting a previous commit                   |
 
 ## Examples
 
@@ -57,12 +57,12 @@ build: Add production budget limits
 
 ## Common Mistakes
 
-| Wrong | Why | Correct |
-|-------|-----|---------|
+| Wrong                                         | Why                               | Correct                                       |
+| --------------------------------------------- | --------------------------------- | --------------------------------------------- |
 | `feat(mobile): refactor and add theme toggle` | Not sentence-case (lowercase `r`) | `feat(mobile): Refactor and add theme toggle` |
-| `feat: added new component` | Past tense — use imperative | `feat: Add new component` |
-| `Feat(hero): Add photo` | Type must be lowercase | `feat(hero): Add photo` |
-| `feat(hero) Add photo` | Missing colon after scope | `feat(hero): Add photo` |
+| `feat: added new component`                   | Past tense — use imperative       | `feat: Add new component`                     |
+| `Feat(hero): Add photo`                       | Type must be lowercase            | `feat(hero): Add photo`                       |
+| `feat(hero) Add photo`                        | Missing colon after scope         | `feat(hero): Add photo`                       |
 
 ## Workflow
 

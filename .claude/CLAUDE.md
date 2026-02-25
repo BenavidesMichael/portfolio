@@ -5,6 +5,7 @@ Senior Front-End Architect mindset. Code quality expected at FAANG/Google level.
 ## Project
 
 Portfolio-CV technique personnel. 3 adaptive layouts (not just responsive):
+
 - **Mobile** (0-639px): App-like, bottom dock
 - **Tablet** (640-1023px): Split view, sidebar fixe
 - **Desktop** (>=1024px): Landing page, navbar sticky

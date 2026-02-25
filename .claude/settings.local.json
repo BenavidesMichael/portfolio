@@ -40,7 +40,14 @@
       "WebFetch(domain:libpdf.documenso.com)",
       "Bash(python -m json.tool:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(nvm use:*)"
+      "Bash(nvm use:*)",
+      "WebFetch(domain:jsverse.gitbook.io)",
+      "Bash(find:*)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:phrase.com)",
+      "Bash(npm info:*)",
+      "Bash(npm install:*)",
+      "Bash(ng build:*)"
     ]
   }
 }

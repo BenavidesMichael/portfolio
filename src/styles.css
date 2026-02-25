@@ -6,7 +6,7 @@
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
 
 @theme {
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
 
   /* Layout Design Tokens */
   --height-navbar: 5rem;

@@ -1,7 +1,7 @@
 ---
 paths:
-  - "src/**/*.ts"
-  - "src/**/*.html"
+  - 'src/**/*.ts'
+  - 'src/**/*.html'
 ---
 
 # Architecture Rules — Angular Portfolio
@@ -45,8 +45,8 @@ src/app/
 
 ## Breakpoints
 
-| Device | Range | Layout | Navigation |
-|--------|-------|--------|------------|
-| Mobile | 0-639px | App-like | Bottom dock |
-| Tablet | 640-1023px | Split view | Sidebar fixe gauche |
-| Desktop | >= 1024px | Landing page | Top navbar sticky |
+| Device  | Range      | Layout       | Navigation          |
+| ------- | ---------- | ------------ | ------------------- |
+| Mobile  | 0-639px    | App-like     | Bottom dock         |
+| Tablet  | 640-1023px | Split view   | Sidebar fixe gauche |
+| Desktop | >= 1024px  | Landing page | Top navbar sticky   |

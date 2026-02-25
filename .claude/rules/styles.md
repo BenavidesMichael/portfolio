@@ -1,8 +1,8 @@
 ---
 paths:
-  - "src/**/*.css"
-  - "src/**/*.html"
-  - "src/**/*.component.ts"
+  - 'src/**/*.css'
+  - 'src/**/*.html'
+  - 'src/**/*.component.ts'
 ---
 
 # Styling Rules — Tailwind v4 + DaisyUI v5 + Angular 21
@@ -15,12 +15,12 @@ Reference: https://daisyui.com/components/
 
 ## CSS Architecture Per File Type
 
-| File | What goes here | Example |
-|------|---------------|---------|
-| **Template (.html)** | Static Tailwind utilities, `dark:`, `data-[active]:` | `class="bg-white dark:bg-surface-dark"` |
-| **Component CSS** | Dynamic state-based styles (raw CSS), `:host-context()` for theme | `nav.scrolled { background: var(--color-surface-dark); }` |
-| **Global styles.css** | `@apply`, `@theme`, `@custom-variant`, shared classes | `.glass-panel { @apply backdrop-blur-md; }` |
-| **TypeScript** | ZERO styling logic, only boolean state signals | `isScrolled = signal(false)` |
+| File                  | What goes here                                                    | Example                                                   |
+| --------------------- | ----------------------------------------------------------------- | --------------------------------------------------------- |
+| **Template (.html)**  | Static Tailwind utilities, `dark:`, `data-[active]:`              | `class="bg-white dark:bg-surface-dark"`                   |
+| **Component CSS**     | Dynamic state-based styles (raw CSS), `:host-context()` for theme | `nav.scrolled { background: var(--color-surface-dark); }` |
+| **Global styles.css** | `@apply`, `@theme`, `@custom-variant`, shared classes             | `.glass-panel { @apply backdrop-blur-md; }`               |
+| **TypeScript**        | ZERO styling logic, only boolean state signals                    | `isScrolled = signal(false)`                              |
 
 ## NEVER DO
 
@@ -41,8 +41,8 @@ Reference: https://daisyui.com/components/
 
 ```html
 <!-- Use data attribute + Tailwind modifier (not boolean bindings) -->
-[attr.data-active]="isActive(item.href) ? true : null"
-class="text-slate-600 dark:text-slate-400 data-[active]:text-primary"
+[attr.data-active]="isActive(item.href) ? true : null" class="text-slate-600 dark:text-slate-400
+data-[active]:text-primary"
 ```
 
 ## Component CSS (when needed)

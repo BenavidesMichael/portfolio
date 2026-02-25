@@ -23,13 +23,12 @@ Reach ──────┼─────────────────�
 ### Layer declaration for ITCSS
 
 ```css
-@layer
-  settings,   /* custom properties / design tokens */
+@layer settings,   /* custom properties / design tokens */
   generic,    /* normalize, reset */
   elements,   /* bare element defaults */
   objects,    /* layout patterns */
   components, /* UI components */
-  utilities;  /* atomic overrides */
+  utilities; /* atomic overrides */
 ```
 
 Settings don't produce CSS output directly, so they're often un-layered or placed in `:root` blocks outside layers.
@@ -56,18 +55,19 @@ styles/
 ```
 
 **main.css:**
+
 ```css
 /* 1. Establish the full layer order */
 @layer generic, elements, objects, components, utilities;
 
 /* 2. Import files into their layers */
-@import url('generic/reset.css')        layer(generic);
-@import url('generic/typography.css')   layer(generic);
-@import url('elements/links.css')       layer(elements);
-@import url('elements/forms.css')       layer(elements);
-@import url('components/button.css')    layer(components);
-@import url('components/card.css')      layer(components);
-@import url('utilities/spacing.css')    layer(utilities);
+@import url('generic/reset.css') layer(generic);
+@import url('generic/typography.css') layer(generic);
+@import url('elements/links.css') layer(elements);
+@import url('elements/forms.css') layer(elements);
+@import url('components/button.css') layer(components);
+@import url('components/card.css') layer(components);
+@import url('utilities/spacing.css') layer(utilities);
 ```
 
 ---
@@ -103,24 +103,29 @@ For design systems that need fine-grained internal layering:
 ## Third-Party Integration Recipes
 
 ### Tailwind CSS
+
 ```css
 /* tailwind.css (modified) */
 @layer tw-base, tw-components, tw-utilities;
 
-@import 'tailwindcss/base'       layer(tw-base);
+@import 'tailwindcss/base' layer(tw-base);
 @import 'tailwindcss/components' layer(tw-components);
-@import 'tailwindcss/utilities'  layer(tw-utilities);
+@import 'tailwindcss/utilities' layer(tw-utilities);
 ```
+
 Or using Tailwind's native `@layer` (Tailwind v3+ respects existing `@layer` blocks).
 
 ### Material UI / CSS-in-JS
+
 Many CSS-in-JS tools inject styles without layers. Wrap them in a layer by adding:
+
 ```css
 /* Force injected styles into a layer using a wrapper */
 @layer mui {
   /* MUI styles will be captured here if configured */
 }
 ```
+
 Check the tool's documentation for native layer support.
 
 ---
@@ -138,20 +143,30 @@ Check the tool's documentation for native layer support.
 }
 
 @layer themes.light {
-  :root { --color-bg: #fafafa; --color-text: #111; }
+  :root {
+    --color-bg: #fafafa;
+    --color-text: #111;
+  }
 }
 
 @layer themes.dark {
   @media (prefers-color-scheme: dark) {
-    :root { --color-bg: #111; --color-text: #fafafa; }
+    :root {
+      --color-bg: #111;
+      --color-text: #fafafa;
+    }
   }
   [data-theme='dark'] {
-    --color-bg: #111; --color-text: #fafafa;
+    --color-bg: #111;
+    --color-text: #fafafa;
   }
 }
 
 @layer components {
-  body { background: var(--color-bg); color: var(--color-text); }
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
 }
 ```
 
@@ -163,6 +178,6 @@ Check the tool's documentation for native layer support.
 2. **Print the layer stack** — inspect order with `@layer` statement previews.
 3. **Use named layers** — anonymous layers are invisible in DevTools.
 4. **Unexpected `!important` behaviour?** — Remember important layers are reversed.
-   A `!important` rule in a *low* layer beats a `!important` rule in a *high* layer.
+   A `!important` rule in a _low_ layer beats a `!important` rule in a _high_ layer.
 5. **Third-party style winning unexpectedly?** — It's probably un-layered. Wrap with
    `@import url('lib.css') layer(lib);` to give it a controlled priority.

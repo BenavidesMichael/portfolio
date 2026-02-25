@@ -5,20 +5,20 @@ module.exports = {
       2,
       'always',
       [
-        'feat',     // Nouvelle fonctionnalité
-        'fix',      // Correction de bug
-        'docs',     // Documentation
-        'style',    // Formatage, sans changement de code
+        'feat', // Nouvelle fonctionnalité
+        'fix', // Correction de bug
+        'docs', // Documentation
+        'style', // Formatage, sans changement de code
         'refactor', // Refactoring
-        'perf',     // Amélioration de performance
-        'test',     // Ajout de tests
-        'build',    // Changements du système de build
-        'ci',       // Changements CI/CD
-        'chore',    // Tâches diverses
-        'revert'    // Annulation de commit
-      ]
+        'perf', // Amélioration de performance
+        'test', // Ajout de tests
+        'build', // Changements du système de build
+        'ci', // Changements CI/CD
+        'chore', // Tâches diverses
+        'revert', // Annulation de commit
+      ],
     ],
     'subject-case': [2, 'always', 'sentence-case'],
-    'subject-max-length': [2, 'always', 100]
-  }
+    'subject-max-length': [2, 'always', 100],
+  },
 };

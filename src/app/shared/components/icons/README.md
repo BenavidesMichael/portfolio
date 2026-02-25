@@ -14,22 +14,22 @@ Standardized icon component system with design tokens for consistent sizes and s
 
 ### Size Variants
 
-| Size | Value | Usage | Example |
-|:---|:---:|:---|:---|
-| `xs` | 16px (1rem) | Small inline icons | Badge icons, table cells |
-| `sm` | 20px (1.25rem) | Body content icons | List items, form labels |
-| `md` | 24px (1.5rem) | **Default** - Navigation | Navbar, footer, bottom nav |
-| `lg` | 32px (2rem) | Feature highlights | Section headers, cards |
-| `xl` | 40px (2.5rem) | Hero sections | Landing page, splash screens |
+| Size |     Value      | Usage                    | Example                      |
+| :--- | :------------: | :----------------------- | :--------------------------- |
+| `xs` |  16px (1rem)   | Small inline icons       | Badge icons, table cells     |
+| `sm` | 20px (1.25rem) | Body content icons       | List items, form labels      |
+| `md` | 24px (1.5rem)  | **Default** - Navigation | Navbar, footer, bottom nav   |
+| `lg` |  32px (2rem)   | Feature highlights       | Section headers, cards       |
+| `xl` | 40px (2.5rem)  | Hero sections            | Landing page, splash screens |
 
 ### Stroke Weight Variants
 
-| Weight | Value | Usage | Example |
-|:---|:---:|:---|:---|
-| `thin` | 1 | Secondary icons, decorative | Background patterns |
-| `regular` | 1.5 | Body content icons | Text inline icons |
-| `medium` | 2 | **Default** - Navigation | Primary actions |
-| `bold` | 2.5 | Emphasis, CTAs | Hero buttons, alerts |
+| Weight    | Value | Usage                       | Example              |
+| :-------- | :---: | :-------------------------- | :------------------- |
+| `thin`    |   1   | Secondary icons, decorative | Background patterns  |
+| `regular` |  1.5  | Body content icons          | Text inline icons    |
+| `medium`  |   2   | **Default** - Navigation    | Primary actions      |
+| `bold`    |  2.5  | Emphasis, CTAs              | Hero buttons, alerts |
 
 ---
 
@@ -95,16 +95,16 @@ Standardized icon component system with design tokens for consistent sizes and s
 
 ## 📋 Available Icons
 
-| Component | Selector | Description | Usage |
-|:---|:---|:---|:---|
-| `GithubIconComponent` | `app-icon-github` | GitHub logo | Social links, profile |
-| `MailIconComponent` | `app-icon-mail` | Email envelope | Contact, forms |
-| `HomeIconComponent` | `app-icon-home` | House | Navigation, home link |
-| `UserIconComponent` | `app-icon-user` | User profile | Account, profile |
-| `CodeIconComponent` | `app-icon-code` | Code brackets | Tech stack, projects |
-| `TerminalIconComponent` | `app-icon-terminal` | Terminal prompt | CLI, development |
-| `SunIconComponent` | `app-icon-sun` | Sun | Light theme toggle |
-| `MoonIconComponent` | `app-icon-moon` | Moon | Dark theme toggle |
+| Component               | Selector            | Description     | Usage                 |
+| :---------------------- | :------------------ | :-------------- | :-------------------- |
+| `GithubIconComponent`   | `app-icon-github`   | GitHub logo     | Social links, profile |
+| `MailIconComponent`     | `app-icon-mail`     | Email envelope  | Contact, forms        |
+| `HomeIconComponent`     | `app-icon-home`     | House           | Navigation, home link |
+| `UserIconComponent`     | `app-icon-user`     | User profile    | Account, profile      |
+| `CodeIconComponent`     | `app-icon-code`     | Code brackets   | Tech stack, projects  |
+| `TerminalIconComponent` | `app-icon-terminal` | Terminal prompt | CLI, development      |
+| `SunIconComponent`      | `app-icon-sun`      | Sun             | Light theme toggle    |
+| `MoonIconComponent`     | `app-icon-moon`     | Moon            | Dark theme toggle     |
 
 ---
 
@@ -230,25 +230,48 @@ Located in `src/styles.css`:
   --icon-stroke-default: var(--icon-stroke-medium);
 
   /* Icon Sizes (Semantic) */
-  --icon-size-xs: 1rem;      /* 16px */
-  --icon-size-sm: 1.25rem;   /* 20px */
-  --icon-size-md: 1.5rem;    /* 24px */
-  --icon-size-lg: 2rem;      /* 32px */
-  --icon-size-xl: 2.5rem;    /* 40px */
+  --icon-size-xs: 1rem; /* 16px */
+  --icon-size-sm: 1.25rem; /* 20px */
+  --icon-size-md: 1.5rem; /* 24px */
+  --icon-size-lg: 2rem; /* 32px */
+  --icon-size-xl: 2.5rem; /* 40px */
 }
 
 /* Size Variants */
-.icon[data-size="xs"] { width: var(--icon-size-xs); height: var(--icon-size-xs); }
-.icon[data-size="sm"] { width: var(--icon-size-sm); height: var(--icon-size-sm); }
-.icon[data-size="md"] { width: var(--icon-size-md); height: var(--icon-size-md); }
-.icon[data-size="lg"] { width: var(--icon-size-lg); height: var(--icon-size-lg); }
-.icon[data-size="xl"] { width: var(--icon-size-xl); height: var(--icon-size-xl); }
+.icon[data-size='xs'] {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+}
+.icon[data-size='sm'] {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+.icon[data-size='md'] {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+.icon[data-size='lg'] {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+.icon[data-size='xl'] {
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+}
 
 /* Weight Variants */
-.icon svg[data-weight="thin"] { stroke-width: var(--icon-stroke-thin); }
-.icon svg[data-weight="regular"] { stroke-width: var(--icon-stroke-regular); }
-.icon svg[data-weight="medium"] { stroke-width: var(--icon-stroke-medium); }
-.icon svg[data-weight="bold"] { stroke-width: var(--icon-stroke-bold); }
+.icon svg[data-weight='thin'] {
+  stroke-width: var(--icon-stroke-thin);
+}
+.icon svg[data-weight='regular'] {
+  stroke-width: var(--icon-stroke-regular);
+}
+.icon svg[data-weight='medium'] {
+  stroke-width: var(--icon-stroke-medium);
+}
+.icon svg[data-weight='bold'] {
+  stroke-width: var(--icon-stroke-bold);
+}
 ```
 
 ---
@@ -342,7 +365,8 @@ export class MyComponent {}
 <!-- ❌ Hardcoded Tailwind classes -->
 <app-icon-github class="size-6" />
 <app-icon-mail class="w-5 h-5" />
-<app-icon-home />  <!-- Inherits parent font-size -->
+<app-icon-home />
+<!-- Inherits parent font-size -->
 ```
 
 ### After (Standardized)
@@ -361,6 +385,7 @@ export class MyComponent {}
 ### Planned Features
 
 1. **Dynamic Icon Loader**
+
    ```html
    <app-icon name="github" size="md" weight="medium" />
    ```

@@ -21,39 +21,53 @@ CSS Cascade Layers (`@layer`) give authors **explicit, named layers of priority*
 ## Core Syntax
 
 ### 1. Declare layer order (do this first!)
+
 ```css
 @layer reset, defaults, themes, patterns, components, utilities;
 ```
+
 Place at the very top. First appearance = lowest priority. Last = highest (before un-layered).
 
 ### 2. Block rule — add styles to a layer
+
 ```css
 @layer utilities {
-  [data-color='brand'] { color: var(--brand, rebeccapurple); }
+  [data-color='brand'] {
+    color: var(--brand, rebeccapurple);
+  }
 }
 @layer defaults {
-  a:any-link { color: maroon; } /* loses to utilities despite higher specificity */
+  a:any-link {
+    color: maroon;
+  } /* loses to utilities despite higher specificity */
 }
 ```
 
 ### 3. Layered @import
+
 ```css
 @import url('reset.css') layer(reset);
 @import url('framework.css') layer(components.framework);
 ```
 
 ### 4. Nested (grouped) layers
+
 ```css
 @layer components {
   @layer defaults, structure, themes, utilities;
 }
 /* Or use dot notation: */
-@layer components.defaults { /* ... */ }
+@layer components.defaults {
+  /* ... */
+}
 ```
 
 ### 5. Anonymous layers (use sparingly)
+
 ```css
-@layer { /* unique, unreferenceable */ }
+@layer {
+  /* unique, unreferenceable */
+}
 @import url('tool.css') layer; /* anonymous import */
 ```
 
@@ -86,11 +100,17 @@ Rolls back to the previous layer's value (like `revert` but scoped to layers):
 
 ```css
 @layer theme {
-  a { color: var(--brand, purple); }
-  .no-theme { color: revert-layer; } /* uses 'default' layer value */
+  a {
+    color: var(--brand, purple);
+  }
+  .no-theme {
+    color: revert-layer;
+  } /* uses 'default' layer value */
 }
 @layer default {
-  a { color: maroon; }
+  a {
+    color: maroon;
+  }
 }
 ```
 
@@ -99,22 +119,24 @@ Rolls back to the previous layer's value (like `revert` but scoped to layers):
 ## Recommended Architecture Patterns
 
 ### Standard layer stack
+
 ```css
-@layer
-  reset,        /* normalize / CSS Remedy */
+@layer reset,        /* normalize / CSS Remedy */
   defaults,     /* element base styles */
   themes,       /* light/dark, brand tokens */
   patterns,     /* reusable UI patterns */
   layouts,      /* page-level structures */
   components,   /* scoped UI components */
-  utilities;    /* atomic helpers — highest layered priority */
+  utilities; /* atomic helpers — highest layered priority */
 /* Un-layered overrides sit above all layers */
 ```
 
 ### ITCSS-inspired layers (for large projects)
+
 See `references/architecture.md` for a detailed breakdown.
 
 ### Integrating third-party tools
+
 ```css
 @layer reset, type, theme, components, utilities;
 
@@ -130,6 +152,7 @@ See `references/architecture.md` for a detailed breakdown.
 ## Common Patterns & Recipes
 
 ### Low-priority reset that's easy to override
+
 ```css
 /* Option A: wrap the entire reset */
 @layer reset {
@@ -139,32 +162,60 @@ See `references/architecture.md` for a detailed breakdown.
 /* Option B: import into a layer */
 @import url('reset.css') layer(reset);
 ```
+
 No need to `:where()` every selector anymore.
 
 ### Protect component internals
+
 ```css
 @layer components {
   @layer base, variants, states;
-  
-  @layer base { .card { background: white; } }
-  @layer variants { .card--dark { background: #111; } }
-  @layer states { .card:hover { transform: scale(1.02); } }
+
+  @layer base {
+    .card {
+      background: white;
+    }
+  }
+  @layer variants {
+    .card--dark {
+      background: #111;
+    }
+  }
+  @layer states {
+    .card:hover {
+      transform: scale(1.02);
+    }
+  }
 }
 ```
 
 ### Theme overrides without !important
+
 ```css
 @layer defaults, themes, components;
 
-@layer defaults { button { color: black; background: gray; } }
-@layer themes   { button { color: white; background: blue; } }
+@layer defaults {
+  button {
+    color: black;
+    background: gray;
+  }
+}
+@layer themes {
+  button {
+    color: white;
+    background: blue;
+  }
+}
 /* themes beats defaults — no !important needed */
 ```
 
 ### Conditional feature flag override
+
 ```css
 @layer utilities {
-  .feature-new-ui button { background: hotpink; }
+  .feature-new-ui button {
+    background: hotpink;
+  }
 }
 /* utilities wins over components regardless of specificity */
 ```
@@ -173,13 +224,13 @@ No need to `:where()` every selector anymore.
 
 ## ⚠️ Gotchas & Best Practices
 
-| ✅ Do | ❌ Don't |
-|---|---|
-| Declare all layers at the top in one statement | Let layer order be determined by import order alone |
-| Use `revert-layer` instead of `!important` to "undo" a layer | Overuse `!important` inside layers (it flips priority) |
-| Name layers semantically (reset, defaults, utilities…) | Create too many granular layers — keep it 5–10 at top level |
-| Import 3rd-party CSS into a named layer | Let framework CSS be un-layered (it will override everything) |
-| Nest sub-layers inside components for fine control | Use anonymous layers for anything you'll need to reference later |
+| ✅ Do                                                        | ❌ Don't                                                         |
+| ------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Declare all layers at the top in one statement               | Let layer order be determined by import order alone              |
+| Use `revert-layer` instead of `!important` to "undo" a layer | Overuse `!important` inside layers (it flips priority)           |
+| Name layers semantically (reset, defaults, utilities…)       | Create too many granular layers — keep it 5–10 at top level      |
+| Import 3rd-party CSS into a named layer                      | Let framework CSS be un-layered (it will override everything)    |
+| Nest sub-layers inside components for fine control           | Use anonymous layers for anything you'll need to reference later |
 
 ---
 
@@ -193,21 +244,35 @@ As of 2024: **all modern browsers** support `@layer` (Chrome 99+, Firefox 97+, S
 
 ```css
 /* 1. Declare order */
-@layer A, B, C;          /* A=lowest, C=highest layered, un-layered=top */
+@layer A, B, C; /* A=lowest, C=highest layered, un-layered=top */
 
 /* 2. Add styles */
-@layer A { .x { color: red; } }
-@layer C { .x { color: blue; } }  /* blue wins (C > A) */
+@layer A {
+  .x {
+    color: red;
+  }
+}
+@layer C {
+  .x {
+    color: blue;
+  }
+} /* blue wins (C > A) */
 
 /* 3. Import */
 @import url('file.css') layer(A);
 
 /* 4. Nest */
-@layer A { @layer sub1, sub2; }
-@layer A.sub1 { /* ... */ }
+@layer A {
+  @layer sub1, sub2;
+}
+@layer A.sub1 {
+  /* ... */
+}
 
 /* 5. Revert */
-.element { color: revert-layer; }
+.element {
+  color: revert-layer;
+}
 ```
 
 ---
