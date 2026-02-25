@@ -4,8 +4,8 @@
     <div class="section-icon">
       <app-icon-mail size="lg" />
     </div>
-    <h2 class="text-3xl font-bold">Contact</h2>
-    <p class="text-base-content/60">Discutons de votre projet</p>
+    <h2 class="text-3xl font-bold">{{ 'contact.title' | transloco }}</h2>
+    <p class="text-base-content/60">{{ 'contact.subtitle' | transloco }}</p>
   </div>
 
   <!-- Form card -->
@@ -13,31 +13,35 @@
     <form class="card-body gap-4" novalidate (submit)="handleSubmit($event)">
       <!-- Name -->
       <fieldset class="fieldset">
-        <label class="fieldset-legend" for="contact-name">Nom complet</label>
+        <label class="fieldset-legend" for="contact-name">
+          {{ 'contact.name-label' | transloco }}
+        </label>
         <input
           id="contact-name"
           type="text"
           class="input w-full"
-          placeholder="Votre nom"
+          [attr.placeholder]="'contact.name-placeholder' | transloco"
           autocomplete="name"
           [formField]="contactForm.name"
           aria-describedby="name-error"
         />
         @if (contactForm.name().touched() && contactForm.name().invalid()) {
           <p id="name-error" class="text-error text-sm mt-1" role="alert">
-            {{ contactForm.name().errors()[0].message }}
+            {{ contactForm.name().errors()[0].message | transloco }}
           </p>
         }
       </fieldset>
 
       <!-- Email -->
       <fieldset class="fieldset">
-        <label class="fieldset-legend" for="contact-email">Email</label>
+        <label class="fieldset-legend" for="contact-email">
+          {{ 'contact.email-label' | transloco }}
+        </label>
         <input
           id="contact-email"
           type="email"
           class="input w-full"
-          placeholder="votre@email.com"
+          [attr.placeholder]="'contact.email-placeholder' | transloco"
           autocomplete="email"
           spellcheck="false"
           [formField]="contactForm.email"
@@ -45,48 +49,52 @@
         />
         @if (contactForm.email().touched() && contactForm.email().invalid()) {
           <p id="email-error" class="text-error text-sm mt-1" role="alert">
-            {{ contactForm.email().errors()[0].message }}
+            {{ contactForm.email().errors()[0].message | transloco }}
           </p>
         }
       </fieldset>
 
       <!-- Mission type -->
       <fieldset class="fieldset">
-        <label class="fieldset-legend" for="contact-mission">Type de mission</label>
+        <label class="fieldset-legend" for="contact-mission">
+          {{ 'contact.mission-label' | transloco }}
+        </label>
         <select
           id="contact-mission"
           class="select w-full"
           [formField]="contactForm.missionType"
           aria-describedby="mission-error"
         >
-          <option value="">Sélectionnez un type</option>
-          <option value="fullstack">Full Stack</option>
-          <option value="frontend">Frontend</option>
-          <option value="backend">Backend</option>
-          <option value="consulting">Consulting</option>
-          <option value="other">Autre</option>
+          <option value="">{{ 'contact.mission-default' | transloco }}</option>
+          <option value="fullstack">{{ 'contact.mission-fullstack' | transloco }}</option>
+          <option value="frontend">{{ 'contact.mission-frontend' | transloco }}</option>
+          <option value="backend">{{ 'contact.mission-backend' | transloco }}</option>
+          <option value="consulting">{{ 'contact.mission-consulting' | transloco }}</option>
+          <option value="other">{{ 'contact.mission-other' | transloco }}</option>
         </select>
         @if (contactForm.missionType().touched() && contactForm.missionType().invalid()) {
           <p id="mission-error" class="text-error text-sm mt-1" role="alert">
-            {{ contactForm.missionType().errors()[0].message }}
+            {{ contactForm.missionType().errors()[0].message | transloco }}
           </p>
         }
       </fieldset>
 
       <!-- Message -->
       <fieldset class="fieldset">
-        <label class="fieldset-legend" for="contact-message">Message</label>
+        <label class="fieldset-legend" for="contact-message">
+          {{ 'contact.message-label' | transloco }}
+        </label>
         <textarea
           id="contact-message"
           class="textarea w-full h-32"
-          placeholder="Décrivez votre projet…"
+          [attr.placeholder]="'contact.message-placeholder' | transloco"
           [formField]="contactForm.message"
           aria-describedby="message-error message-counter"
         ></textarea>
         <div class="flex justify-between">
           @if (contactForm.message().touched() && contactForm.message().invalid()) {
             <p id="message-error" class="text-error text-sm mt-1" role="alert">
-              {{ contactForm.message().errors()[0].message }}
+              {{ contactForm.message().errors()[0].message | transloco }}
             </p>
           }
           <span id="message-counter" class="fieldset-label ml-auto tabular-nums">
@@ -98,7 +106,7 @@
       <!-- Submit -->
       <button type="submit" class="btn btn-primary btn-block">
         <app-icon-send size="sm" />
-        Envoyer
+        {{ 'contact.submit-btn' | transloco }}
       </button>
     </form>
   </div>

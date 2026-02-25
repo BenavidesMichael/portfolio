@@ -8,6 +8,7 @@ import {
   minLength,
   maxLength,
 } from '@angular/forms/signals';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { MailIconComponent, SendIconComponent } from '@shared/components/icons';
 
 interface ContactFormData {
@@ -20,7 +21,7 @@ interface ContactFormData {
 @Component({
   selector: 'app-contact-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FormField, MailIconComponent, SendIconComponent],
+  imports: [TranslocoPipe, FormField, MailIconComponent, SendIconComponent],
   templateUrl: './contact.component.html',
 })
 export class ContactSectionComponent {
@@ -32,29 +33,25 @@ export class ContactSectionComponent {
   });
 
   protected readonly contactForm = form(this.contactModel, (schemaPath) => {
-    required(schemaPath.name, { message: 'Le nom est requis.' });
-    minLength(schemaPath.name, 2, { message: 'Le nom doit contenir au moins 2 caractères.' });
-    maxLength(schemaPath.name, 100, { message: 'Le nom ne peut pas dépasser 100 caractères.' });
+    required(schemaPath.name, { message: 'contact.validation.name-required' });
+    minLength(schemaPath.name, 2, { message: 'contact.validation.name-min' });
+    maxLength(schemaPath.name, 100, { message: 'contact.validation.name-max' });
 
-    required(schemaPath.email, { message: "L'email est requis." });
-    email(schemaPath.email, { message: 'Veuillez entrer une adresse email valide.' });
+    required(schemaPath.email, { message: 'contact.validation.email-required' });
+    email(schemaPath.email, { message: 'contact.validation.email-invalid' });
 
-    required(schemaPath.missionType, { message: 'Veuillez sélectionner un type de mission.' });
+    required(schemaPath.missionType, { message: 'contact.validation.mission-required' });
 
-    required(schemaPath.message, { message: 'Le message est requis.' });
-    minLength(schemaPath.message, 10, {
-      message: 'Le message doit contenir au moins 10 caractères.',
-    });
-    maxLength(schemaPath.message, 500, {
-      message: 'Le message ne peut pas dépasser 500 caractères.',
-    });
+    required(schemaPath.message, { message: 'contact.validation.message-required' });
+    minLength(schemaPath.message, 10, { message: 'contact.validation.message-min' });
+    maxLength(schemaPath.message, 500, { message: 'contact.validation.message-max' });
   });
 
   protected handleSubmit(event: Event): void {
     event.preventDefault();
 
     submit(this.contactForm, async () => {
-      console.log(this.contactModel());
+      // TODO: POST to backend — see product.md P1 backlog
     });
   }
 }
