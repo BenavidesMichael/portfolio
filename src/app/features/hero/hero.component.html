@@ -11,23 +11,23 @@
     <span
       class="badge badge-success badge-sm absolute -bottom-1 right-0 animate-pulse motion-reduce:animate-none"
     >
-      Disponible
+      {{ 'hero.available' | transloco }}
     </span>
   </div>
 
   <!-- Name & title -->
   <div class="space-y-1">
     <h1 class="text-4xl font-bold font-display text-primary">Michael Benavides</h1>
-    <p class="text-xl">Developpeur Full Stack Senior</p>
+    <p class="text-xl">{{ 'hero.title' | transloco }}</p>
   </div>
 
   <!-- Info row -->
   <p class="flex items-center gap-2 text-base-content/70 text-sm">
     <app-icon-briefcase size="sm" />
-    <span>7 ans d'exp.</span>
+    <span>{{ 'hero.years-exp' | transloco }}</span>
     <span aria-hidden="true">·</span>
     <app-icon-map-pin size="sm" />
-    <span>Belgique</span>
+    <span>{{ 'hero.location' | transloco }}</span>
   </p>
 
   <!-- Social icons -->
@@ -67,17 +67,13 @@
   >
     @if (isGenerating()) {
       <span class="loading loading-spinner loading-sm"></span>
-      Génération…
+      <span>{{ 'hero.generating' | transloco }}</span>
     } @else {
       <app-icon-download />
-      Telecharger CV
+      <span>{{ 'hero.download-cv' | transloco }}</span>
     }
   </button>
 
   <!-- Language switcher -->
-  <div class="flex gap-2" role="group" aria-label="Language selection">
-    <button class="btn btn-sm btn-primary" aria-pressed="true">FR</button>
-    <button class="btn btn-sm btn-outline" aria-pressed="false">EN</button>
-    <button class="btn btn-sm btn-outline" aria-pressed="false">ES</button>
-  </div>
+  <app-language-switcher />
 </section>
