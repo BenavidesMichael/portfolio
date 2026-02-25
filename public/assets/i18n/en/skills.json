@@ -1,0 +1,13 @@
+{
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My tech stack",
+    "filter-all": "All",
+    "filter-frontend": "Frontend",
+    "filter-backend": "Backend",
+    "filter-db": "Database",
+    "filter-cloud": "Cloud & DevOps",
+    "filter-ia": "AI & LLM",
+    "filter-tools": "Tools"
+  }
+}

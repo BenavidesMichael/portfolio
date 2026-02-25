@@ -1,0 +1,19 @@
+{
+  "about": {
+    "title": "À Propos",
+    "subtitle": "Qui suis-je ?",
+    "bio-condensed": "Développeur Full Stack TypeScript, je travaille au quotidien avec NestJS côté back et Angular côté front. Passionné par l'écosystème des agents IA, je me suis spécialisé dans la configuration et l'intégration de Claude Code en contexte d'équipe…",
+    "bio-full": "Développeur Full Stack TypeScript, je travaille au quotidien avec NestJS côté back et Angular côté front. Passionné par l'écosystème des agents IA, je me suis spécialisé dans la configuration et l'intégration de Claude Code en contexte d'équipe : conception de rules, skills et commandes custom pour adapter l'agent aux conventions de chaque projet. Issu du monde .NET Core, j'ai su évoluer et m'adapter aux besoins du terrain. Si vous cherchez un développeur qui code et qui sait tirer parti de l'IA pour livrer mieux et plus vite — je suis votre dev.",
+    "read-more": "Lire plus",
+    "read-less": "Lire moins",
+    "passionate": "Passionné",
+    "adaptable": "Adaptable",
+    "continuous-learner": "Apprenant continu",
+    "journey-title": "Mon parcours unique",
+    "fullstack": "Full TypeScript",
+    "stack": "Angular + NestJS",
+    "years": "Années",
+    "projects": "Projets",
+    "clients": "Clients"
+  }
+}

@@ -21,6 +21,10 @@ export const Breakpoint = {
   Desktop: '(min-width: 1024px)',
 } as const;
 
+// Supported i18n languages — single source of truth shared across app and language-switcher
+export const VALID_LANGS = ['fr', 'en', 'es'] as const;
+export type Lang = (typeof VALID_LANGS)[number];
+
 export const SCROLL_THRESHOLD = 50;
 export const SCROLL_THROTTLE_MS = 16; // 60 FPS (1000ms / 60 ≈ 16ms)
 export const CURRENT_YEAR = new Date().getFullYear();

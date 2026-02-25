@@ -1,0 +1,31 @@
+{
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's discuss your project",
+    "name-label": "Full name",
+    "name-placeholder": "Your name",
+    "email-label": "Email",
+    "email-placeholder": "your@email.com",
+    "mission-label": "Mission type",
+    "mission-default": "Select a type",
+    "mission-fullstack": "Full Stack",
+    "mission-frontend": "Frontend",
+    "mission-backend": "Backend",
+    "mission-consulting": "Consulting",
+    "mission-other": "Other",
+    "message-label": "Message",
+    "message-placeholder": "Describe your project…",
+    "submit-btn": "Send",
+    "validation": {
+      "name-required": "Name is required.",
+      "name-min": "Name must be at least 2 characters.",
+      "name-max": "Name cannot exceed 100 characters.",
+      "email-required": "Email is required.",
+      "email-invalid": "Please enter a valid email address.",
+      "mission-required": "Please select a mission type.",
+      "message-required": "Message is required.",
+      "message-min": "Message must be at least 10 characters.",
+      "message-max": "Message cannot exceed 500 characters."
+    }
+  }
+}

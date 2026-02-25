@@ -1,0 +1,113 @@
+{
+  "experience": {
+    "title": "Mi Trayectoria",
+    "subtitle": "7 años de evolución profesional",
+    "current": "✓ Actual",
+    "back-label": "Volver a la trayectoria",
+    "back-btn": "Volver",
+    "detail": {
+      "current": "✓ Actual",
+      "description-title": "Descripción",
+      "tech-stack": "Stack técnico",
+      "not-found": "Experiencia no encontrada",
+      "back-home": "Volver al inicio"
+    }
+  },
+  "exp": {
+    "solidaris": {
+      "title": "Desarrollador TypeScript Full Stack (Angular / NestJS)",
+      "contract-type": "Contrato indefinido — Tiempo completo",
+      "sector": "Mutua / Seguro de salud",
+      "location": "Región de Bruselas-Capital, Bélgica",
+      "description": "Desarrollo de una aplicación back-office Angular 19 y una API REST NestJS para la gestión de expedientes de afiliados de una mutua belga: cotizaciones, asignaciones financieras, llamadas de seguimiento.",
+      "frontend": {
+        "title": "Frontend — Aplicación back-office Angular",
+        "a0": "Desarrollado una aplicación back-office Angular 19 (standalone components, lazy-loading) para la gestión de expedientes de afiliados: búsqueda multi-criterio, historial financiero, seguimiento de cotizaciones",
+        "a1": "Diseñado una arquitectura frontend de 3 capas (modules / shared / core) con autenticación SSO Azure AD (MSAL) y control de acceso por roles (RBAC)",
+        "a2": "Integrado servicios SOAP mainframe DB2 (registro de población) expuestos como REST y APIs internas de gestión financiera",
+        "a3": "Desarrollado dos módulos de negocio clave: llamadas de seguimiento (recordatorios de cotizaciones) y asignaciones (distribución de movimientos financieros)",
+        "a4": "Implementado un dashboard de estadísticas con 7 endpoints de agregación (pagos, saldos, conteos)",
+        "a5": "Aplicado gestión reactiva completa en RxJS (patrón Observable-only) con servicios CRUD genéricos y paginación",
+        "a6": "Garantizado la calidad del código: ESLint estricto (0 warnings), TypeScript estricto, conventional commits, tests E2E Cypress, revisiones de código",
+        "a7": "Configurado el monitoreo Elastic APM (Real User Monitoring) y la integración Microsoft Graph API"
+      },
+      "backend": {
+        "title": "Backend — API REST NestJS",
+        "a0": "Diseñado y desarrollado una API REST NestJS (TypeScript) para la gestión de seguros complementarios (ASCO): cotizaciones, asignaciones de transacciones y llamadas de seguimiento",
+        "a1": "Implementado una arquitectura dual-database (MS SQL + DB2 mainframe) con coordinación transaccional y mecanismo de compensación en caso de fallo en la base legacy",
+        "a2": "Desarrollado el módulo de asignaciones: pipeline completo de importación, validación, cálculo y persistencia de transacciones financieras con seguimiento por processId",
+        "a3": "Integrado servicios SOAP mainframe (DB2/UNMS) para la recuperación de datos de población y sincronización con el sistema legacy",
+        "a4": "Configurado un scheduler batch con gestión de concurrencia, ejecución mono-instancia y recuperación ante errores (Umzug, NestJS Schedule)",
+        "a5": "Securizado la API mediante OAuth2 / Azure AD (MSAL) con guards JWT (RS256), control de acceso por roles y documentación Swagger/OpenID Connect",
+        "a6": "Establecido una cobertura de tests del 80% (Jest, 90+ specs) con patrón AAA, reporting SonarQube y política de cero warnings ESLint",
+        "a7": "Industrializado el delivery: migraciones versionadas, monitoreo Elastic APM, generación Excel/CSV y Azure Key Vault para la gestión de secretos"
+      }
+    },
+    "nsi": {
+      "title": "Desarrollador .NET (Consultor)",
+      "contract-type": "Contrato indefinido — Tiempo completo",
+      "sector": "IT Consulting & Outsourcing",
+      "location": "Bélgica",
+      "description": "Puesto de consultor: misiones realizadas en diferentes clientes finales en los sectores público e industrial.",
+      "unipaper": {
+        "title": "Misión 1 — Unipaper / LumiCS",
+        "sector": "Industria / Gestión de producción",
+        "a0": "Desarrollado una aplicación de escritorio Windows Forms para la gestión del procesamiento de pedidos e instrucciones destinadas a las máquinas de fulfillment industrial",
+        "a1": "Gestionado el ciclo completo: análisis de requisitos de negocio, desarrollo, pruebas y entrega"
+      },
+      "actiris": {
+        "title": "Misión 2 — Actiris · Expediente Único",
+        "sector": "Sector público / Empleo",
+        "a0": "Desarrollado nuevas funcionalidades en los expedientes de demandantes de empleo: baja, gestión documental, certificados",
+        "a1": "Redactado y mantenido los tests unitarios para cada funcionalidad desarrollada",
+        "a2": "Participado en el refactoring de la aplicación hacia arquitectura orientada a servicios: eliminación del patrón MediatR y las factories para una base de código más mantenible",
+        "a3": "Trabajado con funciones Oracle y una base de datos Oracle DB en un entorno de API seguro"
+      }
+    },
+    "megabyte": {
+      "title": "Desarrollador Full Stack .NET / Angular",
+      "company-description": "Empresa ICT belga (50+ empleados, oficinas en Bruselas, Amberes y Lovaina la Nueva), partner Microsoft y Sage, especializada en el desarrollo de aplicaciones a medida y soluciones ERP/CRM.",
+      "contract-type": "Contrato indefinido — Tiempo completo",
+      "sector": "IT Services & Solutions / ERP-CRM",
+      "location": "Bruselas, Bélgica",
+      "description": "Desarrollo de aplicaciones web a medida para clientes internacionales. Tres proyectos principales en los ámbitos de la química europea, las finanzas y la integración CRM.",
+      "cefic": {
+        "title": "Proyecto 1 — Responsible Care Self-Assessment Webtool",
+        "sector": "Industria química europea",
+        "description": "Plataforma web de autoevaluación HSE utilizada por 29.000 empresas químicas en toda Europa y en más de 70 países.",
+        "a0": "Desarrollado la plataforma web de autoevaluación HSE del CEFIC, iniciativa voluntaria utilizada por 29.000 empresas químicas",
+        "a1": "Mejorado las funcionalidades de reporting y benchmarking para la evaluación de la madurez en salud, seguridad y medio ambiente",
+        "a2": "Implementado la gestión de roles y accesos (RBAC) para proteger los datos sensibles de las empresas",
+        "a3": "Añadido soporte multilingüe completo en 18 idiomas para cubrir todos los países miembros europeos"
+      },
+      "approval": {
+        "title": "Proyecto 2 — MegaApproval",
+        "sector": "Validación de facturas / Finanzas",
+        "a0": "Desarrollado un sitio de validación de facturas con flujo de aprobación, generación de PDF y gestión de autorizaciones",
+        "a1": "Creado Windows Services para la importación de documentos contables hacia diferentes tipos de almacenamiento (local, BD, Azure Storage)",
+        "a2": "Desplegado la aplicación en un entorno Azure Cloud (App Service, Key Vault, Application Insights)"
+      },
+      "mailchimp": {
+        "title": "Proyecto 3 — MailChimp to Sage CRM",
+        "sector": "Integración / CRM",
+        "a0": "Desarrollado una API de integración que recupera usuarios desde MailChimp, inyección en base SQL e integración en Sage CRM mediante iframe"
+      }
+    },
+    "clusteo": {
+      "title": "Desarrollador .NET",
+      "company-description": "Startup bruselense (filial del grupo Perceval) especializada en plataformas de comunicación multimodal y salud conectada. Partner oficial de Sidly desde 2018 para la distribución en Bélgica-Luxemburgo.",
+      "contract-type": "Contrato indefinido — Tiempo completo",
+      "sector": "HealthTech / Telemedicina",
+      "location": "Ixelles, Bruselas, Bélgica",
+      "description": "Desarrollo de una plataforma de telemonitorización médica que se comunica con la pulsera conectada Sidly-Care para la recolección de datos biométricos en tiempo real.",
+      "youtonomy": {
+        "title": "Proyecto YOUtonomy — Telemonitorización médica",
+        "sector": "Telemedicina / IoT salud",
+        "a0": "Desarrollado una Web API que se comunica con la pulsera conectada Sidly-Care para recopilar datos biométricos en tiempo real: temperatura corporal, frecuencia cardíaca, saturación de oxígeno (SpO2), geolocalización",
+        "a1": "Diseñado un sitio de telemonitorización que muestra los datos de la pulsera: alarmas, alertas configurables, gráficos de evolución y gestión de umbrales personalizados por paciente",
+        "a2": "Desarrollado un módulo de historial médico que conserva el historial completo del paciente: enfermedades, vacunas, citas médicas con calendario interactivo",
+        "a3": "Implementado notificaciones en tiempo real mediante SignalR para alertas médicas urgentes"
+      }
+    }
+  }
+}
