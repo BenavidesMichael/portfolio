@@ -20,6 +20,13 @@ export const PERSONAL_INFO = {
   yearsOfExperience: 7,
 } as const;
 
+/** Profile stats displayed in the About section */
+export const PROFILE_STATS = {
+  yearsExp: PERSONAL_INFO.yearsOfExperience,
+  projects: 50,
+  clients: 15,
+} as const;
+
 export const PROFILE_TEXT =
   "Developpeur Full Stack TypeScript, je travaille au quotidien avec NestJS cote back et Angular cote front. Passionne par l'ecosysteme des agents IA, je me suis specialise dans la configuration et l'integration de Claude Code en contexte d'equipe : conception de rules, skills et commandes custom pour adapter l'agent aux conventions de chaque projet. Issu du monde .NET Core, j'ai su evoluer et m'adapter aux besoins du terrain. Si vous cherchez un developpeur qui code et qui sait tirer parti de l'IA pour livrer mieux et plus vite — je suis votre dev.";
 

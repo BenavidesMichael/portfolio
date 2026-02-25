@@ -4,35 +4,22 @@
     <div class="section-icon">
       <app-icon-user size="lg" />
     </div>
-    <h2 class="text-3xl font-bold">A propos</h2>
-    <p class="text-base-content/60">Qui suis-je ?</p>
+    <h2 class="text-3xl font-bold">{{ 'about.title' | transloco }}</h2>
+    <p class="text-base-content/60">{{ 'about.subtitle' | transloco }}</p>
   </div>
 
   <!-- Bio card with expand/collapse -->
   <div class="card-section w-full">
     <div class="card-body">
       <p class="text-base-content/80 leading-relaxed">
-        Developpeur Full Stack TypeScript, je travaille au quotidien avec NestJS cote back et
-        Angular cote front. Passionne par l'ecosysteme des agents IA, je me suis specialise dans<!---->
-        @if (!expanded()) {
-          <span>...</span>
-        }
-        @if (expanded()) {
-          <span>
-            la configuration et l'integration de Claude Code en contexte d'equipe : conception de
-            rules, skills et commandes custom pour adapter l'agent aux conventions de chaque projet.
-            Issu du monde .NET Core, j'ai su evoluer et m'adapter aux besoins du terrain. Si vous
-            cherchez un developpeur qui code et qui sait tirer parti de l'IA pour livrer mieux et
-            plus vite — je suis votre dev.</span
-          >
-        }
+        {{ (expanded() ? 'about.bio-full' : 'about.bio-condensed') | transloco }}
       </p>
       <button
         class="text-primary text-sm font-medium self-start mt-1 flex items-center gap-1"
         [attr.aria-expanded]="expanded()"
         (click)="expanded.set(!expanded())"
       >
-        {{ expanded() ? 'Lire moins' : 'Lire plus' }}
+        {{ (expanded() ? 'about.read-less' : 'about.read-more') | transloco }}
         <app-icon-chevron-right
           size="sm"
           class="transition-transform duration-200"
@@ -44,27 +31,29 @@
 
   <!-- Value badges -->
   <div class="flex flex-wrap justify-center gap-2">
-    <span class="badge badge-lg bg-base-200 border-base-300"
-      ><span aria-hidden="true">🔥</span> Passionné</span
-    >
-    <span class="badge badge-lg bg-base-200 border-base-300"
-      ><span aria-hidden="true">🏆</span> Adaptable</span
-    >
-    <span class="badge badge-lg bg-base-200 border-base-300"
-      ><span aria-hidden="true">💻</span> Apprenant continu</span
-    >
+    <span class="badge badge-lg bg-base-200 border-base-300">
+      <span aria-hidden="true">🔥</span> {{ 'about.passionate' | transloco }}
+    </span>
+    <span class="badge badge-lg bg-base-200 border-base-300">
+      <span aria-hidden="true">🏆</span> {{ 'about.adaptable' | transloco }}
+    </span>
+    <span class="badge badge-lg bg-base-200 border-base-300">
+      <span aria-hidden="true">💻</span> {{ 'about.continuous-learner' | transloco }}
+    </span>
   </div>
 
   <!-- Journey block -->
   <div class="card-section w-full">
     <div class="card-body gap-3">
-      <h3 class="font-bold text-primary">🎯 Mon parcours unique</h3>
+      <h3 class="font-bold text-primary">
+        <span aria-hidden="true">🎯</span> {{ 'about.journey-title' | transloco }}
+      </h3>
       <div class="flex items-center gap-3">
         <span class="badge badge-outline">.NET</span>
         <span class="text-base-content/50" aria-hidden="true">→</span>
         <div>
-          <p class="text-primary font-semibold">Full TypeScript</p>
-          <p class="text-sm text-base-content/60">Angular + NestJS</p>
+          <p class="text-primary font-semibold">{{ 'about.fullstack' | transloco }}</p>
+          <p class="text-sm text-base-content/60">{{ 'about.stack' | transloco }}</p>
         </div>
       </div>
     </div>
@@ -73,16 +62,16 @@
   <!-- Stats row -->
   <div class="grid grid-cols-3 gap-4 w-full text-center">
     <div>
-      <p class="text-3xl font-bold text-primary">7+</p>
-      <p class="text-sm text-base-content/60">Annees</p>
+      <p class="text-3xl font-bold text-primary">{{ stats.yearsExp }}+</p>
+      <p class="text-sm text-base-content/60">{{ 'about.years' | transloco }}</p>
     </div>
     <div>
-      <p class="text-3xl font-bold text-secondary">50+</p>
-      <p class="text-sm text-base-content/60">Projets</p>
+      <p class="text-3xl font-bold text-secondary">{{ stats.projects }}+</p>
+      <p class="text-sm text-base-content/60">{{ 'about.projects' | transloco }}</p>
     </div>
     <div>
-      <p class="text-3xl font-bold text-accent">15+</p>
-      <p class="text-sm text-base-content/60">Clients</p>
+      <p class="text-3xl font-bold text-accent">{{ stats.clients }}+</p>
+      <p class="text-sm text-base-content/60">{{ 'about.clients' | transloco }}</p>
     </div>
   </div>
 </section>
