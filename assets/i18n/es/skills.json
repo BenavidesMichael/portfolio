@@ -1,0 +1,13 @@
+{
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Mi stack técnico",
+    "filter-all": "Todos",
+    "filter-frontend": "Frontend",
+    "filter-backend": "Backend",
+    "filter-db": "Base de datos",
+    "filter-cloud": "Cloud & DevOps",
+    "filter-ia": "IA & LLM",
+    "filter-tools": "Herramientas"
+  }
+}

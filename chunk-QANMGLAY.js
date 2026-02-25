@@ -1,1 +1,0 @@
-var e={Light:"light",Dark:"dracula"},o="portfolio-theme",t={Mobile:"mobile",Tablet:"tablet",Desktop:"desktop"},p={Mobile:"(max-width: 639px)",Tablet:"(min-width: 640px) and (max-width: 1023px)",Desktop:"(min-width: 1024px)"},r=50,a=16,s=new Date().getFullYear();export{e as a,o as b,t as c,p as d,r as e,a as f,s as g};

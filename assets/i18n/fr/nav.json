@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "experience": "Parcours",
+    "skills": "Skills",
+    "contact": "Contact",
+    "open-to-work": "Ouvert aux missions",
+    "available": "Disponible"
+  }
+}
