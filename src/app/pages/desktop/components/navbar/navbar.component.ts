@@ -9,11 +9,20 @@ import {
   MailIconComponent,
   TerminalIconComponent,
 } from '@shared/components/icons';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { LanguageSwitcherComponent } from '@shared/components';
 
 @Component({
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ThemeToggleComponent, GithubIconComponent, MailIconComponent, TerminalIconComponent],
+  imports: [
+    TranslocoPipe,
+    ThemeToggleComponent,
+    GithubIconComponent,
+    MailIconComponent,
+    TerminalIconComponent,
+    LanguageSwitcherComponent,
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
