@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { CodeIconComponent } from '@shared/components/icons';
 import { SKILLS, SKILL_FILTER_CATEGORIES } from '@data';
 import type { SkillCategory } from '@models';
@@ -6,7 +7,7 @@ import type { SkillCategory } from '@models';
 @Component({
   selector: 'app-skills-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CodeIconComponent],
+  imports: [TranslocoPipe, CodeIconComponent],
   templateUrl: './skills.component.html',
 })
 export class SkillsSectionComponent {

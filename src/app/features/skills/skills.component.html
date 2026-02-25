@@ -4,8 +4,8 @@
     <div class="section-icon">
       <app-icon-code size="lg" />
     </div>
-    <h2 class="text-3xl font-bold">Competences</h2>
-    <p class="text-base-content/60">Mon stack technique</p>
+    <h2 class="text-3xl font-bold">{{ 'skills.title' | transloco }}</h2>
+    <p class="text-base-content/60">{{ 'skills.subtitle' | transloco }}</p>
   </div>
 
   <!-- Filter tabs -->
@@ -17,7 +17,7 @@
         [attr.aria-pressed]="activeFilter() === filter.value"
         (click)="activeFilter.set(filter.value)"
       >
-        {{ filter.label }}
+        {{ filter.translationKey | transloco }}
       </button>
     }
   </div>

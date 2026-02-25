@@ -115,14 +115,14 @@ export const SKILLS: readonly Skill[] = [
 
 /** Filter categories available in the UI */
 export const SKILL_FILTER_CATEGORIES: readonly {
-  label: string;
+  translationKey: string;
   value: SkillCategory | 'all';
 }[] = [
-  { label: 'Tous', value: 'all' },
-  { label: 'Frontend', value: 'frontend' },
-  { label: 'Backend', value: 'backend' },
-  { label: 'Database', value: 'database' },
-  { label: 'Cloud & DevOps', value: 'cloud-devops' },
-  { label: 'IA & LLM', value: 'ai-llm' },
-  { label: 'Tools', value: 'tools' },
+  { translationKey: 'skills.filter-all', value: 'all' },
+  { translationKey: 'skills.filter-frontend', value: 'frontend' },
+  { translationKey: 'skills.filter-backend', value: 'backend' },
+  { translationKey: 'skills.filter-db', value: 'database' },
+  { translationKey: 'skills.filter-cloud', value: 'cloud-devops' },
+  { translationKey: 'skills.filter-ia', value: 'ai-llm' },
+  { translationKey: 'skills.filter-tools', value: 'tools' },
 ] as const;
