@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/c
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { findExperienceById } from '@data';
 import {
   ArrowLeftIconComponent,
@@ -15,6 +16,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink,
+    TranslocoPipe,
     ArrowLeftIconComponent,
     BriefcaseIconComponent,
     ClockIconComponent,

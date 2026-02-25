@@ -3,10 +3,10 @@
   <a
     routerLink="/experience"
     class="btn btn-ghost btn-sm gap-1.5 mb-4"
-    aria-label="Retour au parcours"
+    [attr.aria-label]="'experience.back-label' | transloco"
   >
     <app-icon-arrow-left size="sm" />
-    <span>Retour</span>
+    <span>{{ 'experience.back-btn' | transloco }}</span>
   </a>
 
   <!-- Header -->
@@ -15,7 +15,7 @@
       <app-icon-clock size="lg" />
     </div>
 
-    <h1 class="text-3xl font-bold">{{ exp.title }}</h1>
+    <h1 class="text-3xl font-bold">{{ exp.title | transloco }}</h1>
     <p class="flex items-center gap-1.5 text-base-content/70 text-lg">
       <app-icon-briefcase size="sm" />
       {{ exp.company }}
@@ -24,13 +24,13 @@
     <!-- Meta badges -->
     <div class="flex flex-wrap items-center gap-2">
       <span class="badge badge-outline">{{ exp.dateRange }}</span>
-      <span class="badge badge-outline">{{ exp.contractType }}</span>
+      <span class="badge badge-outline">{{ exp.contractType | transloco }}</span>
       @if (exp.isCurrent) {
-        <span class="badge badge-success">✓ Actuel</span>
+        <span class="badge badge-success">{{ 'experience.detail.current' | transloco }}</span>
       }
       <span class="flex items-center gap-1 text-base-content/60 text-sm">
         <app-icon-map-pin size="xs" />
-        {{ exp.location }}
+        {{ exp.location | transloco }}
       </span>
     </div>
   </header>
@@ -39,7 +39,7 @@
   @if (exp.companyDescription) {
     <section class="card-section mb-4">
       <div class="card-body gap-3">
-        <p class="text-base-content/70 text-sm italic">{{ exp.companyDescription }}</p>
+        <p class="text-base-content/70 text-sm italic">{{ exp.companyDescription | transloco }}</p>
       </div>
     </section>
   }
@@ -47,8 +47,10 @@
   <!-- Description card -->
   <section class="card-section mb-4">
     <div class="card-body gap-3">
-      <h2 class="card-title text-primary text-lg">Description</h2>
-      <p class="text-base-content/80 leading-relaxed">{{ exp.description }}</p>
+      <h2 class="card-title text-primary text-lg">
+        {{ 'experience.detail.description-title' | transloco }}
+      </h2>
+      <p class="text-base-content/80 leading-relaxed">{{ exp.description | transloco }}</p>
     </div>
   </section>
 
@@ -56,28 +58,28 @@
   @for (mission of exp.missions; track mission.title) {
     <section class="card-section mb-4">
       <div class="card-body gap-3">
-        <h2 class="card-title text-primary text-lg">{{ mission.title }}</h2>
+        <h2 class="card-title text-primary text-lg">{{ mission.title | transloco }}</h2>
 
         @if (mission.client) {
           <p class="text-base-content/60 text-sm">
             Client : <span class="font-medium text-base-content/80">{{ mission.client }}</span>
             @if (mission.sector) {
-              <span class="text-base-content/40"> · {{ mission.sector }}</span>
+              <span class="text-base-content/40"> · {{ mission.sector | transloco }}</span>
             }
           </p>
         }
 
         @if (mission.description) {
-          <p class="text-base-content/70 text-sm italic">{{ mission.description }}</p>
+          <p class="text-base-content/70 text-sm italic">{{ mission.description | transloco }}</p>
         }
 
         <!-- Achievements -->
         @if (mission.achievements.length > 0) {
           <ul class="flex flex-col gap-2 mt-1">
-            @for (item of mission.achievements; track item) {
+            @for (key of mission.achievements; track key) {
               <li class="flex items-start gap-2 text-base-content/80">
                 <span class="text-success mt-1 shrink-0">✓</span>
-                <span>{{ item }}</span>
+                <span>{{ key | transloco }}</span>
               </li>
             }
           </ul>
@@ -98,7 +100,9 @@
   <!-- All technologies summary -->
   <section class="card-section">
     <div class="card-body gap-3">
-      <h2 class="card-title text-primary text-lg">Stack technique</h2>
+      <h2 class="card-title text-primary text-lg">
+        {{ 'experience.detail.tech-stack' | transloco }}
+      </h2>
       <div class="flex flex-wrap gap-2">
         @for (tech of exp.technologies; track tech) {
           <span class="badge badge-primary badge-outline">{{ tech }}</span>
@@ -109,7 +113,7 @@
 } @else {
   <!-- Not found state -->
   <div class="flex flex-col items-center justify-center gap-4 py-16">
-    <p class="text-2xl font-bold">Experience introuvable</p>
-    <a routerLink="/" class="btn btn-primary">Retour a l'accueil</a>
+    <p class="text-2xl font-bold">{{ 'experience.detail.not-found' | transloco }}</p>
+    <a routerLink="/" class="btn btn-primary">{{ 'experience.detail.back-home' | transloco }}</a>
   </div>
 }

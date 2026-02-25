@@ -1,4 +1,5 @@
 import { inject, Injectable, NgZone, signal } from '@angular/core';
+import { TranslocoService } from '@jsverse/transloco';
 import type { SkillCategory } from '@models';
 import {
   PERSONAL_INFO,
@@ -71,6 +72,12 @@ interface MainSectionNode {
 @Injectable({ providedIn: 'root' })
 export class CvPdfService {
   private readonly ngZone = inject(NgZone);
+  private readonly transloco = inject(TranslocoService);
+
+  /** Translate an i18n key synchronously — safe after app bootstrap */
+  private t(key: string): string {
+    return this.transloco.translate(key);
+  }
 
   private readonly isGeneratingState = signal(false);
   readonly isGenerating = this.isGeneratingState.asReadonly();
@@ -277,18 +284,24 @@ export class CvPdfService {
           dateY -= 11;
         }
 
-        drawText(exp.title, experienceContentX, experienceTopY, FONT_SIZE.subTitle, {
+        drawText(this.t(exp.title), experienceContentX, experienceTopY, FONT_SIZE.subTitle, {
           font: helveticaBold,
         });
         mainY = experienceTopY;
         mainY -= 14;
-        drawText(`${exp.company}  |  ${exp.location}`, experienceContentX, mainY, FONT_SIZE.small, {
-          color: COLOR.gray,
-        });
+        drawText(
+          `${exp.company}  |  ${this.t(exp.location)}`,
+          experienceContentX,
+          mainY,
+          FONT_SIZE.small,
+          {
+            color: COLOR.gray,
+          },
+        );
         mainY -= 14;
 
         const descLines = this.wrapText(
-          exp.description,
+          this.t(exp.description),
           experienceContentWidth,
           FONT_SIZE.body,
           false,
@@ -302,7 +315,7 @@ export class CvPdfService {
 
         for (const mission of exp.missions) {
           ensureMainSpace(20);
-          drawText(mission.title, experienceContentX + 8, mainY, FONT_SIZE.body, {
+          drawText(this.t(mission.title), experienceContentX + 8, mainY, FONT_SIZE.body, {
             font: helveticaBold,
             color: COLOR.primary,
           });
@@ -311,7 +324,7 @@ export class CvPdfService {
           if (mission.client) {
             ensureMainSpace(LINE_HEIGHT);
             drawText(
-              `Client : ${mission.client}${mission.sector ? ` — ${mission.sector}` : ''}`,
+              `Client : ${mission.client}${mission.sector ? ` — ${this.t(mission.sector)}` : ''}`,
               experienceContentX + 8,
               mainY,
               FONT_SIZE.small,
@@ -323,7 +336,7 @@ export class CvPdfService {
           const maxAchievements = Math.min(mission.achievements.length, 4);
           for (let i = 0; i < maxAchievements; i++) {
             const achievementLines = this.wrapText(
-              `• ${mission.achievements[i]}`,
+              `• ${this.t(mission.achievements[i])}`,
               experienceContentWidth - 16,
               FONT_SIZE.body,
               false,

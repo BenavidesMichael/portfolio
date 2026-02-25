@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import {
   ClockIconComponent,
   BriefcaseIconComponent,
@@ -10,7 +11,13 @@ import { EXPERIENCES } from '@data';
 @Component({
   selector: 'app-experience-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, ClockIconComponent, BriefcaseIconComponent, ChevronRightIconComponent],
+  imports: [
+    RouterLink,
+    TranslocoPipe,
+    ClockIconComponent,
+    BriefcaseIconComponent,
+    ChevronRightIconComponent,
+  ],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css',
 })

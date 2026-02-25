@@ -4,15 +4,14 @@ import { TECH } from './technology.data';
 export const EXPERIENCES: readonly Experience[] = [
   {
     id: 'solidaris',
-    title: 'Developpeur TypeScript Full Stack (Angular / NestJS)',
+    title: 'exp.solidaris.title',
     company: 'Solidaris',
     dateRange: '09/2023 - Present',
     isCurrent: true,
-    contractType: 'CDI — Temps plein',
-    sector: 'Mutualite / Assurance sante',
-    location: 'Region de Bruxelles-Capitale, Belgique',
-    description:
-      "Developpement d'une application back-office Angular 19 et d'une API REST NestJS pour la gestion des dossiers affilies d'une mutuelle belge : cotisations, affectations financieres, appels-rappels.",
+    contractType: 'exp.solidaris.contract-type',
+    sector: 'exp.solidaris.sector',
+    location: 'exp.solidaris.location',
+    description: 'exp.solidaris.description',
     technologies: [
       `${TECH.Angular} 19`,
       `${TECH.NestJS} 10`,
@@ -31,16 +30,16 @@ export const EXPERIENCES: readonly Experience[] = [
     ],
     missions: [
       {
-        title: 'Frontend — Application back-office Angular',
+        title: 'exp.solidaris.frontend.title',
         achievements: [
-          'Developpe une application back-office Angular 19 (standalone components, lazy-loading) pour la gestion des dossiers affilies : recherche multi-criteres, historique financier, suivi des cotisations',
-          "Concu une architecture frontend 3 couches (modules / shared / core) avec authentification SSO Azure AD (MSAL) et controle d'acces par roles (RBAC)",
-          'Integre des services SOAP mainframe DB2 (registre de population) exposes en REST ainsi que des API internes de gestion financiere',
-          'Developpe deux modules metier cles : appels-rappel (relances cotisations) et affectations (repartition des mouvements financiers)',
-          "Implemente un dashboard statistiques avec 7 endpoints d'agregation (paiements, soldes, comptages)",
-          'Applique une gestion reactive complete en RxJS (pattern Observable-only) avec services CRUD generiques et pagination',
-          'Garanti la qualite du code : ESLint strict (0 warnings), TypeScript strict, conventional commits, tests E2E Cypress, revues de code',
-          "Mis en place le monitoring Elastic APM (Real User Monitoring) et l'integration Microsoft Graph API",
+          'exp.solidaris.frontend.a0',
+          'exp.solidaris.frontend.a1',
+          'exp.solidaris.frontend.a2',
+          'exp.solidaris.frontend.a3',
+          'exp.solidaris.frontend.a4',
+          'exp.solidaris.frontend.a5',
+          'exp.solidaris.frontend.a6',
+          'exp.solidaris.frontend.a7',
         ],
         technologies: [
           `${TECH.Angular} 19`,
@@ -61,16 +60,16 @@ export const EXPERIENCES: readonly Experience[] = [
         ],
       },
       {
-        title: 'Backend — API REST NestJS',
+        title: 'exp.solidaris.backend.title',
         achievements: [
-          'Concu et developpe une API REST NestJS (TypeScript) pour la gestion des assurances complementaires (ASCO) : cotisations, affectations de transactions et appels-rappels',
-          "Implemente une architecture dual-database (MS SQL + DB2 mainframe) avec coordination transactionnelle et mecanisme de compensation en cas d'echec sur la base legacy",
-          "Developpe le module d'affectations : pipeline complet d'import, validation, calcul et persistance de transactions financieres avec suivi par processId",
-          'Integre des services SOAP mainframe (DB2/UNMS) pour la recuperation de donnees population et synchronisation avec le systeme legacy',
-          'Mis en place un scheduler batch avec gestion de concurrence, execution mono-instance et reprise sur erreur (Umzug, NestJS Schedule)',
-          "Securise l'API via OAuth2 / Azure AD (MSAL) avec guards JWT (RS256), controle d'acces par roles et documentation Swagger/OpenID Connect",
-          'Instaure une couverture de tests a 80% (Jest, 90+ specs) avec pattern AAA, reporting SonarQube et politique zero warning ESLint',
-          'Industrialise le delivery : migrations versionnees, monitoring Elastic APM, generation Excel/CSV et Azure Key Vault pour la gestion des secrets',
+          'exp.solidaris.backend.a0',
+          'exp.solidaris.backend.a1',
+          'exp.solidaris.backend.a2',
+          'exp.solidaris.backend.a3',
+          'exp.solidaris.backend.a4',
+          'exp.solidaris.backend.a5',
+          'exp.solidaris.backend.a6',
+          'exp.solidaris.backend.a7',
         ],
         technologies: [
           `${TECH.NestJS} 10`,
@@ -98,15 +97,14 @@ export const EXPERIENCES: readonly Experience[] = [
   },
   {
     id: 'nsi-cegeka',
-    title: 'Developpeur .NET (Consultant)',
+    title: 'exp.nsi.title',
     company: 'NSI IT Software & Services (Groupe Cegeka)',
     dateRange: '07/2021 - 08/2023',
     isCurrent: false,
-    contractType: 'CDI — Temps plein',
-    sector: 'IT Consulting & Outsourcing',
-    location: 'Belgique',
-    description:
-      'Poste de consultant : missions realisees chez differents clients finaux dans le secteur public et industriel.',
+    contractType: 'exp.nsi.contract-type',
+    sector: 'exp.nsi.sector',
+    location: 'exp.nsi.location',
+    description: 'exp.nsi.description',
     technologies: [
       TECH.CSharp,
       `${TECH.DotNETCore} 6`,
@@ -121,24 +119,21 @@ export const EXPERIENCES: readonly Experience[] = [
     ],
     missions: [
       {
-        title: 'Mission 1 — Unipaper / LumiCS',
+        title: 'exp.nsi.unipaper.title',
         client: 'Unipaper / LumiCS',
-        sector: 'Industrie / Gestion de production',
-        achievements: [
-          'Developpe une application desktop Windows Forms pour la gestion du traitement des commandes et des instructions destinees aux machines de fulfillment industriel',
-          'Prise en charge du cycle complet : analyse des besoins metier, developpement, tests et livraison',
-        ],
+        sector: 'exp.nsi.unipaper.sector',
+        achievements: ['exp.nsi.unipaper.a0', 'exp.nsi.unipaper.a1'],
         technologies: [TECH.CSharp, TECH.DotNETFramework, TECH.WindowsForms],
       },
       {
-        title: 'Mission 2 — Actiris · Dossier Unique',
+        title: 'exp.nsi.actiris.title',
         client: 'Actiris',
-        sector: 'Secteur public / Emploi',
+        sector: 'exp.nsi.actiris.sector',
         achievements: [
-          "Developpe de nouvelles fonctionnalites sur les dossiers demandeurs d'emploi : desinscription, gestion documentaire, attestations",
-          'Redige et maintenu les tests unitaires pour chaque fonctionnalite developpee',
-          "Participe au refactoring de l'application en architecture orientee services : suppression du pattern MediatR et des factories pour une base de code plus maintenable",
-          "Travaille avec des fonctions Oracle et une base de donnees Oracle DB dans un environnement d'API securise",
+          'exp.nsi.actiris.a0',
+          'exp.nsi.actiris.a1',
+          'exp.nsi.actiris.a2',
+          'exp.nsi.actiris.a3',
         ],
         technologies: [
           `${TECH.DotNETCore} 6`,
@@ -157,17 +152,15 @@ export const EXPERIENCES: readonly Experience[] = [
   },
   {
     id: 'megabyte',
-    title: 'Developpeur Full Stack .NET / Angular',
+    title: 'exp.megabyte.title',
     company: 'Megabyte',
-    companyDescription:
-      "Societe ICT belge (50+ collaborateurs, offices a Bruxelles, Anvers et Louvain-la-Neuve), partenaire Microsoft et Sage, specialisee dans le developpement d'applications sur mesure et les solutions ERP/CRM.",
+    companyDescription: 'exp.megabyte.company-description',
     dateRange: '11/2019 - 06/2021',
     isCurrent: false,
-    contractType: 'CDI — Temps plein',
-    sector: 'IT Services & Solutions / ERP-CRM',
-    location: 'Bruxelles, Belgique',
-    description:
-      "Developpement d'applications web sur mesure pour des clients internationaux. Trois projets majeurs dans les domaines de la chimie europeenne, la finance et l'integration CRM.",
+    contractType: 'exp.megabyte.contract-type',
+    sector: 'exp.megabyte.sector',
+    location: 'exp.megabyte.location',
+    description: 'exp.megabyte.description',
     technologies: [
       TECH.CSharp,
       TECH.DotNETCore,
@@ -187,16 +180,15 @@ export const EXPERIENCES: readonly Experience[] = [
     ],
     missions: [
       {
-        title: 'Projet 1 — Responsible Care Self-Assessment Webtool',
-        client: "CEFIC (Conseil Europeen de l'Industrie Chimique)",
-        sector: 'Industrie chimique europeenne',
-        description:
-          "Plateforme web d'auto-evaluation HSE utilisee par 29 000 entreprises chimiques a travers l'Europe et dans 70+ pays.",
+        title: 'exp.megabyte.cefic.title',
+        client: "CEFIC (Conseil Européen de l'Industrie Chimique)",
+        sector: 'exp.megabyte.cefic.sector',
+        description: 'exp.megabyte.cefic.description',
         achievements: [
-          "Developpe la plateforme web d'auto-evaluation HSE du CEFIC, initiative volontaire utilisee par 29 000 entreprises chimiques",
-          "Ameliore les fonctionnalites de reporting et de benchmarking pour l'evaluation de la maturite en sante, securite et environnement",
-          'Implemente la gestion des roles et acces (RBAC) pour securiser les donnees sensibles des entreprises',
-          "Ajoute le support multilingue complet en 18 langues pour couvrir l'ensemble des pays membres europeens",
+          'exp.megabyte.cefic.a0',
+          'exp.megabyte.cefic.a1',
+          'exp.megabyte.cefic.a2',
+          'exp.megabyte.cefic.a3',
         ],
         technologies: [
           TECH.CSharp,
@@ -213,13 +205,13 @@ export const EXPERIENCES: readonly Experience[] = [
         ],
       },
       {
-        title: 'Projet 2 — MegaApproval',
+        title: 'exp.megabyte.approval.title',
         client: 'Megabyte (produit interne)',
-        sector: 'Validation de factures / Finance',
+        sector: 'exp.megabyte.approval.sector',
         achievements: [
-          "Developpe un site de validation de factures avec workflow d'approbation, generation de PDF et gestion des autorisations",
-          "Cree des Windows Services pour l'import de documents comptables vers differents types de stockage (local, DB, Azure Storage)",
-          "Deploye l'application sur un environnement Azure Cloud (App Service, Key Vault, Application Insights)",
+          'exp.megabyte.approval.a0',
+          'exp.megabyte.approval.a1',
+          'exp.megabyte.approval.a2',
         ],
         technologies: [
           TECH.CSharp,
@@ -231,29 +223,25 @@ export const EXPERIENCES: readonly Experience[] = [
         ],
       },
       {
-        title: 'Projet 3 — MailChimp to Sage CRM',
+        title: 'exp.megabyte.mailchimp.title',
         client: 'Megabyte (produit interne)',
-        sector: 'Integration / CRM',
-        achievements: [
-          "Developpe une API d'integration recuperant les utilisateurs depuis MailChimp, injection en base SQL et integration dans Sage CRM via iframe",
-        ],
+        sector: 'exp.megabyte.mailchimp.sector',
+        achievements: ['exp.megabyte.mailchimp.a0'],
         technologies: [TECH.CSharp, TECH.DotNETCore, TECH.WebAPI, TECH.SQLServer, TECH.SendGrid],
       },
     ],
   },
   {
     id: 'clusteo',
-    title: 'Developpeur .NET',
+    title: 'exp.clusteo.title',
     company: 'Clusteo S.A.',
-    companyDescription:
-      'Startup bruxelloise (filiale du groupe Perceval) specialisee dans les plateformes de communication multimode et la sante connectee. Partenaire officiel Sidly depuis 2018 pour la distribution en Belgique-Luxembourg.',
+    companyDescription: 'exp.clusteo.company-description',
     dateRange: '02/2018 - 11/2019',
     isCurrent: false,
-    contractType: 'CDI — Temps plein',
-    sector: 'HealthTech / Telemedecine',
-    location: 'Ixelles, Bruxelles, Belgique',
-    description:
-      "Developpement d'une plateforme de telesurveillance medicale communicant avec le bracelet connecte Sidly-Care pour la collecte de donnees biometriques en temps reel.",
+    contractType: 'exp.clusteo.contract-type',
+    sector: 'exp.clusteo.sector',
+    location: 'exp.clusteo.location',
+    description: 'exp.clusteo.description',
     technologies: [
       TECH.ASPNETMVC,
       TECH.ASPNETCore,
@@ -269,13 +257,13 @@ export const EXPERIENCES: readonly Experience[] = [
     ],
     missions: [
       {
-        title: 'Projet YOUtonomy — Telesurveillance medicale',
-        sector: 'Telemedecine / IoT sante',
+        title: 'exp.clusteo.youtonomy.title',
+        sector: 'exp.clusteo.youtonomy.sector',
         achievements: [
-          'Developpe une Web API communiquant avec le bracelet connecte Sidly-Care pour collecter des donnees biometriques en temps reel : temperature corporelle, frequence cardiaque, saturation en oxygene (SpO2), geolocalisation',
-          "Concu un site de telesurveillance affichant les donnees du bracelet : alarmes, alertes configurables, graphiques d'evolution et gestion des seuils personnalises par patient",
-          "Developpe un module dossier medical conservant l'historique complet du patient : maladies, vaccinations, rendez-vous medicaux, avec calendrier interactif",
-          'Implemente des notifications temps reel via SignalR pour les alertes medicales urgentes',
+          'exp.clusteo.youtonomy.a0',
+          'exp.clusteo.youtonomy.a1',
+          'exp.clusteo.youtonomy.a2',
+          'exp.clusteo.youtonomy.a3',
         ],
         technologies: [
           TECH.ASPNETMVC,
