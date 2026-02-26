@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Journey",
+    "skills": "Skills",
+    "contact": "Contact",
+    "open-to-work": "Open to work",
+    "available": "Available"
+  },
+  "lang": {
+    "group-label": "Language selection",
+    "fr-label": "Français",
+    "en-label": "English",
+    "es-label": "Español"
+  },
+  "hero": {
+    "available": "Available",
+    "title": "Senior Full Stack Developer",
+    "years-exp": "7 years exp.",
+    "location": "Belgium",
+    "generating": "Generating…",
+    "download-cv": "Download CV"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Who am I?",
+    "bio-condensed": "TypeScript Full Stack Developer, I work daily with NestJS on the backend and Angular on the frontend. Passionate about the AI agent ecosystem, I specialized in configuring and integrating Claude Code in team settings…",
+    "bio-full": "TypeScript Full Stack Developer, I work daily with NestJS on the backend and Angular on the frontend. Passionate about the AI agent ecosystem, I specialized in configuring and integrating Claude Code in team settings: designing rules, skills and custom commands to adapt the agent to each project's conventions. Coming from the .NET Core world, I've evolved and adapted to real-world needs. If you're looking for a developer who codes and knows how to leverage AI to deliver better and faster — I'm your dev.",
+    "read-more": "Read more",
+    "read-less": "Read less",
+    "passionate": "Passionate",
+    "adaptable": "Adaptable",
+    "continuous-learner": "Continuous learner",
+    "journey-title": "My unique journey",
+    "fullstack": "Full TypeScript",
+    "stack": "Angular + NestJS",
+    "years": "Years",
+    "projects": "Projects",
+    "clients": "Clients"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My tech stack",
+    "filter-all": "All",
+    "filter-frontend": "Frontend",
+    "filter-backend": "Backend",
+    "filter-db": "Database",
+    "filter-cloud": "Cloud & DevOps",
+    "filter-ia": "AI & LLM",
+    "filter-tools": "Tools"
+  },
+  "experience": {
+    "title": "My Journey",
+    "subtitle": "7 years of professional evolution",
+    "current": "✓ Current",
+    "back-label": "Back to journey",
+    "back-btn": "Back",
+    "detail": {
+      "current": "✓ Current",
+      "description-title": "Description",
+      "tech-stack": "Tech stack",
+      "not-found": "Experience not found",
+      "back-home": "Back to home"
+    }
+  },
+  "exp": {
+    "solidaris": {
+      "title": "TypeScript Full Stack Developer (Angular / NestJS)",
+      "contract-type": "Permanent contract — Full time",
+      "sector": "Mutual Insurance / Health Insurance",
+      "location": "Brussels Capital Region, Belgium",
+      "description": "Development of an Angular 19 back-office application and a NestJS REST API for managing affiliated members' files at a Belgian health insurance company: contributions, financial assignments, follow-up calls.",
+      "frontend": {
+        "title": "Frontend — Angular Back-Office Application",
+        "a0": "Built an Angular 19 back-office application (standalone components, lazy-loading) for affiliated member management: multi-criteria search, financial history, contribution tracking",
+        "a1": "Designed a 3-layer frontend architecture (modules / shared / core) with Azure AD SSO authentication (MSAL) and role-based access control (RBAC)",
+        "a2": "Integrated DB2 mainframe SOAP services (population registry) exposed as REST and internal financial management APIs",
+        "a3": "Developed two key business modules: follow-up calls (contribution reminders) and assignments (financial transaction allocation)",
+        "a4": "Implemented a statistics dashboard with 7 aggregation endpoints (payments, balances, counts)",
+        "a5": "Applied full reactive patterns in RxJS (Observable-only) with generic CRUD services and pagination",
+        "a6": "Ensured code quality: strict ESLint (0 warnings), strict TypeScript, conventional commits, Cypress E2E tests, code reviews",
+        "a7": "Set up Elastic APM monitoring (Real User Monitoring) and Microsoft Graph API integration"
+      },
+      "backend": {
+        "title": "Backend — NestJS REST API",
+        "a0": "Designed and developed a NestJS REST API (TypeScript) for supplementary insurance management (ASCO): contributions, transaction assignments and follow-up calls",
+        "a1": "Implemented a dual-database architecture (MS SQL + DB2 mainframe) with transactional coordination and compensation mechanism for legacy database failures",
+        "a2": "Developed the assignments module: full import pipeline, validation, calculation and persistence of financial transactions tracked by processId",
+        "a3": "Integrated mainframe SOAP services (DB2/UNMS) for population data retrieval and synchronization with the legacy system",
+        "a4": "Set up a batch scheduler with concurrency management, single-instance execution and error recovery (Umzug, NestJS Schedule)",
+        "a5": "Secured the API via OAuth2 / Azure AD (MSAL) with JWT guards (RS256), role-based access control and Swagger/OpenID Connect documentation",
+        "a6": "Established 80% test coverage (Jest, 90+ specs) with AAA pattern, SonarQube reporting and zero ESLint warning policy",
+        "a7": "Industrialized delivery: versioned migrations, Elastic APM monitoring, Excel/CSV generation and Azure Key Vault for secrets management"
+      }
+    },
+    "nsi": {
+      "title": ".NET Developer (Consultant)",
+      "contract-type": "Permanent contract — Full time",
+      "sector": "IT Consulting & Outsourcing",
+      "location": "Belgium",
+      "description": "Consultant position: missions carried out at various end clients in the public and industrial sectors.",
+      "unipaper": {
+        "title": "Mission 1 — Unipaper / LumiCS",
+        "sector": "Industry / Production Management",
+        "a0": "Developed a Windows Forms desktop application for managing order processing and instructions for industrial fulfillment machines",
+        "a1": "Handled the complete cycle: business requirements analysis, development, testing and delivery"
+      },
+      "actiris": {
+        "title": "Mission 2 — Actiris · Single File",
+        "sector": "Public sector / Employment",
+        "a0": "Developed new features on job seeker files: deregistration, document management, certificates",
+        "a1": "Wrote and maintained unit tests for each developed feature",
+        "a2": "Participated in application refactoring to a service-oriented architecture: removal of MediatR pattern and factories for a more maintainable codebase",
+        "a3": "Worked with Oracle functions and an Oracle DB database in a secure API environment"
+      }
+    },
+    "megabyte": {
+      "title": "Full Stack .NET / Angular Developer",
+      "company-description": "Belgian ICT company (50+ employees, offices in Brussels, Antwerp and Louvain-la-Neuve), Microsoft and Sage partner, specialized in custom application development and ERP/CRM solutions.",
+      "contract-type": "Permanent contract — Full time",
+      "sector": "IT Services & Solutions / ERP-CRM",
+      "location": "Brussels, Belgium",
+      "description": "Development of custom web applications for international clients. Three major projects in the fields of European chemistry, finance and CRM integration.",
+      "cefic": {
+        "title": "Project 1 — Responsible Care Self-Assessment Webtool",
+        "sector": "European chemical industry",
+        "description": "HSE self-assessment web platform used by 29,000 chemical companies across Europe and in 70+ countries.",
+        "a0": "Developed the CEFIC HSE self-assessment web platform, a voluntary initiative used by 29,000 chemical companies",
+        "a1": "Improved reporting and benchmarking features for evaluating health, safety and environmental maturity",
+        "a2": "Implemented role and access management (RBAC) to secure sensitive company data",
+        "a3": "Added full multilingual support in 18 languages to cover all European member countries"
+      },
+      "approval": {
+        "title": "Project 2 — MegaApproval",
+        "sector": "Invoice validation / Finance",
+        "a0": "Developed an invoice validation site with approval workflow, PDF generation and authorization management",
+        "a1": "Created Windows Services for importing accounting documents to various storage types (local, DB, Azure Storage)",
+        "a2": "Deployed the application on an Azure Cloud environment (App Service, Key Vault, Application Insights)"
+      },
+      "mailchimp": {
+        "title": "Project 3 — MailChimp to Sage CRM",
+        "sector": "Integration / CRM",
+        "a0": "Developed an integration API retrieving users from MailChimp, SQL database injection and Sage CRM integration via iframe"
+      }
+    },
+    "clusteo": {
+      "title": ".NET Developer",
+      "company-description": "Brussels-based startup (subsidiary of the Perceval group) specialized in multimodal communication platforms and connected health. Official Sidly partner since 2018 for distribution in Belgium-Luxembourg.",
+      "contract-type": "Permanent contract — Full time",
+      "sector": "HealthTech / Telemedicine",
+      "location": "Ixelles, Brussels, Belgium",
+      "description": "Development of a medical telemonitoring platform communicating with the Sidly-Care smart bracelet for real-time biometric data collection.",
+      "youtonomy": {
+        "title": "YOUtonomy Project — Medical Telemonitoring",
+        "sector": "Telemedicine / IoT Health",
+        "a0": "Developed a Web API communicating with the Sidly-Care smart bracelet to collect real-time biometric data: body temperature, heart rate, oxygen saturation (SpO2), geolocation",
+        "a1": "Designed a telemonitoring site displaying bracelet data: alarms, configurable alerts, trend charts and personalized threshold management per patient",
+        "a2": "Developed a medical record module maintaining the complete patient history: illnesses, vaccinations, medical appointments with interactive calendar",
+        "a3": "Implemented real-time notifications via SignalR for urgent medical alerts"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's discuss your project",
+    "name-label": "Full name",
+    "name-placeholder": "Your name",
+    "email-label": "Email",
+    "email-placeholder": "your@email.com",
+    "mission-label": "Mission type",
+    "mission-default": "Select a type",
+    "mission-fullstack": "Full Stack",
+    "mission-frontend": "Frontend",
+    "mission-backend": "Backend",
+    "mission-consulting": "Consulting",
+    "mission-other": "Other",
+    "message-label": "Message",
+    "message-placeholder": "Describe your project…",
+    "submit-btn": "Send",
+    "validation": {
+      "name-required": "Name is required.",
+      "name-min": "Name must be at least 2 characters.",
+      "name-max": "Name cannot exceed 100 characters.",
+      "email-required": "Email is required.",
+      "email-invalid": "Please enter a valid email address.",
+      "mission-required": "Please select a mission type.",
+      "message-required": "Message is required.",
+      "message-min": "Message must be at least 10 characters.",
+      "message-max": "Message cannot exceed 500 characters."
+    }
+  }
+}
