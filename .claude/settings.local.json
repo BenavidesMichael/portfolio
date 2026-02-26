@@ -47,7 +47,12 @@
       "WebFetch(domain:phrase.com)",
       "Bash(npm info:*)",
       "Bash(npm install:*)",
-      "Bash(ng build:*)"
+      "Bash(ng build:*)",
+      "WebFetch(domain:developer.chrome.com)",
+      "Bash(wc:*)",
+      "WebFetch(domain:web.dev)",
+      "Bash(ls:*)",
+      "Bash(sort:*)"
     ]
   }
 }
