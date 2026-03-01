@@ -14,7 +14,7 @@ import type { Observable } from 'rxjs';
 
 import { routes } from './app.routes';
 
-const DOMAINS = ['nav', 'lang', 'hero', 'about', 'skills', 'experience', 'contact'] as const;
+const DOMAINS = ['nav', 'lang', 'hero', 'about', 'skills', 'experience', 'contact', 'cv'] as const;
 
 // Relative URLs resolve correctly against <base href> in both dev and production.
 // forkJoin loads all domain files in parallel then merges into a single Translation object.

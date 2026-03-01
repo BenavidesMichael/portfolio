@@ -1,0 +1,19 @@
+{
+  "cv": {
+    "section-personal-info": "Informations personnelles",
+    "section-experience": "Expériences Professionnelles",
+    "section-education": "Formation et diplômes",
+    "section-skills": "Compétences Personnelles",
+    "section-certifications": "Certifications et licences",
+    "label-location": "Adresse",
+    "label-nationality": "Nationalité",
+    "label-email": "E-mail",
+    "label-mother-tongue": "Langue maternelle",
+    "label-other-languages": "Autres langues",
+    "label-stack": "Stack",
+    "label-client": "Client",
+    "label-computer-skills": "Compétences informatiques",
+    "label-more-achievements": "+ {{n}} autres réalisations",
+    "label-methodologies": "Méthodologies"
+  }
+}
