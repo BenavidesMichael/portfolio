@@ -52,7 +52,11 @@
       "Bash(wc:*)",
       "WebFetch(domain:web.dev)",
       "Bash(ls:*)",
-      "Bash(sort:*)"
+      "Bash(sort:*)",
+      "Bash(git -C /c/Projets/portfolio show HEAD~1:src/app/core/services/cv-pdf.service.ts)",
+      "Bash(npx tsc:*)",
+      "Bash(node:*)",
+      "Bash(npm run deploy:*)"
     ]
   }
 }
